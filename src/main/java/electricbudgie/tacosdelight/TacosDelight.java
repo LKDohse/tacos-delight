@@ -1,6 +1,7 @@
 package electricbudgie.tacosdelight;
 
 import electricbudgie.tacosdelight.block.ModBlocks;
+import electricbudgie.tacosdelight.item.ModItemGroups;
 import electricbudgie.tacosdelight.item.ModItems;
 import net.fabricmc.api.ModInitializer;
 
@@ -21,6 +22,7 @@ public class TacosDelight implements ModInitializer {
 		// However, some things (like resources) may still be uninitialized.
 		// Proceed with mild caution.
 
+		ModItemGroups.registerItemGroups();
 		ModItems.registerModItems();
 		ModBlocks.registerModBlocks();
 		LOGGER.info("Initializing Tacos Delight!");

@@ -1,8 +1,10 @@
 package electricbudgie.tacosdelight.block.custom;
 
+import com.mojang.serialization.MapCodec;
 import electricbudgie.tacosdelight.item.ModItems;
 import electricbudgie.tacosdelight.tags.ModTags;
 import net.minecraft.block.*;
+import net.minecraft.block.enums.DoubleBlockHalf;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
@@ -10,6 +12,8 @@ import net.minecraft.registry.tag.TagKey;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
+import net.minecraft.state.StateManager;
+import net.minecraft.state.property.EnumProperty;
 import net.minecraft.state.property.IntProperty;
 import net.minecraft.state.property.Properties;
 import net.minecraft.util.ActionResult;
@@ -17,25 +21,37 @@ import net.minecraft.util.Hand;
 import net.minecraft.util.ItemActionResult;
 import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.Direction;
 import net.minecraft.util.math.random.Random;
+import net.minecraft.world.BlockRenderView;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldView;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.event.GameEvent;
+import org.jetbrains.annotations.Nullable;
 
-/// maybe just directly make this a lime tree instead of inheriting from a third class??
-/// also the lime tree needs to inherit from TallPlantBlock.class
-public abstract class LimeTreeBlock extends TallPlantBlock implements Fertilizable {
+
+public class LimeTreeBlock extends TallPlantBlock implements Fertilizable {
+    public static final MapCodec<LimeTreeBlock> CODEC = createCodec(LimeTreeBlock::new);
     private static final TagKey<Biome> GROWABLE_BIOMES = ModTags.IS_TROPICAL;
-
     public static final int HARVEST_AGE = 5;
     public static final int ADULT_AGE = 3;
-    public static final IntProperty AGE;
+    public static final IntProperty AGE = IntProperty.of("age", 0, 5);
+    public static final EnumProperty<DoubleBlockHalf> HALF = Properties.DOUBLE_BLOCK_HALF;
 
 
     public LimeTreeBlock(Settings settings) {
         super(settings);
-        this.setDefaultState(this.stateManager.getDefaultState().with(AGE, 0));
+        this.setDefaultState(this.stateManager.getDefaultState()
+                .with(AGE, 0)
+                .with(HALF, DoubleBlockHalf.LOWER));
+    }
+
+
+
+    @Override
+    public MapCodec<LimeTreeBlock> getCodec() {
+        return CODEC;
     }
 
     protected boolean hasRandomTicks(BlockState state) {
@@ -78,7 +94,8 @@ public abstract class LimeTreeBlock extends TallPlantBlock implements Fertilizab
 
     @Override
     public boolean canGrow(World world, Random random, BlockPos pos, BlockState state) {
-        return world.getBiome(pos).isIn(GROWABLE_BIOMES);
+        //return world.getBiome(pos).isIn(GROWABLE_BIOMES);
+        return true;
     }
 
     @Override
@@ -87,8 +104,15 @@ public abstract class LimeTreeBlock extends TallPlantBlock implements Fertilizab
         world.setBlockState(pos, state.with(AGE, i), 2);
     }
 
-    static {
-        AGE = Properties.AGE_5;
+    @Override
+    public BlockState getAppearance(BlockState state, BlockRenderView renderView, BlockPos pos, Direction side, @Nullable BlockState sourceState, @Nullable BlockPos sourcePos) {
+        return super.getAppearance(state, renderView, pos, side, sourceState, sourcePos);
     }
+
+    protected void appendProperties(StateManager.Builder<Block, BlockState> builder) {
+        builder.add(AGE);
+        builder.add(HALF);
+    }
+
 
 }

@@ -34,16 +34,16 @@ import net.minecraft.world.event.GameEvent;
 
 public class BlueRaspberryBushBlock extends PlantBlock implements Fertilizable {
     public static final MapCodec<BlueRaspberryBushBlock> CODEC = createCodec(BlueRaspberryBushBlock::new);
-    private static final int MAX_AGE = 5;
-    private static final TagKey<Biome> GROWABLE_BIOMES = ModTags.IS_COLD_FOREST;
-    public static final IntProperty AGE;
+    private static final int MAX_AGE = 6;
+    private static final TagKey<Biome> GROWABLE_BIOMES = ModTags.IS_SNOWY;
+    public static final IntProperty AGE = IntProperty.of("age", 0, 6);
 
     public BlueRaspberryBushBlock(Settings settings) {
         super(settings);
     }
 
     protected boolean hasRandomTicks(BlockState state) {
-        return state.get(AGE) < 3;
+        return state.get(AGE) < MAX_AGE;
     }
 
     protected void randomTick(BlockState state, ServerWorld world, BlockPos pos, Random random) {
@@ -82,12 +82,12 @@ public class BlueRaspberryBushBlock extends PlantBlock implements Fertilizable {
 
     protected ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, BlockHitResult hit) {
         int i = state.get(AGE);
-        boolean bl = i == 3;
+        boolean bl = i == 4;
         if (i >= MAX_AGE) {
             int j = 1 + world.random.nextInt(2);
             dropStack(world, pos, new ItemStack(ModItems.BLUE_RASPBERRY, j + (bl ? 1 : 0)));
             world.playSound(null, pos, SoundEvents.BLOCK_SWEET_BERRY_BUSH_PICK_BERRIES, SoundCategory.BLOCKS, 1.0F, 0.8F + world.random.nextFloat() * 0.4F);
-            BlockState blockState = state.with(AGE, 3);
+            BlockState blockState = state.with(AGE, 4);
             world.setBlockState(pos, blockState, 2);
             world.emitGameEvent(GameEvent.BLOCK_CHANGE, pos, GameEvent.Emitter.of(player, blockState));
             return ActionResult.success(world.isClient);
@@ -108,12 +108,13 @@ public class BlueRaspberryBushBlock extends PlantBlock implements Fertilizable {
 
     @Override
     public boolean canGrow(World world, Random random, BlockPos pos, BlockState state) {
-        return world.getBiome(pos).isIn(GROWABLE_BIOMES);
+        //return world.getBiome(pos).isIn(GROWABLE_BIOMES);
+        return true;
     }
 
     @Override
     public void grow(ServerWorld world, Random random, BlockPos pos, BlockState state) {
-        int i = Math.min(3, state.get(AGE) + 1);
+        int i = Math.min(MAX_AGE, state.get(AGE) + 1);
         world.setBlockState(pos, state.with(AGE, i), 2);
     }
 
@@ -121,7 +122,4 @@ public class BlueRaspberryBushBlock extends PlantBlock implements Fertilizable {
         builder.add(AGE);
     }
 
-    static {
-        AGE = Properties.AGE_5;
-    }
 }

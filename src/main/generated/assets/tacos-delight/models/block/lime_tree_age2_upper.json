@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cross",
+  "textures": {
+    "cross": "tacos-delight:block/lime_tree_age2_upper"
+  }
+}

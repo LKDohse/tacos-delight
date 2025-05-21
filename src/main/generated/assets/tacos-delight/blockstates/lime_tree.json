@@ -1,0 +1,40 @@
+{
+  "variants": {
+    "age=0,half=lower": {
+      "model": "tacos-delight:block/lime_tree_age0_lower"
+    },
+    "age=0,half=upper": {
+      "model": "tacos-delight:block/lime_tree_age0_upper"
+    },
+    "age=1,half=lower": {
+      "model": "tacos-delight:block/lime_tree_age1_lower"
+    },
+    "age=1,half=upper": {
+      "model": "tacos-delight:block/lime_tree_age1_upper"
+    },
+    "age=2,half=lower": {
+      "model": "tacos-delight:block/lime_tree_age2_lower"
+    },
+    "age=2,half=upper": {
+      "model": "tacos-delight:block/lime_tree_age2_upper"
+    },
+    "age=3,half=lower": {
+      "model": "tacos-delight:block/lime_tree_age3_lower"
+    },
+    "age=3,half=upper": {
+      "model": "tacos-delight:block/lime_tree_age3_upper"
+    },
+    "age=4,half=lower": {
+      "model": "tacos-delight:block/lime_tree_age4_lower"
+    },
+    "age=4,half=upper": {
+      "model": "tacos-delight:block/lime_tree_age4_upper"
+    },
+    "age=5,half=lower": {
+      "model": "tacos-delight:block/lime_tree_age5_lower"
+    },
+    "age=5,half=upper": {
+      "model": "tacos-delight:block/lime_tree_age5_upper"
+    }
+  }
+}

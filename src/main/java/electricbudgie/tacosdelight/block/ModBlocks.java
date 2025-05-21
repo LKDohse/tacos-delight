@@ -2,6 +2,7 @@ package electricbudgie.tacosdelight.block;
 
 import electricbudgie.tacosdelight.TacosDelight;
 import electricbudgie.tacosdelight.block.custom.BlueRaspberryBushBlock;
+import electricbudgie.tacosdelight.block.custom.LimeTreeBlock;
 import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
@@ -14,6 +15,7 @@ import net.minecraft.util.Identifier;
 public class ModBlocks {
 
    public static final Block BLUE_RASPBERRY_BUSH = registerBlockWithoutBlockItem("blue_raspberry_bush", new BlueRaspberryBushBlock(AbstractBlock.Settings.copy(Blocks.WHEAT)));
+   public static final Block LIME_TREE = registerBlockWithoutBlockItem("lime_tree", new LimeTreeBlock(AbstractBlock.Settings.copy(Blocks.WHEAT)));
 
     private static Block registerBlock(String name, Block block) {
         registerBlockItem(name, block);
