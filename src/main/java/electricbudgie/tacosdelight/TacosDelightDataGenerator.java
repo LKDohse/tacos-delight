@@ -1,6 +1,7 @@
 package electricbudgie.tacosdelight;
 
 import electricbudgie.tacosdelight.datagen.ModBiomeTagProvider;
+import electricbudgie.tacosdelight.datagen.ModLootTableGenerator;
 import electricbudgie.tacosdelight.datagen.ModModelProvider;
 import electricbudgie.tacosdelight.datagen.ModWorldGenerator;
 import electricbudgie.tacosdelight.world.ModConfiguredFeatures;
@@ -18,6 +19,7 @@ public class TacosDelightDataGenerator implements DataGeneratorEntrypoint {
 		pack.addProvider(ModModelProvider::new);
 		pack.addProvider(ModBiomeTagProvider::new);
 		pack.addProvider(ModWorldGenerator::new);
+		pack.addProvider(ModLootTableGenerator::new);
 	}
 
 	@Override

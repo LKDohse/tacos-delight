@@ -16,6 +16,8 @@ public class ModItemGroups {
                     .icon(() -> new ItemStack(ModItems.LIME)).entries((displayContext, entries)->{
                         entries.add(ModItems.LIME);
                         entries.add(ModItems.BLUE_RASPBERRY);
+                        entries.add(ModItems.HOT_PEPPER);
+                        entries.add(ModItems.HOT_PEPPER_SEEDS);
     }).build());
 
     public static void registerItemGroups(){

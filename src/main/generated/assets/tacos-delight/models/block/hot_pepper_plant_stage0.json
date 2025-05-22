@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/crop",
+  "textures": {
+    "crop": "tacos-delight:block/hot_pepper_plant_stage0"
+  }
+}
