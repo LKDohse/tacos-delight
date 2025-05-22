@@ -3,6 +3,7 @@ package electricbudgie.tacosdelight;
 import electricbudgie.tacosdelight.block.ModBlocks;
 import electricbudgie.tacosdelight.item.ModItemGroups;
 import electricbudgie.tacosdelight.item.ModItems;
+import electricbudgie.tacosdelight.world.gen.ModWorldGeneration;
 import net.fabricmc.api.ModInitializer;
 
 import org.slf4j.Logger;
@@ -25,6 +26,7 @@ public class TacosDelight implements ModInitializer {
 		ModItemGroups.registerItemGroups();
 		ModItems.registerModItems();
 		ModBlocks.registerModBlocks();
+		ModWorldGeneration.generateModWorldGeneration();
 		LOGGER.info("Initializing Tacos Delight!");
 	}
 }
