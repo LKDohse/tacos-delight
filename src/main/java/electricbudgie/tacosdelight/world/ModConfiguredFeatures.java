@@ -14,7 +14,7 @@ public class ModConfiguredFeatures {
     public static final RegistryKey<ConfiguredFeature<?, ?>> BLUE_RASPBERRY_BUSH_KEY = registerKey("blue_raspberry_bush");
 
     public static void bootstrap(Registerable<ConfiguredFeature<?, ?>> context){
-        register(context, LIME_TREE_KEY, Feature.FLOWER, new RandomPatchFeatureConfig(32, 6, 2, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
+        register(context, LIME_TREE_KEY, Feature.FLOWER, new RandomPatchFeatureConfig(20, 4, 2, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
                 new SimpleBlockFeatureConfig(BlockStateProvider.of(ModBlocks.LIME_TREE)))));
 
         register(context, BLUE_RASPBERRY_BUSH_KEY, Feature.FLOWER, new RandomPatchFeatureConfig(32, 6, 2, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
