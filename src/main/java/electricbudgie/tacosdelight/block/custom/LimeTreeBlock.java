@@ -25,6 +25,8 @@ import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
 import net.minecraft.util.math.random.Random;
+import net.minecraft.util.shape.VoxelShape;
+import net.minecraft.util.shape.VoxelShapes;
 import net.minecraft.world.*;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.event.GameEvent;
@@ -170,6 +172,11 @@ public class LimeTreeBlock extends TallPlantBlock implements Fertilizable {
         } else {
             return Blocks.AIR.getDefaultState();
         }
+    }
+
+    @Override
+    protected VoxelShape getCollisionShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context) {
+       return VoxelShapes.fullCube();
     }
 
     record LowerHalfContext(BlockPos pos, BlockState state) {
