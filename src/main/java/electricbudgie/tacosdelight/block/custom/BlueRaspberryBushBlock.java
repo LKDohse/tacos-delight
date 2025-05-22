@@ -48,7 +48,7 @@ public class BlueRaspberryBushBlock extends PlantBlock implements Fertilizable {
 
     protected void randomTick(BlockState state, ServerWorld world, BlockPos pos, Random random) {
         int i = state.get(AGE);
-        if (i < 3 && random.nextInt(5) == 0 && world.getBaseLightLevel(pos.up(), 0) >= 9) {
+        if (world.getBiome(pos).isIn(GROWABLE_BIOMES) && i < MAX_AGE && random.nextInt(5) == 0 && world.getBaseLightLevel(pos.up(), 0) >= 9) {
             BlockState blockState = state.with(AGE, i + 1);
             world.setBlockState(pos, blockState, 2);
             world.emitGameEvent(GameEvent.BLOCK_CHANGE, pos, GameEvent.Emitter.of(blockState));
@@ -108,8 +108,7 @@ public class BlueRaspberryBushBlock extends PlantBlock implements Fertilizable {
 
     @Override
     public boolean canGrow(World world, Random random, BlockPos pos, BlockState state) {
-        //return world.getBiome(pos).isIn(GROWABLE_BIOMES);
-        return true;
+        return world.getBiome(pos).isIn(GROWABLE_BIOMES);
     }
 
     @Override
