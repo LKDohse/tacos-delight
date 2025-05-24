@@ -1,6 +1,7 @@
 package electricbudgie.tacosdelight.item;
 
 import electricbudgie.tacosdelight.TacosDelight;
+import electricbudgie.tacosdelight.block.ModBlocks;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
@@ -18,6 +19,7 @@ public class ModItemGroups {
                         entries.add(ModItems.BLUE_RASPBERRY);
                         entries.add(ModItems.HOT_PEPPER);
                         entries.add(ModItems.HOT_PEPPER_SEEDS);
+                        entries.add(ModBlocks.DEEP_FRYER_BLOCK);
     }).build());
 
     public static void registerItemGroups(){

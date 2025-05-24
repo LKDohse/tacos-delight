@@ -38,6 +38,14 @@ repositories {
 			excludeGroup "io.github.fabricators_of_create"
 		}
 	}
+
+	maven {
+		name = 'GeckoLib'
+		url 'https://dl.cloudsmith.io/public/geckolib3/geckolib/maven/'
+		content {
+			includeGroup("software.bernie.geckolib")
+		}
+	}
 }
 
 fabricApi {
@@ -60,6 +68,8 @@ dependencies {
 		// exclude(group: "io.github.fabricators-of-create")
 		// If you want to exclude Porting Lib to instead provide your own version of Porting Lib, uncomment the above line..
 	}
+
+	modImplementation "software.bernie.geckolib:geckolib-fabric-1.21.1:4.6"
 }
 
 processResources {

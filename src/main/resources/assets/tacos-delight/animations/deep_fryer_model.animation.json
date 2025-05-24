@@ -1,0 +1,57 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"start_frying": {
+			"loop": "hold_on_last_frame",
+			"animation_length": 0.3333,
+			"bones": {
+				"fryer_basket": {
+					"position": {
+						"0.0": {
+							"vector": [0, 0, 0]
+						},
+						"0.1667": {
+							"vector": [0, 0, -2]
+						},
+						"0.2917": {
+							"vector": [0, -4, -2]
+						}
+					}
+				}
+			}
+		},
+		"stop_frying": {
+			"loop": "hold_on_last_frame",
+			"animation_length": 0.2917,
+			"bones": {
+				"fryer_basket": {
+					"position": {
+						"0.0": {
+							"vector": [0, -4, -2]
+						},
+						"0.125": {
+							"vector": [0, 0, -2]
+						},
+						"0.25": {
+							"vector": [0, 0, 0]
+						}
+					}
+				}
+			}
+		},
+		"idle": {
+			"loop": true
+		},
+		"in_use": {
+			"loop": true,
+			"bones": {
+				"fryer_basket": {
+					"position": {
+						"vector": [0, -4, -2]
+					}
+				}
+			}
+		}
+	},
+	"geckolib_format_version": 2
+}

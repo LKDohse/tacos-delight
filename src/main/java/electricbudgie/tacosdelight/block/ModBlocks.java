@@ -2,6 +2,7 @@ package electricbudgie.tacosdelight.block;
 
 import electricbudgie.tacosdelight.TacosDelight;
 import electricbudgie.tacosdelight.block.custom.BlueRaspberryBushBlock;
+import electricbudgie.tacosdelight.block.custom.DeepFryerBlock;
 import electricbudgie.tacosdelight.block.custom.HotPepperCropBlock;
 import electricbudgie.tacosdelight.block.custom.LimeTreeBlock;
 import net.minecraft.block.AbstractBlock;
@@ -19,6 +20,9 @@ public class ModBlocks {
    public static final Block BLUE_RASPBERRY_BUSH = registerBlockWithoutBlockItem("blue_raspberry_bush", new BlueRaspberryBushBlock(AbstractBlock.Settings.copy(Blocks.WHEAT)));
    public static final Block LIME_TREE = registerBlockWithoutBlockItem("lime_tree", new LimeTreeBlock(AbstractBlock.Settings.copy(Blocks.WHEAT)));
    public static final Block HOT_PEPPER_CROP = registerBlockWithoutBlockItem("hot_pepper_plant", new HotPepperCropBlock(AbstractBlock.Settings.copy(Blocks.WHEAT)));
+
+   public static final Block DEEP_FRYER_BLOCK = registerBlock("deep_fryer",
+           new DeepFryerBlock(AbstractBlock.Settings.create().strength(2f).requiresTool().nonOpaque()));
 
     private static Block registerBlock(String name, Block block) {
         registerBlockItem(name, block);
