@@ -4,6 +4,7 @@ import electricbudgie.tacosdelight.block.ModBlocks;
 import electricbudgie.tacosdelight.block.entity.ModBlockEntities;
 import electricbudgie.tacosdelight.item.ModItemGroups;
 import electricbudgie.tacosdelight.item.ModItems;
+import electricbudgie.tacosdelight.recipe.ModRecipes;
 import electricbudgie.tacosdelight.screen.ModScreenHandlers;
 import electricbudgie.tacosdelight.world.gen.ModWorldGeneration;
 import net.fabricmc.api.ModInitializer;
@@ -32,6 +33,7 @@ public class TacosDelight implements ModInitializer {
 		ModBlockEntities.registerBlockEntities();
 		ModWorldGeneration.generateModWorldGeneration();
 		ModScreenHandlers.registerScreenHandlers();
+		ModRecipes.registerRecipes();
 		LOGGER.info("Initializing Tacos Delight!");
 	}
 }
