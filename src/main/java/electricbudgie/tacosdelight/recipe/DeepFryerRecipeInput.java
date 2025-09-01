@@ -13,4 +13,5 @@ public record DeepFryerRecipeInput(ItemStack input) implements RecipeInput {
     public int getSize() {
         return 1;
     }
+
 }

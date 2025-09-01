@@ -46,7 +46,7 @@ public abstract class CustomFabricRecipeProvider extends FabricRecipeProvider {
                 .resolve("resources")
                 .resolve("data")
                 .resolve(id.getNamespace())
-                .resolve("recipes")
+                .resolve("recipe")
                 .resolve(id.getPath() + "_from_deepfrying.json");
         var outputPath = recipePath.getParent();
         Files.createDirectories(outputPath);

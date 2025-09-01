@@ -17,6 +17,8 @@ public class ModRecipeProvider extends CustomFabricRecipeProvider {
 
     @Override
     public void generate(RecipeExporter recipeExporter) {
+       // offerFoodCookingRecipe(recipeExporter, "smoker", RecipeSerializer.SMOKING, SmokingRecipe::new, 100, ModItems.HOT_PEPPER, ModItems.BLUE_RASPBERRY, 1.0f);
+       // offerSmelting(recipeExporter, List.of(ModItems.HOT_PEPPER), RecipeCategory.FOOD, ModItems.BLUE_RASPBERRY, 100f, 100, "Tacos Delight");
         try {
             offerDeepFrying(recipeExporter, ModItems.HOT_PEPPER, ModItems.BLUE_RASPBERRY, 1.0f, 100, "deepfrying");
         } catch (IOException e) {

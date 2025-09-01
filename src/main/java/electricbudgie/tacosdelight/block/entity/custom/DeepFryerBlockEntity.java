@@ -99,7 +99,7 @@ public class DeepFryerBlockEntity extends BlockEntity implements ExtendedScreenH
 
     //Crafting Stuff
     public boolean isCrafting() {
-        return false; // hasRecipe() && canInsertIntoOutputSlot();
+        return hasRecipe() && canInsertIntoOutputSlot();
     }
 
     private void resetProgress() {
