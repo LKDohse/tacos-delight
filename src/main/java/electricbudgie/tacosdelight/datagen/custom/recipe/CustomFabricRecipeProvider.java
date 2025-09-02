@@ -33,10 +33,10 @@ public abstract class CustomFabricRecipeProvider extends FabricRecipeProvider {
                                    ItemConvertible output,
                                    float experience,
                                    int cookingTime,
-                                   String group) throws IOException {
+                                   int count) throws IOException {
 
 
-        var recipeJson = DeepFryRecipeGenerator.generate(input, output, experience, cookingTime);
+        var recipeJson = DeepFryRecipeGenerator.generate(input, output, experience, cookingTime, count);
         writeRecipeJson(fabricDataOutput, Identifier.of(TacosDelight.MOD_ID, Registries.ITEM.getId(output.asItem()).getPath()), recipeJson);
     }
 

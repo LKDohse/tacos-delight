@@ -1,12 +1,14 @@
 {
-  "type": "tacos_delight:deep_frying",
-  "group": "",
+  "type": "tacos-delight:deepfrying",
+  "group": "tacos-delight",
+  "category": "food",
   "experience": 1.0,
   "cookingtime": 100,
   "ingredient": {
     "item": "tacos-delight:hot_pepper"
   },
   "result": {
-    "item": "tacos-delight:blue_raspberry"
+    "id": "tacos-delight:blue_raspberry",
+    "count": 3
   }
 }
