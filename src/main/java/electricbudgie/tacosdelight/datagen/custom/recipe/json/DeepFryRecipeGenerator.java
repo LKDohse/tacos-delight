@@ -5,8 +5,6 @@ import net.minecraft.item.ItemConvertible;
 import net.minecraft.registry.Registries;
 import net.minecraft.util.Identifier;
 
-import java.util.Optional;
-
 public class DeepFryRecipeGenerator {
 
     public static JsonObject generate(ItemConvertible input, ItemConvertible output, float experience, int cookingTime, int count)  {

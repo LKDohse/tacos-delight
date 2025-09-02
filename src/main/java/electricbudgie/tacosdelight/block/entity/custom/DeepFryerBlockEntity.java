@@ -1,5 +1,6 @@
 package electricbudgie.tacosdelight.block.entity.custom;
 
+import electricbudgie.tacosdelight.block.custom.DeepFryerBlock;
 import electricbudgie.tacosdelight.block.entity.ImplementedInventory;
 import electricbudgie.tacosdelight.block.entity.ModBlockEntities;
 import electricbudgie.tacosdelight.recipe.DeepFryerRecipe;
@@ -7,6 +8,7 @@ import electricbudgie.tacosdelight.recipe.DeepFryerRecipeInput;
 import electricbudgie.tacosdelight.recipe.ModRecipes;
 import electricbudgie.tacosdelight.screen.custom.DeepFryerScreenHandler;
 import net.fabricmc.fabric.api.screenhandler.v1.ExtendedScreenHandlerFactory;
+import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.entity.player.PlayerEntity;
@@ -30,8 +32,8 @@ import org.jetbrains.annotations.Nullable;
 import software.bernie.geckolib.animatable.GeoAnimatable;
 import software.bernie.geckolib.animatable.GeoBlockEntity;
 import software.bernie.geckolib.animatable.instance.AnimatableInstanceCache;
-import software.bernie.geckolib.animatable.instance.SingletonAnimatableInstanceCache;
 import software.bernie.geckolib.animation.*;
+import software.bernie.geckolib.util.GeckoLibUtil;
 
 import java.util.Optional;
 
@@ -44,6 +46,8 @@ public class DeepFryerBlockEntity extends BlockEntity implements ExtendedScreenH
     private int progress = 0;
     private int maxProgress = 72;
     private final int DEFAULT_MAX_PROGRESS = 72;
+
+    protected boolean cooking;
 
     public DeepFryerBlockEntity(BlockPos pos, BlockState state) {
         super(ModBlockEntities.DEEP_FRYER_BE, pos, state);
@@ -78,6 +82,7 @@ public class DeepFryerBlockEntity extends BlockEntity implements ExtendedScreenH
     public void tick(World world, BlockPos pos, BlockState state) {
         //20 ticks per second
         if (isCrafting()) {
+            startCooking();
             increaseCraftingProgress();
             markDirty(world, pos, state);
 
@@ -88,8 +93,6 @@ public class DeepFryerBlockEntity extends BlockEntity implements ExtendedScreenH
         } else {
             resetProgress();
         }
-
-        //updateAnimations();
     }
 
     @Override
@@ -102,9 +105,22 @@ public class DeepFryerBlockEntity extends BlockEntity implements ExtendedScreenH
         return hasRecipe() && canInsertIntoOutputSlot();
     }
 
+    public void startCooking() {
+        if (!world.isClient) {
+            world.setBlockState(pos, getCachedState().with(DeepFryerBlock.COOKING, true), Block.NOTIFY_ALL);
+        }
+    }
+
+    public void stopCooking() {
+        if (!world.isClient) {
+            world.setBlockState(pos, getCachedState().with(DeepFryerBlock.COOKING, false), Block.NOTIFY_ALL);
+        }
+    }
+
     private void resetProgress() {
         this.progress = 0;
         this.maxProgress = DEFAULT_MAX_PROGRESS;
+        stopCooking();
     }
 
     private void craftItem() {
@@ -154,30 +170,27 @@ public class DeepFryerBlockEntity extends BlockEntity implements ExtendedScreenH
     }
 
     //Animation BULLSHIT
-    public void updateAnimations() {
-        if (isCrafting()) {
-           this.triggerAnim("in_use_controller", "in_use");
-        } else {
-            this.triggerAnim("idle_controller", "idle");
-        }
-    }
 
-    private final AnimatableInstanceCache geoCache = new SingletonAnimatableInstanceCache(this);
+    private final AnimatableInstanceCache geoCache = GeckoLibUtil.createInstanceCache(this);
 
-    protected static final RawAnimation START_FRYING = RawAnimation.begin().thenPlay("start_frying");
-    protected static final RawAnimation STOP_FRYING = RawAnimation.begin().thenPlay("stop_frying");
+    protected static final RawAnimation START_FRYING = RawAnimation.begin().thenPlayXTimes("start_frying", 1).thenLoop("in_use");
+    protected static final RawAnimation STOP_FRYING = RawAnimation.begin().thenPlayXTimes("stop_frying", 1).thenLoop("idle");
     protected static final RawAnimation IDLE = RawAnimation.begin().thenLoop("idle");
-    protected static final RawAnimation IN_USE = RawAnimation.begin().thenLoop("in_use");
+
 
     @Override
-    public void registerControllers(AnimatableManager.ControllerRegistrar controllerRegistrar) {
-        controllerRegistrar.add(new AnimationController<>(this, "controller", 0, this::predicate));
-
-    }
-
-    private <T extends GeoAnimatable> PlayState predicate(AnimationState<T> tAnimationState) {
-        tAnimationState.getController().setAnimation(RawAnimation.begin().then("idle", Animation.LoopType.LOOP));
-        return PlayState.CONTINUE;
+    public void registerControllers(AnimatableManager.ControllerRegistrar controllers) {
+        controllers.add(new AnimationController<>(this,
+                "baseController",
+                0,
+                state -> {
+                    if (getCachedState().get(DeepFryerBlock.COOKING)){
+                        return state.setAndContinue(RawAnimation.begin().thenPlayXTimes("start_frying", 1).thenLoop("in_use"));
+                    }
+                    else {
+                       return state.setAndContinue(RawAnimation.begin().thenPlayXTimes("stop_frying", 1).thenLoop("idle"));
+                    }
+                }));
     }
 
     @Override
@@ -185,22 +198,22 @@ public class DeepFryerBlockEntity extends BlockEntity implements ExtendedScreenH
         return geoCache;
     }
 
-
-
 // NBT reading/writing and network packets
     @Override
     protected void writeNbt(NbtCompound nbt, RegistryWrapper.WrapperLookup registryLookup) {
         super.writeNbt(nbt, registryLookup);
         Inventories.writeNbt(nbt, inventory, registryLookup);
-        nbt.putInt("crystallizer.progress", progress);
-        nbt.putInt("crystallizer.max_progress", maxProgress);
+        nbt.putInt("deep_fryer.progress", progress);
+        nbt.putInt("deep_fryer.max_progress", maxProgress);
+        nbt.putBoolean("deep_fryer.is_frying", cooking);
     }
 
     @Override
     protected void readNbt(NbtCompound nbt, RegistryWrapper.WrapperLookup registryLookup) {
         Inventories.readNbt(nbt, inventory, registryLookup);
-        progress = nbt.getInt("crystallizer.progress");
-        maxProgress = nbt.getInt("crystallizer.max_progress");
+        progress = nbt.getInt("deep_fryer.progress");
+        maxProgress = nbt.getInt("deep_fryer.max_progress");
+        cooking = nbt.getBoolean("deep_fryer.is_frying");
         super.readNbt(nbt, registryLookup);
     }
 

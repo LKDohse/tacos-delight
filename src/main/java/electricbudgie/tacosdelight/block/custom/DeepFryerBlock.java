@@ -3,6 +3,7 @@ package electricbudgie.tacosdelight.block.custom;
 import com.mojang.serialization.MapCodec;
 import electricbudgie.tacosdelight.block.entity.ModBlockEntities;
 import electricbudgie.tacosdelight.block.entity.custom.DeepFryerBlockEntity;
+import net.minecraft.block.Block;
 import net.minecraft.block.BlockRenderType;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.BlockWithEntity;
@@ -12,6 +13,8 @@ import net.minecraft.block.entity.BlockEntityType;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.screen.NamedScreenHandlerFactory;
+import net.minecraft.state.StateManager;
+import net.minecraft.state.property.BooleanProperty;
 import net.minecraft.util.Hand;
 import net.minecraft.util.ItemActionResult;
 import net.minecraft.util.ItemScatterer;
@@ -22,9 +25,17 @@ import org.jetbrains.annotations.Nullable;
 
 public class DeepFryerBlock extends BlockWithEntity {
     public static final MapCodec<DeepFryerBlock> CODEC = createCodec(DeepFryerBlock::new);
+    public static final BooleanProperty COOKING = BooleanProperty.of("cooking");
 
     public DeepFryerBlock(Settings settings) {
         super(settings);
+        this.setDefaultState(this.stateManager.getDefaultState().with(COOKING, false));
+    }
+
+    @Override
+    protected void appendProperties(StateManager.Builder<Block, BlockState> builder) {
+        builder.add(COOKING);
+        super.appendProperties(builder);
     }
 
     @Override
