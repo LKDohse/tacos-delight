@@ -60,78 +60,78 @@ public class ModFoodComponents {
     public static final FoodComponent UNFINISHED_FOOD_PROPERTIES = new FoodComponent.Builder().nutrition(3).saturationModifier(1.2F).build();
 
     //Basic Ingredients
-    public static final Item DICED_TOMATOES =  new Item(new Item.Settings().food(BASIC_INGREDIENT_PROPERTIES));
-    public static final Item DRIED_CHILI = new Item(new Item.Settings().food(BASIC_INGREDIENT_PROPERTIES));
-    public static final Item DRIED_ONION = new Item(new Item.Settings().food(BASIC_INGREDIENT_PROPERTIES));
-    public static final Item FLOUR_TORTILLA = new Item(new Item.Settings().food(BASIC_INGREDIENT_PROPERTIES));
-    public static final Item NACHO_CHEESE = new Item(new Item.Settings().food(BASIC_INGREDIENT_PROPERTIES).recipeRemainder(Items.GLASS_BOTTLE).maxCount(16));
-    public static final Item SHREDDED_CHEESE_PROPERTIES = new Item(new Item.Settings().food(BASIC_INGREDIENT_PROPERTIES));
-    public static final Item DICED_POTATO = new Item(new Item.Settings().food(BASIC_INGREDIENT_PROPERTIES));
-    public static final Item SOUR_CREAM = new Item(new Item.Settings().food(BASIC_INGREDIENT_PROPERTIES).recipeRemainder(Items.GLASS_BOTTLE).maxCount(16));
-    public static final Item RAW_TORTILLA_CHIPS = new Item(new Item.Settings().food(BASIC_INGREDIENT_PROPERTIES));
-    public static final Item UNCOOKED_FIESTA_POTATOES = new Item(new Item.Settings().food(BASIC_INGREDIENT_PROPERTIES));
-    public static final Item FRIED_FIESTA_POTATOES = new Item(new Item.Settings().food(BASIC_INGREDIENT_PROPERTIES));
-    public static final Item TACO_SEASONING = new Item(new Item.Settings().food(new FoodComponent.Builder().nutrition(1).snack().statusEffect(new StatusEffectInstance(StatusEffects.BLINDNESS), 0.03F).build()));
+    public static final Item.Settings DICED_TOMATOES_SETTINGS =  new Item.Settings().food(BASIC_INGREDIENT_PROPERTIES);
+    public static final Item.Settings DRIED_CHILI_SETTINGS = new Item.Settings().food(BASIC_INGREDIENT_PROPERTIES);
+    public static final Item.Settings DRIED_ONION_SETTINGS = new Item.Settings().food(BASIC_INGREDIENT_PROPERTIES);
+    public static final Item.Settings FLOUR_TORTILLA_SETTINGS = new Item.Settings().food(BASIC_INGREDIENT_PROPERTIES);
+    public static final Item.Settings NACHO_CHEESE_SETTINGS = new Item.Settings().food(BASIC_INGREDIENT_PROPERTIES).recipeRemainder(Items.GLASS_BOTTLE).maxCount(16);
+    public static final Item.Settings SHREDDED_CHEESE_SETTINGS = new Item.Settings().food(BASIC_INGREDIENT_PROPERTIES);
+    public static final Item.Settings DICED_POTATO_SETTINGS = new Item.Settings().food(BASIC_INGREDIENT_PROPERTIES);
+    public static final Item.Settings SOUR_CREAM_SETTINGS = new Item.Settings().food(BASIC_INGREDIENT_PROPERTIES).recipeRemainder(Items.GLASS_BOTTLE).maxCount(16);
+    public static final Item.Settings RAW_TORTILLA_CHIPS_SETTINGS = new Item.Settings().food(BASIC_INGREDIENT_PROPERTIES);
+    public static final Item.Settings UNCOOKED_FIESTA_POTATOES_SETTINGS = new Item.Settings().food(BASIC_INGREDIENT_PROPERTIES);
+    public static final Item.Settings FRIED_FIESTA_POTATOES_SETTINGS = new Item.Settings().food(BASIC_INGREDIENT_PROPERTIES);
+    public static final Item.Settings TACO_SEASONING_SETTINGS = new Item.Settings().food(new FoodComponent.Builder().nutrition(1).snack().statusEffect(new StatusEffectInstance(StatusEffects.BLINDNESS), 0.03F).build());
 
     //Raw Ingredients
-    public static final Item RAW_TACO_BEEF = new Item(new Item.Settings().food(RAW_MEAT_PROPERTIES));
-    public static final Item RAW_TACO_CHICKEN = new Item(new Item.Settings().food(RAW_MEAT_PROPERTIES));
-    public static final Item TORTILLA_DOUGH = new Item(new Item.Settings().food(RAW_INGREDIENT_PROPERTIES));
+    public static final Item.Settings RAW_TACO_BEEF_SETTINGS = new Item.Settings().food(RAW_MEAT_PROPERTIES);
+    public static final Item.Settings RAW_TACO_CHICKEN_SETTINGS = new Item.Settings().food(RAW_MEAT_PROPERTIES);
+    public static final Item.Settings TORTILLA_DOUGH_SETTINGS = new Item.Settings().food(RAW_INGREDIENT_PROPERTIES);
 
     //Cooked Ingredients
-    public static final Item TACO_BEEF = new Item(new Item.Settings().food(MEAT_PROPERTIES));
-    public static final Item TACO_CHICKEN = new Item(new Item.Settings().food(MEAT_PROPERTIES));
+    public static final Item.Settings TACO_BEEF_SETTINGS = new Item.Settings().food(MEAT_PROPERTIES);
+    public static final Item.Settings TACO_CHICKEN_SETTINGS = new Item.Settings().food(MEAT_PROPERTIES);
 
     //Unfinished Foods
-    public static final Item UNCOOKED_CHEESE_QUESADILLA = new Item(new Item.Settings().food(UNFINISHED_FOOD_PROPERTIES));
-    public static final Item UNCOOKED_CHICKEN_QUESADILLA = new Item(new Item.Settings().food(UNFINISHED_FOOD_PROPERTIES));
-    public static final Item UNCOOKED_BEEF_QUESADILLA = new Item(new Item.Settings().food(UNFINISHED_FOOD_PROPERTIES));
-    public static final Item UNCOOKED_CHICKEN_CRUNCHWRAP = new Item(new Item.Settings().food(UNFINISHED_FOOD_PROPERTIES));
-    public static final Item UNCOOKED_BEEF_CRUNCHWRAP = new Item(new Item.Settings().food(UNFINISHED_FOOD_PROPERTIES));
+    public static final Item.Settings UNCOOKED_CHEESE_QUESADILLA_SETTINGS = new Item.Settings().food(UNFINISHED_FOOD_PROPERTIES);
+    public static final Item.Settings UNCOOKED_CHICKEN_QUESADILLA_SETTINGS = new Item.Settings().food(UNFINISHED_FOOD_PROPERTIES);
+    public static final Item.Settings UNCOOKED_BEEF_QUESADILLA_SETTINGS = new Item.Settings().food(UNFINISHED_FOOD_PROPERTIES);
+    public static final Item.Settings UNCOOKED_CHICKEN_CRUNCHWRAP_SETTINGS = new Item.Settings().food(UNFINISHED_FOOD_PROPERTIES);
+    public static final Item.Settings UNCOOKED_BEEF_CRUNCHWRAP_SETTINGS = new Item.Settings().food(UNFINISHED_FOOD_PROPERTIES);
 
     //Sides
-    public static final Item NACHOS = new Item(new Item.Settings().food(BASIC_INGREDIENT_PROPERTIES).recipeRemainder(Items.BOWL).maxCount(16));
-    public static final Item CHEESY_FIESTA_POTATOES = new Item(new Item.Settings().food(BASIC_INGREDIENT_PROPERTIES).recipeRemainder(Items.BOWL).maxCount(16));
+    public static final Item.Settings NACHOS_SETTINGS = new Item.Settings().food(BASIC_INGREDIENT_PROPERTIES).recipeRemainder(Items.BOWL).maxCount(16);
+    public static final Item.Settings CHEESY_FIESTA_POTATOES_SETTINGS = new Item.Settings().food(BASIC_INGREDIENT_PROPERTIES).recipeRemainder(Items.BOWL).maxCount(16);
 
     //Special Nachos
-    public static final Item NACHO_PLATTER_SERVING = new Item(new Item.Settings().food(BuildNachoServingProperties(FillingType.CHEESE)).recipeRemainder(Items.BOWL).maxCount(4));
+    public static final Item.Settings NACHO_PLATTER_SERVING_SETTINGS = new Item.Settings().food(BuildNachoServingProperties(FillingType.CHEESE)).recipeRemainder(Items.BOWL).maxCount(4);
 
     //Tacos
-    public static final Item POTATO_TACO = new Item(new Item.Settings().food(BuildTacoProperties(FillingType.POTATO)));
-    public static final Item CHICKEN_TACO = new Item(new Item.Settings().food(BuildTacoProperties(FillingType.CHICKEN)));
-    public static final Item BEEF_TACO = new Item(new Item.Settings().food(BuildTacoProperties(FillingType.BEEF)));
+    public static final Item.Settings POTATO_TACO_SETTINGS = new Item.Settings().food(BuildTacoProperties(FillingType.POTATO));
+    public static final Item.Settings CHICKEN_TACO_SETTINGS = new Item.Settings().food(BuildTacoProperties(FillingType.CHICKEN));
+    public static final Item.Settings BEEF_TACO_SETTINGS = new Item.Settings().food(BuildTacoProperties(FillingType.BEEF));
 
     //Burritos
-    public static final Item POTATO_BURRITO = new Item(new Item.Settings().food(BuildBurritoProperties(FillingType.POTATO)));
-    public static final Item CHICKEN_BURRITO = new Item(new Item.Settings().food(BuildBurritoProperties(FillingType.CHICKEN)));
-    public static final Item BEEF_BURRITO = new Item(new Item.Settings().food(BuildBurritoProperties(FillingType.BEEF)));
+    public static final Item.Settings POTATO_BURRITO_SETTINGS = new Item.Settings().food(BuildBurritoProperties(FillingType.POTATO));
+    public static final Item.Settings CHICKEN_BURRITO_SETTINGS = new Item.Settings().food(BuildBurritoProperties(FillingType.CHICKEN));
+    public static final Item.Settings BEEF_BURRITO_SETTINGS = new Item.Settings().food(BuildBurritoProperties(FillingType.BEEF));
 
     //Quesadillas
-    public static final Item CHEESE_QUESADILLA = new Item(new Item.Settings().food(BuildQuesadillaProperties(FillingType.CHEESE)));
-    public static final Item CHICKEN_QUESADILLA = new Item(new Item.Settings().food(BuildQuesadillaProperties(FillingType.CHICKEN)));
-    public static final Item BEEF_QUESADILLA = new Item(new Item.Settings().food(BuildQuesadillaProperties(FillingType.BEEF)));
+    public static final Item.Settings CHEESE_QUESADILLA_SETTINGS = new Item.Settings().food(BuildQuesadillaProperties(FillingType.CHEESE));
+    public static final Item.Settings CHICKEN_QUESADILLA_SETTINGS = new Item.Settings().food(BuildQuesadillaProperties(FillingType.CHICKEN));
+    public static final Item.Settings BEEF_QUESADILLA_SETTINGS = new Item.Settings().food(BuildQuesadillaProperties(FillingType.BEEF));
 
     //Crunchwraps
-    public static final Item CHICKEN_CRUNCHWRAP = new Item(new Item.Settings().food(BuildCrunchwrapProperties(FillingType.CHICKEN)));
-    public static final Item BEEF_CRUNCHWRAP = new Item(new Item.Settings().food(BuildCrunchwrapProperties(FillingType.BEEF)));
+    public static final Item.Settings CHICKEN_CRUNCHWRAP_SETTINGS = new Item.Settings().food(BuildCrunchwrapProperties(FillingType.CHICKEN));
+    public static final Item.Settings BEEF_CRUNCHWRAP_SETTINGS = new Item.Settings().food(BuildCrunchwrapProperties(FillingType.BEEF));
 
     //Taco Boxes
-    public static final Item BEEF_TACO_BOX = new Item(new Item.Settings());
-    public static final Item CHICKEN_TACO_BOX = new Item(new Item.Settings());
-    public static final Item POTATO_TACO_BOX = new Item(new Item.Settings());
+    public static final Item.Settings BEEF_TACO_BOX_SETTINGS = new Item.Settings();
+    public static final Item.Settings CHICKEN_TACO_BOX_SETTINGS = new Item.Settings();
+    public static final Item.Settings POTATO_TACO_BOX_SETTINGS = new Item.Settings();
 
     //Burrito Boxes
-    public static final Item POTATO_BURRITO_BOX = new Item(new Item.Settings());
-    public static final Item CHICKEN_BURRITO_BOX = new Item(new Item.Settings());
-    public static final Item BEEF_BURRITO_BOX = new Item(new Item.Settings());
+    public static final Item.Settings POTATO_BURRITO_BOX_SETTINGS = new Item.Settings();
+    public static final Item.Settings CHICKEN_BURRITO_BOX_SETTINGS = new Item.Settings();
+    public static final Item.Settings BEEF_BURRITO_BOX_SETTINGS = new Item.Settings();
 
     // Cravings Boxes
-    public static final Item POTATO_CRAVINGS_BOX = new Item(new Item.Settings());
-    public static final Item CHICKEN_CRAVINGS_BOX = new Item(new Item.Settings());
-    public static final Item BEEF_CRAVINGS_BOX = new Item(new Item.Settings());
+    public static final Item.Settings POTATO_CRAVINGS_BOX_SETTINGS = new Item.Settings();
+    public static final Item.Settings CHICKEN_CRAVINGS_BOX_SETTINGS = new Item.Settings();
+    public static final Item.Settings BEEF_CRAVINGS_BOX_SETTINGS = new Item.Settings();
 
     //Nacho Platters
-    public static final Item CHEESY_NACHO_PLATTER = new Item(new Item.Settings());
+    public static final Item.Settings CHEESY_NACHO_PLATTER_SETTINGS = new Item.Settings();
 
     //Crops
     public static final Item.Settings LIME_SETTINGS = new Item.Settings().food(new FoodComponent.Builder().nutrition(1).snack().statusEffect(new StatusEffectInstance(StatusEffects.WITHER), 0.1F).build());
