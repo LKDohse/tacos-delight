@@ -8,8 +8,11 @@ import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
 
-public class ModItems {
+import java.util.ArrayList;
+import java.util.List;
 
+public class ModItems {
+    public static final List<Item> CREATIVE_MODE_TAB = new ArrayList<>();
 
     //Basic Ingredients
     public static final Item DICED_TOMATOES = registerItemViaSettings("diced_tomatoes", ModFoodComponents.DICED_TOMATOES_SETTINGS);
@@ -94,12 +97,18 @@ public class ModItems {
     //Uncategorized
     public static final Item CARDBOARD_TRAY = registerItem("cardboard_tray", new Item(new Item.Settings()));
 
+
+
     public static Item registerItemViaSettings(String name, Item.Settings settings){
-        return Registry.register(Registries.ITEM, Identifier.of(TacosDelight.MOD_ID, name), new Item(settings));
+        var item = Registry.register(Registries.ITEM, Identifier.of(TacosDelight.MOD_ID, name), new Item(settings));
+        CREATIVE_MODE_TAB.add(item);
+        return item;
     }
 
     public static Item registerItem(String name, Item item) {
-        return Registry.register(Registries.ITEM, Identifier.of(TacosDelight.MOD_ID, name), item);
+        var registeredItem = Registry.register(Registries.ITEM, Identifier.of(TacosDelight.MOD_ID, name), item);
+        CREATIVE_MODE_TAB.add(registeredItem);
+        return registeredItem;
     }
 
     public static void registerModItems() {
