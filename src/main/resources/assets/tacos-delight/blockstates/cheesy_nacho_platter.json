@@ -1,0 +1,109 @@
+{
+  "variants": {
+    "facing=east,servings=0": {
+      "model": "tacos-delight:block/cheesy_nacho_platter_servings0",
+      "y": 90
+    },
+    "facing=east,servings=1": {
+      "model": "tacos-delight:block/cheesy_nacho_platter_servings1",
+      "y": 90
+    },
+    "facing=east,servings=2": {
+      "model": "tacos-delight:block/cheesy_nacho_platter_servings2",
+      "y": 90
+    },
+    "facing=east,servings=3": {
+      "model": "tacos-delight:block/cheesy_nacho_platter_servings3",
+      "y": 90
+    },
+    "facing=east,servings=4": {
+      "model": "tacos-delight:block/cheesy_nacho_platter_servings4",
+      "y": 90
+    },
+    "facing=east,servings=5": {
+      "model": "tacos-delight:block/cheesy_nacho_platter_servings5",
+      "y": 90
+    },
+    "facing=east,servings=6": {
+      "model": "tacos-delight:block/cheesy_nacho_platter_servings6",
+      "y": 90
+    },
+    "facing=north,servings=0": {
+      "model": "tacos-delight:block/cheesy_nacho_platter_servings0"
+    },
+    "facing=north,servings=1": {
+      "model": "tacos-delight:block/cheesy_nacho_platter_servings1"
+    },
+    "facing=north,servings=2": {
+      "model": "tacos-delight:block/cheesy_nacho_platter_servings2"
+    },
+    "facing=north,servings=3": {
+      "model": "tacos-delight:block/cheesy_nacho_platter_servings3"
+    },
+    "facing=north,servings=4": {
+      "model": "tacos-delight:block/cheesy_nacho_platter_servings4"
+    },
+    "facing=north,servings=5": {
+      "model": "tacos-delight:block/cheesy_nacho_platter_servings5"
+    },
+    "facing=north,servings=6": {
+      "model": "tacos-delight:block/cheesy_nacho_platter_servings6"
+    },
+    "facing=south,servings=0": {
+      "model": "tacos-delight:block/cheesy_nacho_platter_servings0",
+      "y": 180
+    },
+    "facing=south,servings=1": {
+      "model": "tacos-delight:block/cheesy_nacho_platter_servings1",
+      "y": 180
+    },
+    "facing=south,servings=2": {
+      "model": "tacos-delight:block/cheesy_nacho_platter_servings2",
+      "y": 180
+    },
+    "facing=south,servings=3": {
+      "model": "tacos-delight:block/cheesy_nacho_platter_servings3",
+      "y": 180
+    },
+    "facing=south,servings=4": {
+      "model": "tacos-delight:block/cheesy_nacho_platter_servings4",
+      "y": 180
+    },
+    "facing=south,servings=5": {
+      "model": "tacos-delight:block/cheesy_nacho_platter_servings5",
+      "y": 180
+    },
+    "facing=south,servings=6": {
+      "model": "tacos-delight:block/cheesy_nacho_platter_servings6",
+      "y": 180
+    },
+    "facing=west,servings=0": {
+      "model": "tacos-delight:block/cheesy_nacho_platter_servings0",
+      "y": 270
+    },
+    "facing=west,servings=1": {
+      "model": "tacos-delight:block/cheesy_nacho_platter_servings1",
+      "y": 270
+    },
+    "facing=west,servings=2": {
+      "model": "tacos-delight:block/cheesy_nacho_platter_servings2",
+      "y": 270
+    },
+    "facing=west,servings=3": {
+      "model": "tacos-delight:block/cheesy_nacho_platter_servings3",
+      "y": 270
+    },
+    "facing=west,servings=4": {
+      "model": "tacos-delight:block/cheesy_nacho_platter_servings4",
+      "y": 270
+    },
+    "facing=west,servings=5": {
+      "model": "tacos-delight:block/cheesy_nacho_platter_servings5",
+      "y": 270
+    },
+    "facing=west,servings=6": {
+      "model": "tacos-delight:block/cheesy_nacho_platter_servings6",
+      "y": 270
+    }
+  }
+}

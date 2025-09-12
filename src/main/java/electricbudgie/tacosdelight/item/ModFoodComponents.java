@@ -14,6 +14,14 @@ public class ModFoodComponents {
         CHEESE
     };
 
+    public enum FoodType {
+        QUESADILLA,
+        TACO,
+        BURRITO,
+        CRUNCHWRAP,
+        NACHOS
+    }
+
     public static StatusEffectInstance GetFillingEffect(FillingType filling, int duration){
         return switch (filling) {
             case BEEF -> new StatusEffectInstance(StatusEffects.STRENGTH, duration);

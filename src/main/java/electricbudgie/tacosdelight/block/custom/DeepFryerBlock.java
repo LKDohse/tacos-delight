@@ -11,6 +11,7 @@ import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.block.entity.BlockEntityTicker;
 import net.minecraft.block.entity.BlockEntityType;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.item.ItemPlacementContext;
 import net.minecraft.item.ItemStack;
 import net.minecraft.particle.ParticleTypes;
 import net.minecraft.screen.NamedScreenHandlerFactory;
@@ -18,6 +19,8 @@ import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.state.StateManager;
 import net.minecraft.state.property.BooleanProperty;
+import net.minecraft.state.property.DirectionProperty;
+import net.minecraft.state.property.Properties;
 import net.minecraft.util.Hand;
 import net.minecraft.util.ItemActionResult;
 import net.minecraft.util.ItemScatterer;
@@ -30,6 +33,7 @@ import org.jetbrains.annotations.Nullable;
 public class DeepFryerBlock extends BlockWithEntity {
     public static final MapCodec<DeepFryerBlock> CODEC = createCodec(DeepFryerBlock::new);
     public static final BooleanProperty COOKING = BooleanProperty.of("cooking");
+    public static final DirectionProperty FACING = Properties.HORIZONTAL_FACING;
 
     public DeepFryerBlock(Settings settings) {
         super(settings);
@@ -39,7 +43,14 @@ public class DeepFryerBlock extends BlockWithEntity {
     @Override
     protected void appendProperties(StateManager.Builder<Block, BlockState> builder) {
         builder.add(COOKING);
+        builder.add(FACING);
         super.appendProperties(builder);
+    }
+
+    @Override
+    public BlockState getPlacementState(ItemPlacementContext ctx) {
+        return this.getDefaultState()
+                .with(FACING, ctx.getHorizontalPlayerFacing().getOpposite());
     }
 
     @Override

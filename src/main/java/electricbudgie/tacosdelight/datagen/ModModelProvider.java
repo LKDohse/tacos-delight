@@ -1,5 +1,6 @@
 package electricbudgie.tacosdelight.datagen;
 
+import electricbudgie.tacosdelight.TacosDelight;
 import electricbudgie.tacosdelight.block.ModBlocks;
 import electricbudgie.tacosdelight.block.custom.BlueRaspberryBushBlock;
 import electricbudgie.tacosdelight.block.custom.HotPepperCropBlock;
@@ -9,11 +10,14 @@ import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricModelProvider;
 import net.minecraft.block.Block;
 import net.minecraft.block.enums.DoubleBlockHalf;
+import net.minecraft.client.model.Model;
 import net.minecraft.data.client.*;
 import net.minecraft.state.property.Properties;
 import net.minecraft.state.property.Property;
+import net.minecraft.util.Identifier;
 
 import java.util.Map;
+import java.util.Optional;
 
 public class ModModelProvider extends FabricModelProvider {
     public ModModelProvider(FabricDataOutput output) {
@@ -22,11 +26,13 @@ public class ModModelProvider extends FabricModelProvider {
 
     @Override
     public void generateBlockStateModels(BlockStateModelGenerator blockStateModelGenerator) {
+        //Crops
         blockStateModelGenerator.registerCrop(ModBlocks.BLUE_RASPBERRY_BUSH, BlueRaspberryBushBlock.AGE, 0, 1, 2, 3, 4, 5, 6);
         blockStateModelGenerator.registerCrop(ModBlocks.HOT_PEPPER_CROP, HotPepperCropBlock.AGE, 0,1,2,3,4,5);
         registerTallPlant(blockStateModelGenerator, ModBlocks.LIME_TREE, LimeTreeBlock.AGE);
-
     }
+
+
 
     @Override
     public void generateItemModels(ItemModelGenerator itemModelGenerator) {
