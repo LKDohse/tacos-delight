@@ -1,21 +1,22 @@
-// 1.21.1	2025-09-09T14:40:34.485318	Tacos Delight/Model Definitions
+// 1.21.1	2025-09-25T23:57:40.2638287	Tacos Delight/Model Definitions
 404815242e90bd3d779b86a945e1a6df9e30be3b assets\tacos-delight\blockstates\blue_raspberry_bush.json
 f4de42af0e5865f7cd0ccdead13f76e4e4066b26 assets\tacos-delight\models\block\lime_tree_age4_lower.json
 a6514b3e377d8193f645f96a32e413f8c4472947 assets\tacos-delight\models\item\lime.json
-fa9dc464b295796c4b13e52f2db07b682465a581 assets\tacos-delight\models\item\potato_cravings_box.json
 2bcc6c49884723b020dde3ad36c3f923baac1405 assets\tacos-delight\models\item\chicken_crunchwrap.json
 2b10b4a12a2bdba8615b5a4cd0554617bb15295b assets\tacos-delight\models\block\lime_tree_age5_upper.json
 60d43862630755e20371287c3a0d0ccb4affc437 assets\tacos-delight\models\item\beef_quesadilla.json
 3e6a12a758232f889c6bb7ea7dbf1f5c21525eb1 assets\tacos-delight\models\block\blue_raspberry_bush_stage1.json
 483a5da603ad63af8f3eb1e144765342edf0d391 assets\tacos-delight\models\block\lime_tree_age1_lower.json
+af831573e73daf845081e3775ff51da495e91579 assets\tacos-delight\models\item\beef_nacho_platter.json
 ba553f01fa1aef9d732fde1d5b77c07c9c456199 assets\tacos-delight\models\item\beef_cravings_box.json
 b06655d5965e2176c343600f3edcdd779ac6e830 assets\tacos-delight\models\block\hot_pepper_plant_stage1.json
 24ceed7f530f6c8231c9fec7833bc87e1645e95c assets\tacos-delight\models\item\nacho_cheese.json
 b2f19fa68a1dc033b4a4b9fb42056be46bb9b00e assets\tacos-delight\models\item\uncooked_cheese_quesadilla.json
 87096af0ac3e422591fe39630c048226a5965289 assets\tacos-delight\models\block\lime_tree_age2_upper.json
+9ac762a4e14ff6301a4a1e5f1300db6995907ef7 assets\tacos-delight\models\item\potato_quesadilla.json
 8d71fea17dbc367c135a4581b7efef53e9deb297 assets\tacos-delight\models\item\cheesy_fiesta_potatoes.json
 e1635411bf15ffdc51078196c413fb62419c6aff assets\tacos-delight\models\item\taco_seasoning.json
-29df38954b87f15428834848fd8f493cdf432ed9 assets\tacos-delight\models\item\nacho_platter_serving.json
+a089d15896948d92221abda5c7861b92c907f936 assets\tacos-delight\models\item\chicken_nacho_platter.json
 2736a9c64282f305cf6d3dde5fd170c5c754017a assets\tacos-delight\models\item\diced_potato.json
 389ec2f5cd0ba79b7c3148ab7d82f1f7a962077e assets\tacos-delight\models\item\hot_pepper.json
 b15e795d865822409e687b02a902f8dce2ef71c5 assets\tacos-delight\models\item\raw_taco_chicken.json
@@ -40,6 +41,7 @@ f71c8de3489a8e52892c6a14bd32602f571a718a assets\tacos-delight\models\item\beef_c
 d2db2626cf369b782ded58460f5d5d361093c30f assets\tacos-delight\models\item\chicken_cravings_box.json
 bb54d66ede3ab57d32ab8c3ea6598ca38b491f50 assets\tacos-delight\models\block\hot_pepper_plant_stage5.json
 1ce9897708afe3748ad2bb67c5cecffb0f3de6f3 assets\tacos-delight\models\block\hot_pepper_plant_stage2.json
+ef32d28403bc152cabeba5fa99e175db725556cb assets\tacos-delight\models\item\potato_crunchwrap.json
 60e2133cc91b0e4a810501cc1da632c8e817b21e assets\tacos-delight\models\item\fried_fiesta_potatoes.json
 b7506ae405181fd54cf5db7d18a055f373cffc6a assets\tacos-delight\models\item\nachos.json
 64237b5846048f1c7a2122b556717a1e3b7a999b assets\tacos-delight\models\item\chicken_taco.json
@@ -50,6 +52,7 @@ f4ff64b6f4a0b42581b3656711111dd60b3db7d6 assets\tacos-delight\models\block\blue_
 11167b3df3976bbd848984bedafa93f7c20266bc assets\tacos-delight\models\block\lime_tree_age1_upper.json
 40337a4d2dcafa69de24f0b5bf0324dbf5e805b7 assets\tacos-delight\models\item\flour_tortilla.json
 b2c03b6db9e671349c71b6b38ed80188fb06024a assets\tacos-delight\models\item\shredded_cheese.json
+f869ebec0d7bdb7f2fa00dbf4d3d2b7647813e5c assets\tacos-delight\models\item\cheesy_nacho_platter_serving.json
 aea9192ec8ab7d640381c1032589476d8c7ecda2 assets\tacos-delight\models\item\sour_cream.json
 3db43dfb46295c4b072ce7046d7150e04fd22bd4 assets\tacos-delight\blockstates\lime_tree.json
 67e611f0f6c66305eb38ec23291d09c2d9ce442a assets\tacos-delight\models\item\chicken_quesadilla.json
@@ -62,6 +65,7 @@ a85a14fc891bad440e2f7380ba9b4e2d96a4e260 assets\tacos-delight\models\block\hot_p
 68374b367560133f69429c45d4a3a189bfa0c2bc assets\tacos-delight\models\item\cheesy_nacho_platter.json
 bdfbbee616c23120c3c565b4edf172ebe503615d assets\tacos-delight\models\item\cardboard_tray.json
 279e3cf00bacbdd16596f9fb75870c84e481eac6 assets\tacos-delight\models\block\hot_pepper_plant_stage0.json
+47d59fd7ecacc8052ee66acfaaa4078c28dfc01c assets\tacos-delight\models\item\uncooked_potato_quesadilla.json
 5b98cfb0b4d4fddbcb94a5cdaf37122deeb3dfb0 assets\tacos-delight\models\item\dried_onion.json
 8c3b7e64fcc9e613aa84f9b5b18a9e974cb64929 assets\tacos-delight\models\item\beef_taco_box.json
 66566b746cef115331e54fc7256935ed40aafadc assets\tacos-delight\models\block\hot_pepper_plant_stage3.json
@@ -70,11 +74,13 @@ bdfbbee616c23120c3c565b4edf172ebe503615d assets\tacos-delight\models\item\cardbo
 0080ce67e90d357bc9563beb25a12fe89cbb48b1 assets\tacos-delight\models\item\uncooked_beef_crunchwrap.json
 939d74e0d2125d14db94d185ad233699de9f1c6c assets\tacos-delight\models\item\beef_taco.json
 a10378663134431da41b18cd139d57824aefefff assets\tacos-delight\models\block\blue_raspberry_bush_stage2.json
-2a4985c5f379ca7552ace433c0dc472d3cfefbeb assets\tacos-delight\models\item\uncooked_beef_quesadilla.json
 a16f0da92febb1cb12ef9975277f81e420d3659a assets\tacos-delight\models\item\cheese_quesadilla.json
+2a4985c5f379ca7552ace433c0dc472d3cfefbeb assets\tacos-delight\models\item\uncooked_beef_quesadilla.json
 1d6240207f018eb5ddc43803b524d5ff78a9fede assets\tacos-delight\models\block\lime_tree_age4_upper.json
 0ec8b45edb8d9b7f4bff0890dbae7d1e3d54bf12 assets\tacos-delight\models\item\beef_burrito_box.json
 a6858ac16738edfc6c7ccf8fe28b35b5f332320c assets\tacos-delight\models\item\hot_pepper_seeds.json
 8d7a2300806e94fb9b9e77e290f7161b68cea593 assets\tacos-delight\models\item\potato_burrito.json
 c8a428f76c2f32f33591a7b443234862c0f4b7cf assets\tacos-delight\models\item\taco_beef.json
 5024473fd6f558e7d7df77dccf101e96c0fd90e0 assets\tacos-delight\models\item\dried_chili.json
+b694d0ded40caec4e1a1e6232457eb6c72d4ea90 assets\tacos-delight\models\item\uncooked_potato_crunchwrap.json
+c2544c9f712147e8fecde9472c652eca9404ace9 assets\tacos-delight\models\item\veggie_cravings_box.json

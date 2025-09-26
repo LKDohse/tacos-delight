@@ -27,7 +27,7 @@ public class ModFoodComponents {
             case BEEF -> new StatusEffectInstance(StatusEffects.STRENGTH, duration);
             case CHICKEN -> new StatusEffectInstance(StatusEffects.HASTE, duration);
             case POTATO -> new StatusEffectInstance(StatusEffects.RESISTANCE, duration);
-            case CHEESE -> new StatusEffectInstance(StatusEffects.GLOWING, duration);
+            case CHEESE -> new StatusEffectInstance(StatusEffects.REGENERATION, duration);
         };
     }
 
@@ -39,25 +39,25 @@ public class ModFoodComponents {
 
     public static FoodComponent BuildTacoProperties(FillingType type){
         var builder = new FoodComponent.Builder().nutrition(12).saturationModifier(14F);
-        builder.statusEffect(GetFillingEffect(type, 30), 0.30F);
+        builder.statusEffect(GetFillingEffect(type, 25), 0.30F);
         return builder.build();
     }
 
     public static FoodComponent BuildBurritoProperties(FillingType type){
         var builder = new FoodComponent.Builder().nutrition(14).saturationModifier(16F);
-        builder.statusEffect(GetFillingEffect(type, 45), 0.80F);
+        builder.statusEffect(GetFillingEffect(type, 30), 0.80F);
         return builder.build();
     }
 
     public static FoodComponent BuildCrunchwrapProperties(FillingType type){
         var builder = new FoodComponent.Builder().nutrition(16).saturationModifier(18F);
-        builder.statusEffect(GetFillingEffect(type, 50), 1F);
+        builder.statusEffect(GetFillingEffect(type, 35), 1F);
         return builder.build();
     }
 
     public static FoodComponent BuildNachoServingProperties(FillingType type){
         var builder = new FoodComponent.Builder().nutrition(10).saturationModifier(10F);
-        builder.statusEffect(GetFillingEffect(type, 50), 0.30F);
+        builder.statusEffect(GetFillingEffect(type, 20), 0.30F);
         return builder.build();
     }
 
@@ -80,6 +80,8 @@ public class ModFoodComponents {
     public static final Item.Settings UNCOOKED_FIESTA_POTATOES_SETTINGS = new Item.Settings().food(BASIC_INGREDIENT_PROPERTIES);
     public static final Item.Settings FRIED_FIESTA_POTATOES_SETTINGS = new Item.Settings().food(BASIC_INGREDIENT_PROPERTIES);
     public static final Item.Settings TACO_SEASONING_SETTINGS = new Item.Settings().food(new FoodComponent.Builder().nutrition(1).snack().statusEffect(new StatusEffectInstance(StatusEffects.BLINDNESS), 0.03F).build());
+    public static final Item.Settings TORTILLA_CHIPS = new Item.Settings().food(BASIC_INGREDIENT_PROPERTIES);
+    public static final Item.Settings FLOUR_TOSTADA = new Item.Settings().food(BASIC_INGREDIENT_PROPERTIES);
 
     //Raw Ingredients
     public static final Item.Settings RAW_TACO_BEEF_SETTINGS = new Item.Settings().food(RAW_MEAT_PROPERTIES);
@@ -94,15 +96,19 @@ public class ModFoodComponents {
     public static final Item.Settings UNCOOKED_CHEESE_QUESADILLA_SETTINGS = new Item.Settings().food(UNFINISHED_FOOD_PROPERTIES);
     public static final Item.Settings UNCOOKED_CHICKEN_QUESADILLA_SETTINGS = new Item.Settings().food(UNFINISHED_FOOD_PROPERTIES);
     public static final Item.Settings UNCOOKED_BEEF_QUESADILLA_SETTINGS = new Item.Settings().food(UNFINISHED_FOOD_PROPERTIES);
+    public static final Item.Settings UNCOOKED_POTATO_QUESADILLA_SETTINGS = new Item.Settings().food(UNFINISHED_FOOD_PROPERTIES);
     public static final Item.Settings UNCOOKED_CHICKEN_CRUNCHWRAP_SETTINGS = new Item.Settings().food(UNFINISHED_FOOD_PROPERTIES);
     public static final Item.Settings UNCOOKED_BEEF_CRUNCHWRAP_SETTINGS = new Item.Settings().food(UNFINISHED_FOOD_PROPERTIES);
+    public static final Item.Settings UNCOOKED_POTATO_CRUNCHWRAP_SETTINGS = new Item.Settings().food(UNFINISHED_FOOD_PROPERTIES);
 
     //Sides
     public static final Item.Settings NACHOS_SETTINGS = new Item.Settings().food(BASIC_INGREDIENT_PROPERTIES).recipeRemainder(Items.BOWL).maxCount(16);
     public static final Item.Settings CHEESY_FIESTA_POTATOES_SETTINGS = new Item.Settings().food(BASIC_INGREDIENT_PROPERTIES).recipeRemainder(Items.BOWL).maxCount(16);
 
     //Special Nachos
-    public static final Item.Settings NACHO_PLATTER_SERVING_SETTINGS = new Item.Settings().food(BuildNachoServingProperties(FillingType.CHEESE)).recipeRemainder(Items.BOWL).maxCount(4);
+    public static final Item.Settings CHEESY_NACHO_PLATTER_SERVING_SETTINGS = new Item.Settings().food(BuildNachoServingProperties(FillingType.CHEESE)).recipeRemainder(Items.BOWL).maxCount(4);
+    public static final Item.Settings CHICKEN_NACHO_PLATTER_SERVING_SETTINGS = new Item.Settings().food(BuildNachoServingProperties(FillingType.CHICKEN)).recipeRemainder(Items.BOWL).maxCount(4);
+    public static final Item.Settings BEEF_NACHO_PLATTER_SERVING_SETTINGS = new Item.Settings().food(BuildNachoServingProperties(FillingType.BEEF)).recipeRemainder(Items.BOWL).maxCount(4);
 
     //Tacos
     public static final Item.Settings POTATO_TACO_SETTINGS = new Item.Settings().food(BuildTacoProperties(FillingType.POTATO));
@@ -118,10 +124,12 @@ public class ModFoodComponents {
     public static final Item.Settings CHEESE_QUESADILLA_SETTINGS = new Item.Settings().food(BuildQuesadillaProperties(FillingType.CHEESE));
     public static final Item.Settings CHICKEN_QUESADILLA_SETTINGS = new Item.Settings().food(BuildQuesadillaProperties(FillingType.CHICKEN));
     public static final Item.Settings BEEF_QUESADILLA_SETTINGS = new Item.Settings().food(BuildQuesadillaProperties(FillingType.BEEF));
+    public static final Item.Settings POTATO_QUESADILLA_SETTINGS = new Item.Settings().food(BuildQuesadillaProperties(FillingType.POTATO));
 
     //Crunchwraps
     public static final Item.Settings CHICKEN_CRUNCHWRAP_SETTINGS = new Item.Settings().food(BuildCrunchwrapProperties(FillingType.CHICKEN));
     public static final Item.Settings BEEF_CRUNCHWRAP_SETTINGS = new Item.Settings().food(BuildCrunchwrapProperties(FillingType.BEEF));
+    public static final Item.Settings POTATO_CRUNCHWRAP_SETTINGS = new Item.Settings().food(BuildCrunchwrapProperties(FillingType.POTATO));
 
     //Taco Boxes
     public static final Item.Settings BEEF_TACO_BOX_SETTINGS = new Item.Settings();
@@ -134,12 +142,14 @@ public class ModFoodComponents {
     public static final Item.Settings BEEF_BURRITO_BOX_SETTINGS = new Item.Settings();
 
     // Cravings Boxes
-    public static final Item.Settings POTATO_CRAVINGS_BOX_SETTINGS = new Item.Settings();
+    public static final Item.Settings VEGGIE_CRAVINGS_BOX_SETTINGS = new Item.Settings();
     public static final Item.Settings CHICKEN_CRAVINGS_BOX_SETTINGS = new Item.Settings();
     public static final Item.Settings BEEF_CRAVINGS_BOX_SETTINGS = new Item.Settings();
 
     //Nacho Platters
     public static final Item.Settings CHEESY_NACHO_PLATTER_SETTINGS = new Item.Settings();
+    public static final Item.Settings BEEF_NACHO_PLATTER_SETTINGS = new Item.Settings();
+    public static final Item.Settings CHICKEN_NACHO_PLATTER_SETTINGS = new Item.Settings();
 
     //Crops
     public static final Item.Settings LIME_SETTINGS = new Item.Settings().food(new FoodComponent.Builder().nutrition(1).snack().statusEffect(new StatusEffectInstance(StatusEffects.WITHER), 0.1F).build());

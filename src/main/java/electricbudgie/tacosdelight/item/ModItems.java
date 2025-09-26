@@ -27,6 +27,8 @@ public class ModItems {
     public static final Item UNCOOKED_FIESTA_POTATOES = registerItemViaSettings("uncooked_fiesta_potatoes", ModFoodComponents.UNCOOKED_FIESTA_POTATOES_SETTINGS);
     public static final Item FRIED_FIESTA_POTATOES = registerItemViaSettings("fried_fiesta_potatoes", ModFoodComponents.FRIED_FIESTA_POTATOES_SETTINGS);
     public static final Item TACO_SEASONING = registerItemViaSettings("taco_seasoning", ModFoodComponents.TACO_SEASONING_SETTINGS);
+    public static final Item TORTILLA_CHIPS = registerItemViaSettings("tortilla_chips", ModFoodComponents.TORTILLA_CHIPS);
+    public static final Item FLOUR_TOSTADA = registerItemViaSettings("flour_tostada", ModFoodComponents.FLOUR_TOSTADA);
 
     //Raw Ingredients
     public static final Item RAW_TACO_BEEF = registerItemViaSettings("raw_taco_beef", ModFoodComponents.RAW_TACO_BEEF_SETTINGS);
@@ -41,15 +43,19 @@ public class ModItems {
     public static final Item UNCOOKED_CHEESE_QUESADILLA = registerItemViaSettings("uncooked_cheese_quesadilla", ModFoodComponents.UNCOOKED_CHEESE_QUESADILLA_SETTINGS);
     public static final Item UNCOOKED_CHICKEN_QUESADILLA = registerItemViaSettings("uncooked_chicken_quesadilla", ModFoodComponents.UNCOOKED_CHICKEN_QUESADILLA_SETTINGS);
     public static final Item UNCOOKED_BEEF_QUESADILLA = registerItemViaSettings("uncooked_beef_quesadilla", ModFoodComponents.UNCOOKED_BEEF_QUESADILLA_SETTINGS);
+    public static final Item UNCOOKED_POTATO_QUESADILLA = registerItemViaSettings("uncooked_potato_quesadilla", ModFoodComponents.UNCOOKED_POTATO_QUESADILLA_SETTINGS);
     public static final Item UNCOOKED_CHICKEN_CRUNCHWRAP = registerItemViaSettings("uncooked_chicken_crunchwrap", ModFoodComponents.UNCOOKED_CHICKEN_CRUNCHWRAP_SETTINGS);
     public static final Item UNCOOKED_BEEF_CRUNCHWRAP = registerItemViaSettings("uncooked_beef_crunchwrap", ModFoodComponents.UNCOOKED_BEEF_CRUNCHWRAP_SETTINGS);
+    public static final Item UNCOOKED_POTATO_CRUNCHWRAP = registerItemViaSettings("uncooked_potato_crunchwrap", ModFoodComponents.UNCOOKED_POTATO_CRUNCHWRAP_SETTINGS);
 
     //Sides
     public static final Item NACHOS = registerItemViaSettings("nachos", ModFoodComponents.NACHOS_SETTINGS);
     public static final Item CHEESY_FIESTA_POTATOES = registerItemViaSettings("cheesy_fiesta_potatoes", ModFoodComponents.CHEESY_FIESTA_POTATOES_SETTINGS);
 
     //Special Nachos
-    public static final Item NACHO_PLATTER_SERVING = registerItemViaSettings("nacho_platter_serving", ModFoodComponents.NACHO_PLATTER_SERVING_SETTINGS);
+    public static final Item CHEESY_NACHO_PLATTER_SERVING = registerItemViaSettings("cheesy_nacho_platter_serving", ModFoodComponents.CHEESY_NACHO_PLATTER_SERVING_SETTINGS);
+    public static final Item BEEF_NACHO_PLATTER_SERVING = registerItemViaSettings("beef_nacho_platter_serving", ModFoodComponents.BEEF_NACHO_PLATTER_SERVING_SETTINGS);
+    public static final Item CHICKEN_NACHO_PLATTER_SERVING = registerItemViaSettings("chicken_nacho_platter_serving", ModFoodComponents.CHICKEN_NACHO_PLATTER_SERVING_SETTINGS);
 
     //Tacos
     public static final Item POTATO_TACO = registerItemViaSettings("potato_taco", ModFoodComponents.POTATO_TACO_SETTINGS);
@@ -65,10 +71,12 @@ public class ModItems {
     public static final Item CHEESE_QUESADILLA = registerItemViaSettings("cheese_quesadilla", ModFoodComponents.CHEESE_QUESADILLA_SETTINGS);
     public static final Item CHICKEN_QUESADILLA = registerItemViaSettings("chicken_quesadilla", ModFoodComponents.CHICKEN_QUESADILLA_SETTINGS);
     public static final Item BEEF_QUESADILLA = registerItemViaSettings("beef_quesadilla", ModFoodComponents.BEEF_QUESADILLA_SETTINGS);
+    public static final Item POTATO_QUESADILLA = registerItemViaSettings("potato_quesadilla", ModFoodComponents.POTATO_QUESADILLA_SETTINGS);
 
     //Crunchwraps
     public static final Item CHICKEN_CRUNCHWRAP = registerItemViaSettings("chicken_crunchwrap", ModFoodComponents.CHICKEN_CRUNCHWRAP_SETTINGS);
     public static final Item BEEF_CRUNCHWRAP = registerItemViaSettings("beef_crunchwrap", ModFoodComponents.BEEF_CRUNCHWRAP_SETTINGS);
+    public static final Item POTATO_CRUNCHWRAP = registerItemViaSettings("potato_crunchwrap", ModFoodComponents.POTATO_CRUNCHWRAP_SETTINGS);
 
     //Taco Boxes
     public static final Item BEEF_TACO_BOX = registerItemViaSettings("beef_taco_box", ModFoodComponents.BEEF_TACO_BOX_SETTINGS);
@@ -81,12 +89,15 @@ public class ModItems {
     public static final Item BEEF_BURRITO_BOX = registerItemViaSettings("beef_burrito_box", ModFoodComponents.BEEF_BURRITO_BOX_SETTINGS);
 
     // Cravings Boxes
-    public static final Item POTATO_CRAVINGS_BOX = registerItemViaSettings("potato_cravings_box", ModFoodComponents.POTATO_CRAVINGS_BOX_SETTINGS);
+    public static final Item VEGGIE_CRAVINGS_BOX = registerItemViaSettings("veggie_cravings_box", ModFoodComponents.VEGGIE_CRAVINGS_BOX_SETTINGS);
     public static final Item CHICKEN_CRAVINGS_BOX = registerItemViaSettings("chicken_cravings_box", ModFoodComponents.CHICKEN_CRAVINGS_BOX_SETTINGS);
     public static final Item BEEF_CRAVINGS_BOX = registerItemViaSettings("beef_cravings_box", ModFoodComponents.BEEF_CRAVINGS_BOX_SETTINGS);
 
     //Nacho Platters
     public static final Item CHEESY_NACHO_PLATTER = registerItemViaSettings("cheesy_nacho_platter", ModFoodComponents.CHEESY_NACHO_PLATTER_SETTINGS);
+    public static final Item BEEF_NACHO_PLATTER = registerItemViaSettings("chicken_nacho_platter", ModFoodComponents.CHICKEN_NACHO_PLATTER_SETTINGS);
+    public static final Item CHICKEN_NACHO_PLATTER = registerItemViaSettings("beef_nacho_platter", ModFoodComponents.BEEF_NACHO_PLATTER_SETTINGS);
+
 
     //Crops
     public static final Item LIME = registerItem("lime", new AliasedBlockItem(ModBlocks.LIME_TREE, ModFoodComponents.LIME_SETTINGS));
@@ -96,7 +107,6 @@ public class ModItems {
 
     //Uncategorized
     public static final Item CARDBOARD_TRAY = registerItem("cardboard_tray", new Item(new Item.Settings()));
-
 
 
     public static Item registerItemViaSettings(String name, Item.Settings settings){

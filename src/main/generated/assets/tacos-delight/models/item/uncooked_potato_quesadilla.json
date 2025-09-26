@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "tacos-delight:item/nacho_platter_serving"
+    "layer0": "tacos-delight:item/uncooked_potato_quesadilla"
   }
 }

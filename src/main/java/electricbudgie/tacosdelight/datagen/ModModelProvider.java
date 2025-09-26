@@ -1,6 +1,5 @@
 package electricbudgie.tacosdelight.datagen;
 
-import electricbudgie.tacosdelight.TacosDelight;
 import electricbudgie.tacosdelight.block.ModBlocks;
 import electricbudgie.tacosdelight.block.custom.BlueRaspberryBushBlock;
 import electricbudgie.tacosdelight.block.custom.HotPepperCropBlock;
@@ -10,14 +9,11 @@ import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricModelProvider;
 import net.minecraft.block.Block;
 import net.minecraft.block.enums.DoubleBlockHalf;
-import net.minecraft.client.model.Model;
 import net.minecraft.data.client.*;
 import net.minecraft.state.property.Properties;
 import net.minecraft.state.property.Property;
-import net.minecraft.util.Identifier;
 
 import java.util.Map;
-import java.util.Optional;
 
 public class ModModelProvider extends FabricModelProvider {
     public ModModelProvider(FabricDataOutput output) {
@@ -69,15 +65,17 @@ public class ModModelProvider extends FabricModelProvider {
         itemModelGenerator.register(ModItems.UNCOOKED_CHEESE_QUESADILLA, Models.GENERATED);
         itemModelGenerator.register(ModItems.UNCOOKED_CHICKEN_QUESADILLA, Models.GENERATED);
         itemModelGenerator.register(ModItems.UNCOOKED_BEEF_QUESADILLA, Models.GENERATED);
+        itemModelGenerator.register(ModItems.UNCOOKED_POTATO_QUESADILLA, Models.GENERATED);
         itemModelGenerator.register(ModItems.UNCOOKED_CHICKEN_CRUNCHWRAP, Models.GENERATED);
         itemModelGenerator.register(ModItems.UNCOOKED_BEEF_CRUNCHWRAP, Models.GENERATED);
+        itemModelGenerator.register(ModItems.UNCOOKED_POTATO_CRUNCHWRAP, Models.GENERATED);
 
         //Sides
         itemModelGenerator.register(ModItems.NACHOS, Models.GENERATED);
         itemModelGenerator.register(ModItems.CHEESY_FIESTA_POTATOES, Models.GENERATED);
 
         //Special Nachos
-        itemModelGenerator.register(ModItems.NACHO_PLATTER_SERVING, Models.GENERATED);
+        itemModelGenerator.register(ModItems.CHEESY_NACHO_PLATTER_SERVING, Models.GENERATED);
 
         //Tacos
         itemModelGenerator.register(ModItems.POTATO_TACO, Models.GENERATED);
@@ -93,10 +91,12 @@ public class ModModelProvider extends FabricModelProvider {
         itemModelGenerator.register(ModItems.CHEESE_QUESADILLA, Models.GENERATED);
         itemModelGenerator.register(ModItems.CHICKEN_QUESADILLA, Models.GENERATED);
         itemModelGenerator.register(ModItems.BEEF_QUESADILLA, Models.GENERATED);
+        itemModelGenerator.register(ModItems.POTATO_QUESADILLA, Models.GENERATED);
 
         //Crunchwraps
         itemModelGenerator.register(ModItems.CHICKEN_CRUNCHWRAP, Models.GENERATED);
         itemModelGenerator.register(ModItems.BEEF_CRUNCHWRAP, Models.GENERATED);
+        itemModelGenerator.register(ModItems.POTATO_CRUNCHWRAP, Models.GENERATED);
 
         //Taco Boxes
         itemModelGenerator.register(ModItems.POTATO_TACO_BOX, Models.GENERATED);
@@ -111,10 +111,12 @@ public class ModModelProvider extends FabricModelProvider {
         //Cravings Boxes
         itemModelGenerator.register(ModItems.BEEF_CRAVINGS_BOX, Models.GENERATED);
         itemModelGenerator.register(ModItems.CHICKEN_CRAVINGS_BOX, Models.GENERATED);
-        itemModelGenerator.register(ModItems.POTATO_CRAVINGS_BOX, Models.GENERATED);
+        itemModelGenerator.register(ModItems.VEGGIE_CRAVINGS_BOX, Models.GENERATED);
 
         //Nacho Platters
         itemModelGenerator.register(ModItems.CHEESY_NACHO_PLATTER, Models.GENERATED);
+        itemModelGenerator.register(ModItems.CHICKEN_NACHO_PLATTER, Models.GENERATED);
+        itemModelGenerator.register(ModItems.BEEF_NACHO_PLATTER, Models.GENERATED);
     }
 
     public final void registerTallPlant(BlockStateModelGenerator generator, Block plant, Property<Integer> ageProperty) {
