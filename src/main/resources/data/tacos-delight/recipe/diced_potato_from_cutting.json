@@ -1,0 +1,21 @@
+{
+  "type": "farmersdelight:cutting",
+  "group": "tacos-delight",
+  "category": "food",
+  "ingredients": [
+    {
+      "item": "minecraft:potato"
+    }
+  ],
+  "tool": {
+    "tag": "farmersdelight:tools/knives"
+  },
+  "result": [
+    {
+      "count": 4,
+      "item": {
+        "id": "tacos-delight:diced_potato"
+      }
+    }
+  ]
+}

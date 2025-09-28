@@ -1,0 +1,31 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "tacos-delight:chicken_taco"
+    },
+    {
+      "item": "tacos-delight:chicken_taco"
+    },
+    {
+      "item": "tacos-delight:chicken_taco"
+    },
+    {
+      "item": "tacos-delight:chicken_taco"
+    },
+    {
+      "item": "tacos-delight:chicken_taco"
+    },
+    {
+      "item": "tacos-delight:chicken_taco"
+    },
+    {
+      "item": "tacos-delight:cardboard_tray"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "tacos-delight:chicken_taco_box"
+  }
+}

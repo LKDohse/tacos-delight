@@ -1,0 +1,28 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "tacos-delight:potato_burrito"
+    },
+    {
+      "item": "tacos-delight:potato_burrito"
+    },
+    {
+      "item": "tacos-delight:potato_burrito"
+    },
+    {
+      "item": "tacos-delight:potato_burrito"
+    },
+    {
+      "item": "tacos-delight:potato_burrito"
+    },
+    {
+      "item": "tacos-delight:cardboard_tray"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "tacos-delight:potato_burrito_box"
+  }
+}

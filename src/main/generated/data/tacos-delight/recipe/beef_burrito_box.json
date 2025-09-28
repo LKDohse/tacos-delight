@@ -1,0 +1,28 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "tacos-delight:beef_burrito"
+    },
+    {
+      "item": "tacos-delight:beef_burrito"
+    },
+    {
+      "item": "tacos-delight:beef_burrito"
+    },
+    {
+      "item": "tacos-delight:beef_burrito"
+    },
+    {
+      "item": "tacos-delight:beef_burrito"
+    },
+    {
+      "item": "tacos-delight:cardboard_tray"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "tacos-delight:beef_burrito_box"
+  }
+}

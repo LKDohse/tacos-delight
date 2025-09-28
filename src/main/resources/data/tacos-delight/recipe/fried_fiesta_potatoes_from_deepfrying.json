@@ -1,0 +1,14 @@
+{
+  "type": "tacos-delight:deepfrying",
+  "group": "tacos-delight",
+  "category": "food",
+  "experience": 1.0,
+  "cookingtime": 100,
+  "ingredient": {
+    "item": "tacos-delight:uncooked_fiesta_potatoes"
+  },
+  "result": {
+    "id": "tacos-delight:fried_fiesta_potatoes",
+    "count": 1
+  }
+}

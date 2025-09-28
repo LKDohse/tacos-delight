@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "tag": "tacos-delight:ground_beef"
+    },
+    {
+      "item": "tacos-delight:taco_seasoning"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "tacos-delight:taco_chicken"
+  }
+}

@@ -131,26 +131,6 @@ public class ModFoodComponents {
     public static final Item.Settings BEEF_CRUNCHWRAP_SETTINGS = new Item.Settings().food(BuildCrunchwrapProperties(FillingType.BEEF));
     public static final Item.Settings POTATO_CRUNCHWRAP_SETTINGS = new Item.Settings().food(BuildCrunchwrapProperties(FillingType.POTATO));
 
-    //Taco Boxes
-    public static final Item.Settings BEEF_TACO_BOX_SETTINGS = new Item.Settings();
-    public static final Item.Settings CHICKEN_TACO_BOX_SETTINGS = new Item.Settings();
-    public static final Item.Settings POTATO_TACO_BOX_SETTINGS = new Item.Settings();
-
-    //Burrito Boxes
-    public static final Item.Settings POTATO_BURRITO_BOX_SETTINGS = new Item.Settings();
-    public static final Item.Settings CHICKEN_BURRITO_BOX_SETTINGS = new Item.Settings();
-    public static final Item.Settings BEEF_BURRITO_BOX_SETTINGS = new Item.Settings();
-
-    // Cravings Boxes
-    public static final Item.Settings VEGGIE_CRAVINGS_BOX_SETTINGS = new Item.Settings();
-    public static final Item.Settings CHICKEN_CRAVINGS_BOX_SETTINGS = new Item.Settings();
-    public static final Item.Settings BEEF_CRAVINGS_BOX_SETTINGS = new Item.Settings();
-
-    //Nacho Platters
-    public static final Item.Settings CHEESY_NACHO_PLATTER_SETTINGS = new Item.Settings();
-    public static final Item.Settings BEEF_NACHO_PLATTER_SETTINGS = new Item.Settings();
-    public static final Item.Settings CHICKEN_NACHO_PLATTER_SETTINGS = new Item.Settings();
-
     //Crops
     public static final Item.Settings LIME_SETTINGS = new Item.Settings().food(new FoodComponent.Builder().nutrition(1).snack().statusEffect(new StatusEffectInstance(StatusEffects.WITHER), 0.1F).build());
     public static final Item.Settings HOT_PEPPER_SETTINGS = new Item.Settings().food(new FoodComponent.Builder().nutrition(1).snack().statusEffect(new StatusEffectInstance(StatusEffects.FIRE_RESISTANCE), 0.1F).build());

@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_potato_burrito": {
+      "conditions": {
+        "items": [
+          {
+            "items": "tacos-delight:potato_burrito"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "tacos-delight:potato_burrito_box"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_potato_burrito"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "tacos-delight:potato_burrito_box"
+    ]
+  }
+}

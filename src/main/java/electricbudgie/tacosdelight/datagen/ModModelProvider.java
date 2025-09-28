@@ -98,25 +98,25 @@ public class ModModelProvider extends FabricModelProvider {
         itemModelGenerator.register(ModItems.BEEF_CRUNCHWRAP, Models.GENERATED);
         itemModelGenerator.register(ModItems.POTATO_CRUNCHWRAP, Models.GENERATED);
 
-        //Taco Boxes
-        itemModelGenerator.register(ModItems.POTATO_TACO_BOX, Models.GENERATED);
-        itemModelGenerator.register(ModItems.BEEF_TACO_BOX, Models.GENERATED);
-        itemModelGenerator.register(ModItems.CHICKEN_TACO_BOX, Models.GENERATED);
-
-        //Burrito Boxes
-        itemModelGenerator.register(ModItems.POTATO_BURRITO_BOX, Models.GENERATED);
-        itemModelGenerator.register(ModItems.CHICKEN_BURRITO_BOX, Models.GENERATED);
-        itemModelGenerator.register(ModItems.BEEF_BURRITO_BOX, Models.GENERATED);
-
-        //Cravings Boxes
-        itemModelGenerator.register(ModItems.BEEF_CRAVINGS_BOX, Models.GENERATED);
-        itemModelGenerator.register(ModItems.CHICKEN_CRAVINGS_BOX, Models.GENERATED);
-        itemModelGenerator.register(ModItems.VEGGIE_CRAVINGS_BOX, Models.GENERATED);
-
-        //Nacho Platters
-        itemModelGenerator.register(ModItems.CHEESY_NACHO_PLATTER, Models.GENERATED);
-        itemModelGenerator.register(ModItems.CHICKEN_NACHO_PLATTER, Models.GENERATED);
-        itemModelGenerator.register(ModItems.BEEF_NACHO_PLATTER, Models.GENERATED);
+//        //Taco Boxes
+//        itemModelGenerator.register(ModItems.POTATO_TACO_BOX, Models.GENERATED);
+//        itemModelGenerator.register(ModItems.BEEF_TACO_BOX, Models.GENERATED);
+//        itemModelGenerator.register(ModItems.CHICKEN_TACO_BOX, Models.GENERATED);
+//
+//        //Burrito Boxes
+//        itemModelGenerator.register(ModItems.POTATO_BURRITO_BOX, Models.GENERATED);
+//        itemModelGenerator.register(ModItems.CHICKEN_BURRITO_BOX, Models.GENERATED);
+//        itemModelGenerator.register(ModItems.BEEF_BURRITO_BOX, Models.GENERATED);
+//
+//        //Cravings Boxes
+//        itemModelGenerator.register(ModItems.BEEF_CRAVINGS_BOX, Models.GENERATED);
+//        itemModelGenerator.register(ModItems.CHICKEN_CRAVINGS_BOX, Models.GENERATED);
+//        itemModelGenerator.register(ModItems.VEGGIE_CRAVINGS_BOX, Models.GENERATED);
+//
+//        //Nacho Platters
+//        itemModelGenerator.register(ModItems.CHEESY_NACHO_PLATTER, Models.GENERATED);
+//        itemModelGenerator.register(ModItems.CHICKEN_NACHO_PLATTER, Models.GENERATED);
+//        itemModelGenerator.register(ModItems.BEEF_NACHO_PLATTER, Models.GENERATED);
     }
 
     public final void registerTallPlant(BlockStateModelGenerator generator, Block plant, Property<Integer> ageProperty) {

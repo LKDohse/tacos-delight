@@ -11,13 +11,12 @@ import net.minecraft.registry.RegistryKeys;
 import net.minecraft.registry.RegistryWrapper;
 import net.minecraft.registry.tag.TagKey;
 import net.minecraft.util.Identifier;
+import org.jetbrains.annotations.Nullable;
 
 import java.util.concurrent.CompletableFuture;
 
-public class ModItemTagProvider extends FabricTagProvider<Item> {
-    public ModItemTagProvider(FabricDataOutput output, RegistryKey<? extends Registry<Item>> registryKey, CompletableFuture<RegistryWrapper.WrapperLookup> registriesFuture) {
-        super(output, registryKey, registriesFuture);
-    }
+public class ModItemTagProvider extends FabricTagProvider.ItemTagProvider {
+
 
     public static final TagKey<Item> LEAFY_GREENS = TagKey.of(RegistryKeys.ITEM, Identifier.of(TacosDelight.MOD_ID, "leafy_greens"));
     public static final TagKey<Item> BLOCK_CHEESE = TagKey.of(RegistryKeys.ITEM, Identifier.of(TacosDelight.MOD_ID, "block_cheese"));
@@ -25,6 +24,12 @@ public class ModItemTagProvider extends FabricTagProvider<Item> {
     public static final TagKey<Item> TOMATOES = TagKey.of(RegistryKeys.ITEM, Identifier.of(TacosDelight.MOD_ID, "tomatoes"));
     public static final TagKey<Item> ONIONS = TagKey.of(RegistryKeys.ITEM, Identifier.of(TacosDelight.MOD_ID, "onions"));
     public static final TagKey<Item> RICE = TagKey.of(RegistryKeys.ITEM, Identifier.of(TacosDelight.MOD_ID, "rice"));
+    public static final TagKey<Item> CUT_CHICKEN = TagKey.of(RegistryKeys.ITEM, Identifier.of(TacosDelight.MOD_ID, "cut_chicken"));
+    public static final TagKey<Item> GROUND_BEEF = TagKey.of(RegistryKeys.ITEM, Identifier.of(TacosDelight.MOD_ID, "ground_beef"));
+
+    public ModItemTagProvider(FabricDataOutput output, CompletableFuture<RegistryWrapper.WrapperLookup> completableFuture, @Nullable FabricTagProvider.BlockTagProvider blockTagProvider) {
+        super(output, completableFuture, blockTagProvider);
+    }
 
     @Override
     protected void configure(RegistryWrapper.WrapperLookup wrapperLookup) {
@@ -39,6 +44,12 @@ public class ModItemTagProvider extends FabricTagProvider<Item> {
 
         this.getOrCreateTagBuilder(RICE)
                 .add(Identifier.of("farmersdelight","rice"));
+
+        this.getOrCreateTagBuilder(CUT_CHICKEN)
+                .add(Identifier.of("farmersdelight", "chicken_cuts"));
+
+        this.getOrCreateTagBuilder(GROUND_BEEF)
+                .add(Identifier.of("farmersdelight","minced_beef"));
 
         this.getOrCreateTagBuilder(SHREDDED_CHEESE)
                 .add(ModItems.SHREDDED_CHEESE);

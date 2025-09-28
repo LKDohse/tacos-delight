@@ -1,0 +1,18 @@
+{
+  "type": "farmersdelight:cooking",
+  "ingredients": [
+    {
+      "item": "minecraft:milk_bucket"
+    },
+    {
+      "item": "minecraft:bone_meal"
+    }
+  ],
+  "result": {
+    "id": "tacos-delight:sour_cream",
+    "count": 4
+  },
+  "recipe_book_tab": "misc",
+  "cookingtime": 200,
+  "experience": 1.0
+}

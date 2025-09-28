@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:campfire_cooking",
+  "category": "food",
+  "cookingtime": 100,
+  "experience": 1.0,
+  "ingredient": {
+    "item": "tacos-delight:uncooked_chicken_crunchwrap"
+  },
+  "result": {
+    "id": "tacos-delight:chicken_crunchwrap"
+  }
+}

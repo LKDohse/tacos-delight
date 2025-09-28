@@ -1,6 +1,0 @@
-{
-  "parent": "minecraft:item/generated",
-  "textures": {
-    "layer0": "tacos-delight:item/chicken_taco_box"
-  }
-}

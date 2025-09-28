@@ -78,27 +78,6 @@ public class ModItems {
     public static final Item BEEF_CRUNCHWRAP = registerItemViaSettings("beef_crunchwrap", ModFoodComponents.BEEF_CRUNCHWRAP_SETTINGS);
     public static final Item POTATO_CRUNCHWRAP = registerItemViaSettings("potato_crunchwrap", ModFoodComponents.POTATO_CRUNCHWRAP_SETTINGS);
 
-    //Taco Boxes
-    public static final Item BEEF_TACO_BOX = registerItemViaSettings("beef_taco_box", ModFoodComponents.BEEF_TACO_BOX_SETTINGS);
-    public static final Item CHICKEN_TACO_BOX = registerItemViaSettings("chicken_taco_box", ModFoodComponents.CHICKEN_TACO_BOX_SETTINGS);
-    public static final Item POTATO_TACO_BOX = registerItemViaSettings("potato_taco_box", ModFoodComponents.POTATO_TACO_BOX_SETTINGS);
-
-    //Burrito Boxes
-    public static final Item POTATO_BURRITO_BOX = registerItemViaSettings("potato_burrito_box", ModFoodComponents.POTATO_BURRITO_BOX_SETTINGS);
-    public static final Item CHICKEN_BURRITO_BOX = registerItemViaSettings("chicken_burrito_box", ModFoodComponents.CHICKEN_BURRITO_BOX_SETTINGS);
-    public static final Item BEEF_BURRITO_BOX = registerItemViaSettings("beef_burrito_box", ModFoodComponents.BEEF_BURRITO_BOX_SETTINGS);
-
-    // Cravings Boxes
-    public static final Item VEGGIE_CRAVINGS_BOX = registerItemViaSettings("veggie_cravings_box", ModFoodComponents.VEGGIE_CRAVINGS_BOX_SETTINGS);
-    public static final Item CHICKEN_CRAVINGS_BOX = registerItemViaSettings("chicken_cravings_box", ModFoodComponents.CHICKEN_CRAVINGS_BOX_SETTINGS);
-    public static final Item BEEF_CRAVINGS_BOX = registerItemViaSettings("beef_cravings_box", ModFoodComponents.BEEF_CRAVINGS_BOX_SETTINGS);
-
-    //Nacho Platters
-    public static final Item CHEESY_NACHO_PLATTER = registerItemViaSettings("cheesy_nacho_platter", ModFoodComponents.CHEESY_NACHO_PLATTER_SETTINGS);
-    public static final Item BEEF_NACHO_PLATTER = registerItemViaSettings("chicken_nacho_platter", ModFoodComponents.CHICKEN_NACHO_PLATTER_SETTINGS);
-    public static final Item CHICKEN_NACHO_PLATTER = registerItemViaSettings("beef_nacho_platter", ModFoodComponents.BEEF_NACHO_PLATTER_SETTINGS);
-
-
     //Crops
     public static final Item LIME = registerItem("lime", new AliasedBlockItem(ModBlocks.LIME_TREE, ModFoodComponents.LIME_SETTINGS));
     public static final Item BLUE_RASPBERRY = registerItem("blue_raspberry", new AliasedBlockItem(ModBlocks.BLUE_RASPBERRY_BUSH, ModFoodComponents.BLUE_RASPBERRY_SETTINGS));
@@ -107,7 +86,6 @@ public class ModItems {
 
     //Uncategorized
     public static final Item CARDBOARD_TRAY = registerItem("cardboard_tray", new Item(new Item.Settings()));
-
 
     public static Item registerItemViaSettings(String name, Item.Settings settings){
         var item = Registry.register(Registries.ITEM, Identifier.of(TacosDelight.MOD_ID, name), new Item(settings));

@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_beef_burrito": {
+      "conditions": {
+        "items": [
+          {
+            "items": "tacos-delight:beef_burrito"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "tacos-delight:beef_burrito_box"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_beef_burrito"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "tacos-delight:beef_burrito_box"
+    ]
+  }
+}
