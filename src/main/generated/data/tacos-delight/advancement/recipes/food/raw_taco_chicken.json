@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "tacos-delight:taco_chicken"
+        "recipe": "tacos-delight:raw_taco_chicken"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "tacos-delight:taco_chicken"
+      "tacos-delight:raw_taco_chicken"
     ]
   }
 }

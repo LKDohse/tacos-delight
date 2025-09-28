@@ -5,8 +5,6 @@ import electricbudgie.tacosdelight.item.ModItems;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
 import net.minecraft.item.Item;
-import net.minecraft.registry.Registry;
-import net.minecraft.registry.RegistryKey;
 import net.minecraft.registry.RegistryKeys;
 import net.minecraft.registry.RegistryWrapper;
 import net.minecraft.registry.tag.TagKey;
@@ -43,7 +41,7 @@ public class ModItemTagProvider extends FabricTagProvider.ItemTagProvider {
                 .add(Identifier.of("farmersdelight", "onion"));
 
         this.getOrCreateTagBuilder(RICE)
-                .add(Identifier.of("farmersdelight","rice"));
+                .add(Identifier.of("farmersdelight","cooked_rice"));
 
         this.getOrCreateTagBuilder(CUT_CHICKEN)
                 .add(Identifier.of("farmersdelight", "chicken_cuts"));
