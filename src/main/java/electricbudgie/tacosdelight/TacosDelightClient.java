@@ -18,6 +18,11 @@ public class TacosDelightClient implements ClientModInitializer {
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.BLUE_RASPBERRY_BUSH, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.LIME_TREE, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.HOT_PEPPER_CROP, RenderLayer.getCutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.HALITE, RenderLayer.getTranslucent());
+        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.HALITE_CLUSTER, RenderLayer.getCutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.SMALL_HALITE_BUD, RenderLayer.getCutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.MEDIUM_HALITE_BUD, RenderLayer.getCutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.LARGE_HALITE_BUD, RenderLayer.getCutout());
 //        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.BEEF_TACO_BOX_BLOCK, RenderLayer.getCutout());
 //        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.CHICKEN_TACO_BOX_BLOCK, RenderLayer.getCutout());
 //        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.POTATO_TACO_BOX_BLOCK, RenderLayer.getCutout());

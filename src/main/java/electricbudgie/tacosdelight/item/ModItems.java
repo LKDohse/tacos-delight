@@ -14,6 +14,10 @@ import java.util.List;
 public class ModItems {
     public static final List<Item> CREATIVE_MODE_TAB = new ArrayList<>();
 
+    //Ores and Ore-related Items
+    public static final Item SALT = registerItemViaSettings("salt", ModFoodComponents.SALT);
+    public static final Item ROCK_SALT_CRYSTALS = registerItem("rock_salt_crystals", new Item(new Item.Settings()));
+
     //Basic Ingredients
     public static final Item DICED_TOMATOES = registerItemViaSettings("diced_tomatoes", ModFoodComponents.DICED_TOMATOES_SETTINGS);
     public static final Item DRIED_CHILI = registerItemViaSettings("dried_chili", ModFoodComponents.DRIED_CHILI_SETTINGS);

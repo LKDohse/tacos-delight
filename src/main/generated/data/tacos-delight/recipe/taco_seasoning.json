@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "tacos-delight:salt"
+    },
+    {
+      "item": "tacos-delight:dried_chili"
+    },
+    {
+      "item": "tacos-delight:dried_onion"
+    }
+  ],
+  "result": {
+    "count": 4,
+    "id": "tacos-delight:taco_seasoning"
+  }
+}

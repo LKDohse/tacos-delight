@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_rock_salt_crystals": {
+      "conditions": {
+        "items": [
+          {
+            "items": "tacos-delight:rock_salt_crystals"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "tacos-delight:salt"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_rock_salt_crystals"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "tacos-delight:salt"
+    ]
+  }
+}

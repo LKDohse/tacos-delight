@@ -29,6 +29,8 @@ public class ModRecipeProvider extends CustomFabricRecipeProvider {
 
     @Override
     public void generate(RecipeExporter recipeExporter) {
+
+
         Map<Item, Item> fillingWithTaco = Map.of(
                 ModItems.TACO_BEEF, ModItems.BEEF_TACO,
                 ModItems.TACO_CHICKEN, ModItems.CHICKEN_TACO,
@@ -144,6 +146,20 @@ public class ModRecipeProvider extends CustomFabricRecipeProvider {
                 .input('#', Items.PAPER)
                 .criterion(FabricRecipeProvider.hasItem(Items.PAPER), FabricRecipeProvider.conditionsFromItem(Items.PAPER))
                 .offerTo(recipeExporter);
+
+        ShapelessRecipeJsonBuilder.create(RecipeCategory.MISC, ModItems.SALT, 2)
+                .input(ModItems.ROCK_SALT_CRYSTALS)
+                .criterion(FabricRecipeProvider.hasItem(ModItems.ROCK_SALT_CRYSTALS), FabricRecipeProvider.conditionsFromItem((ModItems.ROCK_SALT_CRYSTALS)))
+                .offerTo(recipeExporter);
+
+        ShapelessRecipeJsonBuilder.create(RecipeCategory.MISC, ModItems.TACO_SEASONING, 4)
+                .input(ModItems.SALT)
+                .input(ModItems.DRIED_CHILI)
+                .input(ModItems.DRIED_ONION)
+                .criterion(FabricRecipeProvider.hasItem(ModItems.SALT), FabricRecipeProvider.conditionsFromItem(ModItems.SALT))
+                .offerTo(recipeExporter);
+
+
         try {
             offerDeepFrying(recipeExporter, ModItems.RAW_TORTILLA_CHIPS, ModItems.TORTILLA_CHIPS, 1.0f, 100, 1);
             offerDeepFrying(recipeExporter, ModItems.UNCOOKED_FIESTA_POTATOES, ModItems.FRIED_FIESTA_POTATOES, 1.0f, 100, 1);
@@ -151,8 +167,6 @@ public class ModRecipeProvider extends CustomFabricRecipeProvider {
             offerCutting(recipeExporter, ModItemTagProvider.TOMATOES, ModItems.DICED_TOMATOES, 1);
             offerCutting(recipeExporter, ModItems.FLOUR_TORTILLA, ModItems.RAW_TORTILLA_CHIPS, 2);
             offerCutting(recipeExporter, Items.POTATO, ModItems.DICED_POTATO, 4);
-
-
         } catch (IOException e) {
             throw new RuntimeException(e);
         }

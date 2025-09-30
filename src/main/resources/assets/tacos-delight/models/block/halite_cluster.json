@@ -1,0 +1,7 @@
+{
+  "parent": "block/cross",
+  "textures": {
+    "cross": "tacos-delight:block/halite_cluster"
+  },
+  "render_type": "cutout"
+}

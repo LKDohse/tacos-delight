@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "facing=down":  { "model": "tacos-delight:block/halite_cluster", "x": 180 },
+    "facing=up":    { "model": "tacos-delight:block/halite_cluster" },
+    "facing=north": { "model": "tacos-delight:block/halite_cluster", "x": 90 },
+    "facing=south": { "model": "tacos-delight:block/halite_cluster", "x": 90, "y": 180 },
+    "facing=west":  { "model": "tacos-delight:block/halite_cluster", "x": 90, "y": 270 },
+    "facing=east":  { "model": "tacos-delight:block/halite_cluster", "x": 90, "y": 90 }
+  }
+}

@@ -3,20 +3,28 @@ package electricbudgie.tacosdelight.block;
 import electricbudgie.tacosdelight.TacosDelight;
 import electricbudgie.tacosdelight.block.custom.*;
 import electricbudgie.tacosdelight.item.ModFoodComponents;
-import net.minecraft.block.AbstractBlock;
-import net.minecraft.block.Block;
-import net.minecraft.block.Blocks;
+import net.minecraft.block.*;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
+import net.minecraft.util.math.intprovider.UniformIntProvider;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class ModBlocks {
     public static final List<Block> CREATIVE_TAB_BLOCKS = new ArrayList<>();
+
+    //Ores
+    public static final Block HALITE = registerBlock("halite", new PillarBlock(AbstractBlock.Settings.copy(Blocks.QUARTZ_PILLAR)));
+    public static final Block BUDDING_HALITE = registerBlock("budding_halite", new BuddingHaliteBlock(AbstractBlock.Settings.create().ticksRandomly().strength(1.5F).requiresTool()));
+    public static final Block HALITE_CLUSTER = registerBlock("halite_cluster", new HaliteClusterBlock(7.0F, 3.0F, AbstractBlock.Settings.create().nonOpaque()));
+    public static final Block SMALL_HALITE_BUD = registerBlock("small_halite_bud", new HaliteClusterBlock(3.0f, 4.0f, AbstractBlock.Settings.copy(ModBlocks.HALITE_CLUSTER).nonOpaque()));
+    public static final Block MEDIUM_HALITE_BUD = registerBlock("medium_halite_bud", new HaliteClusterBlock(4.0f, 4.0f, AbstractBlock.Settings.copy(ModBlocks.HALITE_CLUSTER).nonOpaque()));
+    public static final Block LARGE_HALITE_BUD = registerBlock("large_halite_bud", new HaliteClusterBlock(5.0f, 4.0f, AbstractBlock.Settings.copy(ModBlocks.HALITE_CLUSTER).nonOpaque()));
+
     //Crops
     public static final Block BLUE_RASPBERRY_BUSH = registerBlockWithoutBlockItem("blue_raspberry_bush", new BlueRaspberryBushBlock(AbstractBlock.Settings.copy(Blocks.WHEAT)));
     public static final Block LIME_TREE = registerBlockWithoutBlockItem("lime_tree", new LimeTreeBlock(AbstractBlock.Settings.copy(Blocks.WHEAT)));

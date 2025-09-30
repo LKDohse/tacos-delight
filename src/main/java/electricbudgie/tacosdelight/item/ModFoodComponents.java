@@ -82,6 +82,8 @@ public class ModFoodComponents {
     public static final Item.Settings TACO_SEASONING_SETTINGS = new Item.Settings().food(new FoodComponent.Builder().nutrition(1).snack().statusEffect(new StatusEffectInstance(StatusEffects.BLINDNESS), 0.03F).build());
     public static final Item.Settings TORTILLA_CHIPS = new Item.Settings().food(BASIC_INGREDIENT_PROPERTIES);
     public static final Item.Settings FLOUR_TOSTADA = new Item.Settings().food(BASIC_INGREDIENT_PROPERTIES);
+    public static final Item.Settings SALT = new Item.Settings().food(BASIC_INGREDIENT_PROPERTIES);
+
 
     //Raw Ingredients
     public static final Item.Settings RAW_TACO_BEEF_SETTINGS = new Item.Settings().food(RAW_MEAT_PROPERTIES);

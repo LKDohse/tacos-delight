@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column_horizontal",
+  "textures": {
+    "end": "tacos-delight:block/halite_top",
+    "side": "tacos-delight:block/halite"
+  }
+}
