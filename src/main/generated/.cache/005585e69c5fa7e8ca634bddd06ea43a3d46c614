@@ -1,4 +1,4 @@
-// 1.21.1	2025-11-14T16:20:17.8058205	Tacos Delight/Model Definitions
+// 1.21.1	2025-11-14T17:47:02.8247178	Tacos Delight/Model Definitions
 404815242e90bd3d779b86a945e1a6df9e30be3b assets\tacos-delight\blockstates\blue_raspberry_bush.json
 f4de42af0e5865f7cd0ccdead13f76e4e4066b26 assets\tacos-delight\models\block\lime_tree_age4_lower.json
 a6514b3e377d8193f645f96a32e413f8c4472947 assets\tacos-delight\models\item\lime.json
@@ -20,8 +20,8 @@ e1635411bf15ffdc51078196c413fb62419c6aff assets\tacos-delight\models\item\taco_s
 ef9467be510a2cacc3de1a791e42db18c3e1a71a assets\tacos-delight\models\item\rock_salt_crystals.json
 389ec2f5cd0ba79b7c3148ab7d82f1f7a962077e assets\tacos-delight\models\item\hot_pepper.json
 b15e795d865822409e687b02a902f8dce2ef71c5 assets\tacos-delight\models\item\raw_taco_chicken.json
-e9fef1e76ef708665ace10f0e15aae92cbdbf7a9 assets\tacos-delight\models\block\lime_tree_age0_upper.json
 fffebd62d412163ebb5e1f11790adaeeacb74669 assets\tacos-delight\models\item\diced_tomatoes.json
+e9fef1e76ef708665ace10f0e15aae92cbdbf7a9 assets\tacos-delight\models\block\lime_tree_age0_upper.json
 c4ae6b5d4c418b57820114855926898854251503 assets\tacos-delight\models\block\lime_tree_age2_lower.json
 62aa45e52a1733be396d3595f91dbc0e59298797 assets\tacos-delight\models\block\halite_horizontal.json
 d880141ad63d77fb19c96029f49ddacc9480e183 assets\tacos-delight\blockstates\halite.json
@@ -59,6 +59,7 @@ aea9192ec8ab7d640381c1032589476d8c7ecda2 assets\tacos-delight\models\item\sour_c
 3db43dfb46295c4b072ce7046d7150e04fd22bd4 assets\tacos-delight\blockstates\lime_tree.json
 67e611f0f6c66305eb38ec23291d09c2d9ce442a assets\tacos-delight\models\item\chicken_quesadilla.json
 aa3c1c764894cd15c29a0e71059453489268986e assets\tacos-delight\models\block\lime_tree_age5_lower.json
+2e47f8b0e5b5df7cca183e70d556dc5511de598d assets\tacos-delight\models\item\cheese_wedge.json
 a85a14fc891bad440e2f7380ba9b4e2d96a4e260 assets\tacos-delight\models\block\hot_pepper_plant_stage4.json
 8103d6c24843143e4f677d4d4eb7037478a3d64a assets\tacos-delight\models\item\taco_chicken.json
 6d4137132b0dcf1718ee51c0e67f8d2de6ee2c93 assets\tacos-delight\models\block\lime_tree_age0_lower.json

@@ -1,4 +1,4 @@
-// 1.21.1	2025-11-14T16:20:17.8099663	Tacos Delight/Recipes
+// 1.21.1	2025-11-14T17:47:02.8289556	Tacos Delight/Recipes
 701f648597cbbbf4647a01a1097572a1d95b97ae data\tacos-delight\recipe\chicken_taco.json
 52b1fbde17e6043d2862700d2360f4ad1e618d23 data\tacos-delight\recipe\taco_seasoning.json
 57ba1cf866a2536800b7d5803b2fd0544c5a9f0d data\tacos-delight\recipe\potato_burrito_box.json
@@ -38,8 +38,8 @@ cadc43beb91879296d4bf1c864f4e1c332d3741e data\tacos-delight\advancement\recipes\
 655b8dfc3e9d6f95235b11dd8b4be423d3ab4b5b data\tacos-delight\recipe\beef_burrito_box.json
 7f5b838d0cb0bf8b613ab3a74c0cacea4c626c6f data\tacos-delight\advancement\recipes\food\beef_crunchwrap_from_campfire.json
 84112ca97b9d5cbe51a57d9ebdeb4bb75eb978e3 data\tacos-delight\recipe\beef_cravings_box.json
-b05b12330e1ec3dad5bb2c119255a9ba6f939f7a data\tacos-delight\advancement\recipes\food\uncooked_potato_crunchwrap.json
 65edb50e6f273e7c01baf54efdef0d71b926ebf0 data\tacos-delight\advancement\recipes\food\uncooked_chicken_crunchwrap.json
+b05b12330e1ec3dad5bb2c119255a9ba6f939f7a data\tacos-delight\advancement\recipes\food\uncooked_potato_crunchwrap.json
 55ed224caf149e024068248b9211c4d6fcbe02de data\tacos-delight\recipe\uncooked_potato_quesadilla.json
 b0c52e63516612a1d5f40908df44d24443529ce5 data\tacos-delight\advancement\recipes\misc\cardboard_tray.json
 3e6f25042550b14f7b70c2ad1ddaba9e26c40b9f data\tacos-delight\advancement\recipes\food\raw_taco_beef.json

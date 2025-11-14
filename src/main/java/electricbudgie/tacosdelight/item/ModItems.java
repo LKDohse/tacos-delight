@@ -33,6 +33,7 @@ public class ModItems {
     public static final Item TACO_SEASONING = registerItemViaSettings("taco_seasoning", ModFoodComponents.TACO_SEASONING_SETTINGS);
     public static final Item TORTILLA_CHIPS = registerItemViaSettings("tortilla_chips", ModFoodComponents.TORTILLA_CHIPS);
     public static final Item FLOUR_TOSTADA = registerItemViaSettings("flour_tostada", ModFoodComponents.FLOUR_TOSTADA);
+    public static final Item CHEESE_WEDGE = registerItemViaSettings("cheese_wedge", ModFoodComponents.CHEESE_WEDGE);
 
     //Raw Ingredients
     public static final Item RAW_TACO_BEEF = registerItemViaSettings("raw_taco_beef", ModFoodComponents.RAW_TACO_BEEF_SETTINGS);

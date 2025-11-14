@@ -5,6 +5,7 @@ import electricbudgie.tacosdelight.block.ModBlocks;
 import electricbudgie.tacosdelight.block.entity.ModBlockEntities;
 import electricbudgie.tacosdelight.block.entity.custom.CheeseWheelBlockEntity;
 import electricbudgie.tacosdelight.components.ModComponents;
+import electricbudgie.tacosdelight.item.ModItems;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockRenderType;
 import net.minecraft.block.BlockState;
@@ -15,9 +16,11 @@ import net.minecraft.block.entity.BlockEntityType;
 import net.minecraft.entity.ItemEntity;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.loot.context.LootContextParameterSet;
 import net.minecraft.server.world.ServerWorld;
+import net.minecraft.sound.SoundCategory;
 import net.minecraft.state.StateManager;
 import net.minecraft.state.property.IntProperty;
 import net.minecraft.util.Hand;
@@ -27,6 +30,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.random.Random;
 import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
+import vectorwing.farmersdelight.common.tag.ModTags;
 
 import java.util.List;
 
@@ -76,7 +80,21 @@ public class CheeseWheelBlock extends BlockWithEntity {
     @Override //boilerplate; pulls up a screen when block used with an item
     protected ItemActionResult onUseWithItem(ItemStack stack, BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult hit) {
         if (!world.isClient) {
-
+            if (itemCanCutTheCheese(stack) && state.get(AGE) >= 2) {
+                ItemStack cheeseStack = new ItemStack(ModItems.CHEESE_WEDGE, 8);
+                ItemEntity cheeseEntity = new ItemEntity(world, pos.getX(), pos.getY(), pos.getZ(), cheeseStack);
+                world.spawnEntity(cheeseEntity);
+                world.syncWorldEvent(2001, pos, Block.getRawIdFromState(state));
+                world.removeBlock(pos, false);
+                world.playSound(
+                        null, // player = null → plays for everyone nearby
+                        pos,
+                        state.getSoundGroup().getBreakSound(),
+                        SoundCategory.BLOCKS,
+                        1.0f, // volume
+                        1.0f  // pitch
+                );
+            }
         }
         return ItemActionResult.SUCCESS;
     }
@@ -104,5 +122,9 @@ public class CheeseWheelBlock extends BlockWithEntity {
     @Override
     public BlockEntity createBlockEntity(BlockPos pos, BlockState state) {
         return new CheeseWheelBlockEntity(pos, state);
+    }
+
+    private boolean itemCanCutTheCheese(ItemStack stack) {
+        return stack.isIn(ModTags.KNIVES);
     }
 }

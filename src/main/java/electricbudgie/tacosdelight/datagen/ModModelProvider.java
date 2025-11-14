@@ -61,6 +61,7 @@ public class ModModelProvider extends FabricModelProvider {
         itemModelGenerator.register(ModItems.ROCK_SALT_CRYSTALS, Models.GENERATED);
         itemModelGenerator.register(ModItems.TORTILLA_CHIPS, Models.GENERATED);
         itemModelGenerator.register(ModItems.FLOUR_TOSTADA, Models.GENERATED);
+        itemModelGenerator.register(ModItems.CHEESE_WEDGE, Models.GENERATED);
 
         // Raw Ingredients
         itemModelGenerator.register(ModItems.RAW_TACO_BEEF, Models.GENERATED);
