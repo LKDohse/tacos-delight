@@ -167,6 +167,7 @@ public class ModRecipeProvider extends CustomFabricRecipeProvider {
             offerCutting(recipeExporter, ModItemTagProvider.TOMATOES, ModItems.DICED_TOMATOES, 1);
             offerCutting(recipeExporter, ModItems.FLOUR_TORTILLA, ModItems.RAW_TORTILLA_CHIPS, 2);
             offerCutting(recipeExporter, Items.POTATO, ModItems.DICED_POTATO, 4);
+            offerCutting(recipeExporter, ModItems.CHEESE_WEDGE, ModItems.SHREDDED_CHEESE, 4);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }

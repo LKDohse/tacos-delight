@@ -1,0 +1,21 @@
+{
+  "type": "farmersdelight:cutting",
+  "group": "tacos-delight",
+  "category": "food",
+  "ingredients": [
+    {
+      "item": "tacos-delight:cheese_wedge"
+    }
+  ],
+  "tool": {
+    "tag": "farmersdelight:tools/knives"
+  },
+  "result": [
+    {
+      "count": 4,
+      "item": {
+        "id": "tacos-delight:shredded_cheese"
+      }
+    }
+  ]
+}
