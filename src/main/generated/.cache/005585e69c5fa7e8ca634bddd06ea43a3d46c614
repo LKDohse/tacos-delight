@@ -1,4 +1,4 @@
-// 1.21.1	2025-11-14T17:50:10.2001461	Tacos Delight/Model Definitions
+// 1.21.1	2025-11-14T18:57:13.3484946	Tacos Delight/Model Definitions
 404815242e90bd3d779b86a945e1a6df9e30be3b assets\tacos-delight\blockstates\blue_raspberry_bush.json
 f4de42af0e5865f7cd0ccdead13f76e4e4066b26 assets\tacos-delight\models\block\lime_tree_age4_lower.json
 a6514b3e377d8193f645f96a32e413f8c4472947 assets\tacos-delight\models\item\lime.json
@@ -80,6 +80,7 @@ b7d58112421040b5c2a641c1db3dfbc99d99a8cc assets\tacos-delight\models\item\buddin
 151e012901b608324cb559f70f311c41dd0b0e3f assets\tacos-delight\models\item\salt.json
 1d6240207f018eb5ddc43803b524d5ff78a9fede assets\tacos-delight\models\block\lime_tree_age4_upper.json
 a6858ac16738edfc6c7ccf8fe28b35b5f332320c assets\tacos-delight\models\item\hot_pepper_seeds.json
+da440765062ceb4fc13d1bab1e7ebe5e8d15b1ae assets\tacos-delight\models\item\curds_and_whey.json
 8d7a2300806e94fb9b9e77e290f7161b68cea593 assets\tacos-delight\models\item\potato_burrito.json
 c8a428f76c2f32f33591a7b443234862c0f4b7cf assets\tacos-delight\models\item\taco_beef.json
 5024473fd6f558e7d7df77dccf101e96c0fd90e0 assets\tacos-delight\models\item\dried_chili.json

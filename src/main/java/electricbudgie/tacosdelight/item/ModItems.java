@@ -39,6 +39,7 @@ public class ModItems {
     public static final Item RAW_TACO_BEEF = registerItemViaSettings("raw_taco_beef", ModFoodComponents.RAW_TACO_BEEF_SETTINGS);
     public static final Item RAW_TACO_CHICKEN = registerItemViaSettings("raw_taco_chicken", ModFoodComponents.RAW_TACO_CHICKEN_SETTINGS);
     public static final Item TORTILLA_DOUGH = registerItemViaSettings("tortilla_dough", ModFoodComponents.TORTILLA_DOUGH_SETTINGS);
+    public static final Item CURDS_AND_WHEY = registerItemViaSettings("curds_and_whey", ModFoodComponents.CURDS_AND_WHEY_SETTINGS);
 
     //Cooked Ingredients
     public static final Item TACO_BEEF = registerItemViaSettings("taco_beef", ModFoodComponents.TACO_BEEF_SETTINGS);

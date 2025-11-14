@@ -67,6 +67,7 @@ public class ModModelProvider extends FabricModelProvider {
         itemModelGenerator.register(ModItems.RAW_TACO_BEEF, Models.GENERATED);
         itemModelGenerator.register(ModItems.RAW_TACO_CHICKEN, Models.GENERATED);
         itemModelGenerator.register(ModItems.TORTILLA_DOUGH, Models.GENERATED);
+        itemModelGenerator.register(ModItems.CURDS_AND_WHEY, Models.GENERATED);
 
         //Cooked Ingredients
         itemModelGenerator.register(ModItems.TACO_BEEF, Models.GENERATED);
