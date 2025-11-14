@@ -1,0 +1,18 @@
+{
+  "parent": "minecraft:item/generated",
+
+  "overrides": [
+    {
+      "predicate": { "age": 0.0 } ,
+      "model": "tacos-delight:item/cheese_wheel_age0"
+    },
+    {
+      "predicate": { "age": 0.5 } ,
+      "model": "tacos-delight:item/cheese_wheel_age1"
+    },
+    {
+      "predicate": { "age": 1.0 },
+      "model": "tacos-delight:item/cheese_wheel_age2"
+    }
+  ]
+}
