@@ -42,15 +42,7 @@ public class ModLootTableGenerator extends FabricBlockLootTableProvider {
         addDrop(ModBlocks.MEDIUM_HALITE_BUD, multipleOreDrops(ModBlocks.MEDIUM_HALITE_BUD, ModItems.ROCK_SALT_CRYSTALS, 2f, 3f));
         addDrop(ModBlocks.SMALL_HALITE_BUD, multipleOreDrops(ModBlocks.SMALL_HALITE_BUD, ModItems.ROCK_SALT_CRYSTALS, 1f, 2f));
         addDrop(ModBlocks.DEEP_FRYER_BLOCK);
-
-        BlockStatePropertyLootCondition.Builder cheeseWheelLootConditionBuilder = BlockStatePropertyLootCondition.builder(ModBlocks.CHEESE_WHEEL_BLOCK)
-                .properties(StatePredicate.Builder.create().exactMatch(CheeseWheelBlock.AGE, 0));
-        BlockStatePropertyLootCondition.Builder cheeseWheelLootConditionBuilder2 = BlockStatePropertyLootCondition.builder(ModBlocks.CHEESE_WHEEL_BLOCK)
-                .properties(StatePredicate.Builder.create().exactMatch(CheeseWheelBlock.AGE, 1));
-        BlockStatePropertyLootCondition.Builder cheeseWheelLootConditionBuilder3 = BlockStatePropertyLootCondition.builder(ModBlocks.CHEESE_WHEEL_BLOCK)
-                .properties(StatePredicate.Builder.create().exactMatch(CheeseWheelBlock.AGE, 2));
-
-        //addDrop(ModBlocks.CHEESE_WHEEL_BLOCK);
+        addDrop(ModBlocks.CHEESE_PRESS_BLOCK);
 
         BlockStatePropertyLootCondition.Builder hotPepperLootConditionBuilder = BlockStatePropertyLootCondition.builder(ModBlocks.HOT_PEPPER_CROP)
                 .properties(StatePredicate.Builder.create().exactMatch(HotPepperCropBlock.AGE, 5));
