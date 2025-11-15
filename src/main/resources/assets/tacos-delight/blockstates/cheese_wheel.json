@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "age=0": { "model": "tacos-delight:block/cheese_wheel_age0" },
+    "age=1": { "model": "tacos-delight:block/cheese_wheel_age1" },
+    "age=2": { "model": "tacos-delight:block/cheese_wheel_age2" }
+  }
+}

@@ -39,6 +39,7 @@ public class ModModelProvider extends FabricModelProvider {
     public void generateItemModels(ItemModelGenerator itemModelGenerator) {
         registerFoodModels(itemModelGenerator);
         itemModelGenerator.register(ModItems.CARDBOARD_TRAY, Models.GENERATED);
+        itemModelGenerator.register(ModBlocks.CHEESE_PRESS_BLOCK.asItem(), Models.GENERATED);
     }
 
     private static void registerFoodModels(ItemModelGenerator itemModelGenerator) {
@@ -61,11 +62,13 @@ public class ModModelProvider extends FabricModelProvider {
         itemModelGenerator.register(ModItems.ROCK_SALT_CRYSTALS, Models.GENERATED);
         itemModelGenerator.register(ModItems.TORTILLA_CHIPS, Models.GENERATED);
         itemModelGenerator.register(ModItems.FLOUR_TOSTADA, Models.GENERATED);
+        itemModelGenerator.register(ModItems.CHEESE_WEDGE, Models.GENERATED);
 
         // Raw Ingredients
         itemModelGenerator.register(ModItems.RAW_TACO_BEEF, Models.GENERATED);
         itemModelGenerator.register(ModItems.RAW_TACO_CHICKEN, Models.GENERATED);
         itemModelGenerator.register(ModItems.TORTILLA_DOUGH, Models.GENERATED);
+        itemModelGenerator.register(ModItems.CURDS_AND_WHEY, Models.GENERATED);
 
         //Cooked Ingredients
         itemModelGenerator.register(ModItems.TACO_BEEF, Models.GENERATED);

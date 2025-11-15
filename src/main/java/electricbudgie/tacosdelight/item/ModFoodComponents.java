@@ -83,12 +83,13 @@ public class ModFoodComponents {
     public static final Item.Settings TORTILLA_CHIPS = new Item.Settings().food(BASIC_INGREDIENT_PROPERTIES);
     public static final Item.Settings FLOUR_TOSTADA = new Item.Settings().food(BASIC_INGREDIENT_PROPERTIES);
     public static final Item.Settings SALT = new Item.Settings().food(BASIC_INGREDIENT_PROPERTIES);
-
+    public static final Item.Settings CHEESE_WEDGE = new Item.Settings().food(BASIC_INGREDIENT_PROPERTIES);
 
     //Raw Ingredients
     public static final Item.Settings RAW_TACO_BEEF_SETTINGS = new Item.Settings().food(RAW_MEAT_PROPERTIES);
     public static final Item.Settings RAW_TACO_CHICKEN_SETTINGS = new Item.Settings().food(RAW_MEAT_PROPERTIES);
     public static final Item.Settings TORTILLA_DOUGH_SETTINGS = new Item.Settings().food(RAW_INGREDIENT_PROPERTIES);
+    public static final Item.Settings CURDS_AND_WHEY_SETTINGS = new Item.Settings().food(RAW_INGREDIENT_PROPERTIES).recipeRemainder(Items.BUCKET).maxCount(16);
 
     //Cooked Ingredients
     public static final Item.Settings TACO_BEEF_SETTINGS = new Item.Settings().food(MEAT_PROPERTIES);

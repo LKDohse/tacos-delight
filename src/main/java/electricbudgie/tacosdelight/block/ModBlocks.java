@@ -2,6 +2,7 @@ package electricbudgie.tacosdelight.block;
 
 import electricbudgie.tacosdelight.TacosDelight;
 import electricbudgie.tacosdelight.block.custom.*;
+import electricbudgie.tacosdelight.components.ModComponents;
 import electricbudgie.tacosdelight.item.ModFoodComponents;
 import net.minecraft.block.*;
 import net.minecraft.item.BlockItem;
@@ -9,7 +10,6 @@ import net.minecraft.item.Item;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
-import net.minecraft.util.math.intprovider.UniformIntProvider;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -44,9 +44,28 @@ public class ModBlocks {
     public static final Block POTATO_CRAVINGS_BLOCK_BOX = registerBlock("potato_cravings_box", new CravingsBoxBlock(AbstractBlock.Settings.copy(Blocks.CAKE), ModFoodComponents.FillingType.POTATO, true));
 
     //Entities
-    public static final Block DEEP_FRYER_BLOCK = registerBlock("deep_fryer",
-            new DeepFryerBlock(AbstractBlock.Settings.create().strength(2f).requiresTool().nonOpaque()));
+    public static final Block DEEP_FRYER_BLOCK = registerCraftingBlock("deep_fryer",
+            new DeepFryerBlock(AbstractBlock.Settings.create().strength(0.5f).nonOpaque()));
+    public static final Block CHEESE_WHEEL_BLOCK = registerCheeseBlock("cheese_wheel",
+            new CheeseWheelBlock((AbstractBlock.Settings.create().nonOpaque())));
+    public static final Block CHEESE_PRESS_BLOCK = registerCraftingBlock("cheese_press",
+            new CheesePressBlock(AbstractBlock.Settings.create().strength(0.5f).nonOpaque()));
 
+
+    private static Block registerCheeseBlock(String name, Block block){
+        registerBlockItemWithAgeComponent(name, block);
+        var registeredBlock = Registry.register(Registries.BLOCK, Identifier.of(TacosDelight.MOD_ID, name), block);
+        CREATIVE_TAB_BLOCKS.add(registeredBlock);
+        return registeredBlock;
+    }
+
+    private static Block registerCraftingBlock(String name, Block block){
+        Registry.register(Registries.ITEM, Identifier.of(TacosDelight.MOD_ID, name),
+                new BlockItem(block, new Item.Settings().maxCount(1)));
+        var registeredBlock = Registry.register(Registries.BLOCK, Identifier.of(TacosDelight.MOD_ID, name), block);
+        CREATIVE_TAB_BLOCKS.add(registeredBlock);
+        return registeredBlock;
+    }
 
     private static Block registerBlock(String name, Block block) {
         registerBlockItem(name, block);
@@ -58,6 +77,11 @@ public class ModBlocks {
     private static void registerBlockItem(String name, Block block) {
         Registry.register(Registries.ITEM, Identifier.of(TacosDelight.MOD_ID, name),
                 new BlockItem(block, new Item.Settings()));
+    }
+
+    private static void registerBlockItemWithAgeComponent(String name, Block block){
+        Registry.register(Registries.ITEM, Identifier.of(TacosDelight.MOD_ID, name),
+                new BlockItem(block, new Item.Settings().component(ModComponents.AGE_COMPONENT, 0)));
     }
 
     private static Block registerBlockWithoutBlockItem(String name, Block block) {
