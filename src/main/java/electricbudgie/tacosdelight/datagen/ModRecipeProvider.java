@@ -16,6 +16,7 @@ import net.minecraft.recipe.RecipeSerializer;
 import net.minecraft.recipe.SmokingRecipe;
 import net.minecraft.recipe.book.RecipeCategory;
 import net.minecraft.registry.RegistryWrapper;
+import net.minecraft.registry.tag.ItemTags;
 
 import java.io.IOException;
 import java.util.Map;
@@ -145,6 +146,16 @@ public class ModRecipeProvider extends CustomFabricRecipeProvider {
                 .pattern("###")
                 .input('#', Items.PAPER)
                 .criterion(FabricRecipeProvider.hasItem(Items.PAPER), FabricRecipeProvider.conditionsFromItem(Items.PAPER))
+                .offerTo(recipeExporter);
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ModBlocks.CHEESE_PRESS_BLOCK)
+                .pattern(" i ")
+                .pattern("#D#")
+                .pattern("###")
+                .input('i', Items.LEVER)
+                .input('#', ItemTags.SLABS)
+                .input('D', Items.IRON_TRAPDOOR)
+                .criterion(FabricRecipeProvider.hasItem(Items.LEVER), FabricRecipeProvider.conditionsFromItem(Items.LEVER))
                 .offerTo(recipeExporter);
 
         ShapelessRecipeJsonBuilder.create(RecipeCategory.MISC, ModItems.SALT, 2)
