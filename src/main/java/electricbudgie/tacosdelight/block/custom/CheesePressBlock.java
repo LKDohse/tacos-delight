@@ -3,7 +3,6 @@ package electricbudgie.tacosdelight.block.custom;
 import com.mojang.serialization.MapCodec;
 import electricbudgie.tacosdelight.block.entity.ModBlockEntities;
 import electricbudgie.tacosdelight.block.entity.custom.CheesePressBlockEntity;
-import electricbudgie.tacosdelight.block.entity.custom.CheeseWheelBlockEntity;
 import electricbudgie.tacosdelight.item.ModItems;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockRenderType;

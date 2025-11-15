@@ -16,10 +16,8 @@ import net.minecraft.block.entity.BlockEntityType;
 import net.minecraft.entity.ItemEntity;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.loot.context.LootContextParameterSet;
-import net.minecraft.server.world.ServerWorld;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.state.StateManager;
 import net.minecraft.state.property.IntProperty;
@@ -27,7 +25,6 @@ import net.minecraft.util.Hand;
 import net.minecraft.util.ItemActionResult;
 import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.random.Random;
 import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
 import vectorwing.farmersdelight.common.tag.ModTags;
@@ -62,11 +59,10 @@ public class CheeseWheelBlock extends BlockWithEntity {
     @Nullable
     @Override
     public <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type) {
-        //this forces the class to use our manually defined tick method, also pretty boilerplate
         return validateTicker(type, ModBlockEntities.CHEESE_WHEEL_BE, ((world1, pos, state1, blockEntity) -> blockEntity.tick(world1, pos, state1)));
     }
 
-    @Override //boilerplate; pulls up a screen when block used with an item
+    @Override
     protected ItemActionResult onUseWithItem(ItemStack stack, BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult hit) {
         if (!world.isClient) {
             if (itemCanCutTheCheese(stack) && state.get(AGE) >= 2) {
@@ -76,12 +72,12 @@ public class CheeseWheelBlock extends BlockWithEntity {
                 world.syncWorldEvent(2001, pos, Block.getRawIdFromState(state));
                 world.removeBlock(pos, false);
                 world.playSound(
-                        null, // player = null → plays for everyone nearby
+                        null,
                         pos,
                         state.getSoundGroup().getBreakSound(),
                         SoundCategory.BLOCKS,
-                        1.0f, // volume
-                        1.0f  // pitch
+                        1.0f,
+                        1.0f
                 );
             }
         }

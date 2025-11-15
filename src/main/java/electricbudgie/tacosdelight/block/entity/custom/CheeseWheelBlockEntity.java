@@ -17,7 +17,7 @@ import org.jetbrains.annotations.Nullable;
 public class CheeseWheelBlockEntity extends BlockEntity {
     protected int age = 0;
     private int progress = 0;
-    private final int maxProgress = 200;
+    private final int maxProgress = 24000;
     private static final int maxAge = 2;
 
     protected final PropertyDelegate propertyDelegate;
