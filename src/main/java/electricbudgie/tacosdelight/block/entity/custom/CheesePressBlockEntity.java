@@ -2,9 +2,7 @@ package electricbudgie.tacosdelight.block.entity.custom;
 
 import electricbudgie.tacosdelight.block.ModBlocks;
 import electricbudgie.tacosdelight.block.custom.CheesePressBlock;
-import electricbudgie.tacosdelight.block.custom.CheeseWheelBlock;
 import electricbudgie.tacosdelight.block.entity.ModBlockEntities;
-import electricbudgie.tacosdelight.item.ModItems;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.entity.ItemEntity;
@@ -29,8 +27,7 @@ import software.bernie.geckolib.util.GeckoLibUtil;
 public class CheesePressBlockEntity extends BlockEntity implements GeoBlockEntity, GeoAnimatable {
     protected final PropertyDelegate propertyDelegate;
     private int progress = 0;
-    private int maxProgress = 72;
-    private final int DEFAULT_MAX_PROGRESS = 72;
+    private int maxProgress = 12000;
     protected boolean pressing;
 
     public CheesePressBlockEntity(BlockPos pos, BlockState state) {
