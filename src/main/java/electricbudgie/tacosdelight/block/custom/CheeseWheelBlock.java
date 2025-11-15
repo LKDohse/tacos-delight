@@ -66,17 +66,6 @@ public class CheeseWheelBlock extends BlockWithEntity {
         return validateTicker(type, ModBlockEntities.CHEESE_WHEEL_BE, ((world1, pos, state1, blockEntity) -> blockEntity.tick(world1, pos, state1)));
     }
 
-//    @Override
-//    protected void randomTick(BlockState state, ServerWorld world, BlockPos pos, Random random) {
-//        int age = state.get(AGE);
-//        if (age >= 2) return;
-//
-//        if(random.nextInt(5)==0){
-//            world.setBlockState(pos, state.with(AGE, age +1), Block.NOTIFY_ALL);
-//        }
-//    }
-
-
     @Override //boilerplate; pulls up a screen when block used with an item
     protected ItemActionResult onUseWithItem(ItemStack stack, BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult hit) {
         if (!world.isClient) {

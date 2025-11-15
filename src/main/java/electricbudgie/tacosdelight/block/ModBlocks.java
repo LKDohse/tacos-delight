@@ -48,6 +48,8 @@ public class ModBlocks {
             new DeepFryerBlock(AbstractBlock.Settings.create().strength(2f).requiresTool().nonOpaque()));
     public static final Block CHEESE_WHEEL_BLOCK = registerCheeseBlock("cheese_wheel",
             new CheeseWheelBlock((AbstractBlock.Settings.create().nonOpaque())));
+    public static final Block CHEESE_PRESS_BLOCK = registerBlock("cheese_press",
+            new CheesePressBlock(AbstractBlock.Settings.create().strength(2f).requiresTool().nonOpaque()));
 
 
     private static Block registerCheeseBlock(String name, Block block){

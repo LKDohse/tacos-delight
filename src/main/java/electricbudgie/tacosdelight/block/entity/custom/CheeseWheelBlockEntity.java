@@ -2,7 +2,6 @@ package electricbudgie.tacosdelight.block.entity.custom;
 
 import electricbudgie.tacosdelight.block.custom.CheeseWheelBlock;
 import electricbudgie.tacosdelight.block.entity.ModBlockEntities;
-import net.minecraft.block.BlockRenderType;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.nbt.NbtCompound;

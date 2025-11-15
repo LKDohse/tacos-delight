@@ -3,6 +3,7 @@ package electricbudgie.tacosdelight;
 import electricbudgie.tacosdelight.block.ModBlocks;
 import electricbudgie.tacosdelight.block.custom.CheeseWheelBlock;
 import electricbudgie.tacosdelight.block.entity.ModBlockEntities;
+import electricbudgie.tacosdelight.block.entity.renderer.CheesePressEntityRenderer;
 import electricbudgie.tacosdelight.block.entity.renderer.DeepFryerBlockEntityRenderer;
 import electricbudgie.tacosdelight.components.ModComponents;
 import electricbudgie.tacosdelight.screen.ModScreenHandlers;
@@ -47,6 +48,7 @@ public class TacosDelightClient implements ClientModInitializer {
 //        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.CHICKEN_TACO_BOX_BLOCK, RenderLayer.getCutout());
 //        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.POTATO_TACO_BOX_BLOCK, RenderLayer.getCutout());
         BlockEntityRendererFactories.register(ModBlockEntities.DEEP_FRYER_BE, DeepFryerBlockEntityRenderer::new);
+        BlockEntityRendererFactories.register(ModBlockEntities.CHEESE_PRESS_BE, CheesePressEntityRenderer::new);
 
         registerModelPredicateProviders();
         HandledScreens.register(ModScreenHandlers.DEEP_FRYER_HANDLER, DeepFryerScreen::new);
