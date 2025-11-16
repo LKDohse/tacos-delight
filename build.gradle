@@ -71,7 +71,7 @@ dependencies {
 		// If you want to exclude Porting Lib to instead provide your own version of Porting Lib, uncomment the above line..
 	}
 
-	modImplementation "software.bernie.geckolib:geckolib-fabric-1.21.1:4.6"
+	modImplementation "software.bernie.geckolib:geckolib-fabric-${geckolib_version}"
 }
 
 processResources {
