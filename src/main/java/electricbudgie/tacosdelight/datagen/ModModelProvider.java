@@ -39,6 +39,15 @@ public class ModModelProvider extends FabricModelProvider {
         itemModelGenerator.register(ModItems.CARDBOARD_TRAY, Models.GENERATED);
         itemModelGenerator.register(ModBlocks.CHEESE_PRESS_BLOCK.asItem(), Models.GENERATED);
         itemModelGenerator.register(ModBlocks.DEEP_FRYER_BLOCK.asItem(), Models.GENERATED);
+        itemModelGenerator.register(ModBlocks.BEEF_BURRITO_BOX_BLOCK.asItem(), Models.GENERATED);
+        itemModelGenerator.register(ModBlocks.CHICKEN_BURRITO_BOX_BLOCK.asItem(), Models.GENERATED);
+        itemModelGenerator.register(ModBlocks.POTATO_BURRITO_BOX_BLOCK.asItem(), Models.GENERATED);
+        itemModelGenerator.register(ModBlocks.BEEF_TACO_BOX_BLOCK.asItem(), Models.GENERATED);
+        itemModelGenerator.register(ModBlocks.CHICKEN_TACO_BOX_BLOCK.asItem(), Models.GENERATED);
+        itemModelGenerator.register(ModBlocks.POTATO_TACO_BOX_BLOCK.asItem(), Models.GENERATED);
+        itemModelGenerator.register(ModBlocks.BEEF_CRAVINGS_BLOCK_BOX.asItem(), Models.GENERATED);
+        itemModelGenerator.register(ModBlocks.CHICKEN_CRAVINGS_BLOCK_BOX.asItem(), Models.GENERATED);
+        itemModelGenerator.register(ModBlocks.POTATO_CRAVINGS_BLOCK_BOX.asItem(), Models.GENERATED);
     }
 
     private static void registerFoodModels(ItemModelGenerator itemModelGenerator) {

@@ -2,7 +2,6 @@ package electricbudgie.tacosdelight.item;
 
 import net.minecraft.item.Item;
 import net.minecraft.item.Items;
-import org.jetbrains.annotations.NotNull;
 
 import java.util.EnumMap;
 import java.util.Map;
@@ -31,15 +30,14 @@ public class ModItemSuppliers {
         Map<ModFoodComponents.FillingType, Supplier<Item>> quesadillas = new EnumMap<>(ModFoodComponents.FillingType.class);
         quesadillas.put(ModFoodComponents.FillingType.BEEF, () -> ModItems.BEEF_QUESADILLA);
         quesadillas.put(ModFoodComponents.FillingType.CHICKEN, () -> ModItems.CHICKEN_QUESADILLA);
-        //quesadillas.put(ModFoodComponents.FillingType.POTATO, () -> ModItems.POTATO_QUESADILLA);
+        quesadillas.put(ModFoodComponents.FillingType.POTATO, () -> ModItems.POTATO_QUESADILLA);
         quesadillas.put(ModFoodComponents.FillingType.CHEESE, () -> ModItems.CHEESE_QUESADILLA);
         SUPPLIERS.put(ModFoodComponents.FoodType.QUESADILLA, quesadillas);
 
         Map<ModFoodComponents.FillingType, Supplier<Item>> crunchwraps = new EnumMap<>(ModFoodComponents.FillingType.class);
         crunchwraps.put(ModFoodComponents.FillingType.BEEF, () -> ModItems.BEEF_CRUNCHWRAP);
         crunchwraps.put(ModFoodComponents.FillingType.CHICKEN, () -> ModItems.CHICKEN_CRUNCHWRAP);
-        //crunchwraps.put(ModFoodComponents.FillingType.POTATO, () -> ModItems.POTATO_CRUNCHWRAP);
-        //crunchwraps.put(ModFoodComponents.FillingType.CHEESE, () -> ModItems.POTATO_CRUNCHWRAP);
+        crunchwraps.put(ModFoodComponents.FillingType.POTATO, () -> ModItems.POTATO_CRUNCHWRAP);
         SUPPLIERS.put(ModFoodComponents.FoodType.CRUNCHWRAP, crunchwraps);
 
 
