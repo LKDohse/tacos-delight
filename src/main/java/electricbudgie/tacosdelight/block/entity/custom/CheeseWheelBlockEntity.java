@@ -92,6 +92,7 @@ public class CheeseWheelBlockEntity extends BlockEntity {
             updateAge(age, pos, state);
         }
         progress++;
+        markDirty(world, pos, state);
     }
 
     private void updateAge(int age, BlockPos pos, BlockState state){
