@@ -2,7 +2,9 @@ package electricbudgie.tacosdelight;
 
 import electricbudgie.tacosdelight.block.ModBlocks;
 import electricbudgie.tacosdelight.block.entity.ModBlockEntities;
+import electricbudgie.tacosdelight.block.entity.renderer.CheesePressEntityRenderer;
 import electricbudgie.tacosdelight.block.entity.renderer.DeepFryerBlockEntityRenderer;
+import electricbudgie.tacosdelight.registry.ModModelPredicateProvider;
 import electricbudgie.tacosdelight.screen.ModScreenHandlers;
 import electricbudgie.tacosdelight.screen.custom.DeepFryerScreen;
 import net.fabricmc.api.ClientModInitializer;
@@ -12,6 +14,7 @@ import net.minecraft.client.render.RenderLayer;
 import net.minecraft.client.render.block.entity.BlockEntityRendererFactories;
 
 public class TacosDelightClient implements ClientModInitializer {
+
 
     @Override
     public void onInitializeClient() {
@@ -23,11 +26,9 @@ public class TacosDelightClient implements ClientModInitializer {
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.SMALL_HALITE_BUD, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.MEDIUM_HALITE_BUD, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.LARGE_HALITE_BUD, RenderLayer.getCutout());
-//        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.BEEF_TACO_BOX_BLOCK, RenderLayer.getCutout());
-//        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.CHICKEN_TACO_BOX_BLOCK, RenderLayer.getCutout());
-//        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.POTATO_TACO_BOX_BLOCK, RenderLayer.getCutout());
         BlockEntityRendererFactories.register(ModBlockEntities.DEEP_FRYER_BE, DeepFryerBlockEntityRenderer::new);
-
+        BlockEntityRendererFactories.register(ModBlockEntities.CHEESE_PRESS_BE, CheesePressEntityRenderer::new);
+        ModModelPredicateProvider.registerModelPredicateProviders();
         HandledScreens.register(ModScreenHandlers.DEEP_FRYER_HANDLER, DeepFryerScreen::new);
     }
 }

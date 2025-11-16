@@ -2,6 +2,7 @@ package electricbudgie.tacosdelight;
 
 import electricbudgie.tacosdelight.block.ModBlocks;
 import electricbudgie.tacosdelight.block.entity.ModBlockEntities;
+import electricbudgie.tacosdelight.components.ModComponents;
 import electricbudgie.tacosdelight.effect.ModEffects;
 import electricbudgie.tacosdelight.item.ModItemGroups;
 import electricbudgie.tacosdelight.item.ModItems;
@@ -13,6 +14,7 @@ import net.fabricmc.api.ModInitializer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import software.bernie.geckolib.GeckoLib;
+import vectorwing.farmersdelight.common.registry.ModDataComponents;
 
 public class TacosDelight implements ModInitializer {
 	public static final String MOD_ID = "tacos-delight";
@@ -29,6 +31,7 @@ public class TacosDelight implements ModInitializer {
 		// Proceed with mild caution.
 
 		ModItemGroups.registerItemGroups();
+		ModComponents.initialize();
 		ModItems.registerModItems();
 		ModBlocks.registerModBlocks();
 		ModBlockEntities.registerBlockEntities();

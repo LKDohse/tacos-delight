@@ -1,0 +1,12 @@
+{
+  "variants": {
+    "facing=north,pressing=false": { "model": "tacos-delight:block/cheese_press", "y": 0 },
+    "facing=south,pressing=false": { "model": "tacos-delight:block/cheese_press", "y": 180},
+    "facing=west,pressing=false":  { "model": "tacos-delight:block/cheese_press", "y": 90 },
+    "facing=east,pressing=false":  { "model": "tacos-delight:block/cheese_press", "y": 270 },
+    "facing=north,pressing=true": { "model": "tacos-delight:block/cheese_press_down", "y": 0 },
+    "facing=south,pressing=true": { "model": "tacos-delight:block/cheese_press_down", "y": 180},
+    "facing=west,pressing=true":  { "model": "tacos-delight:block/cheese_press_down", "y": 90 },
+    "facing=east,pressing=true":  { "model": "tacos-delight:block/cheese_press_down", "y": 270 }
+  }
+}
