@@ -80,6 +80,7 @@ public class CheesePressBlockEntity extends BlockEntity implements GeoBlockEntit
             stopPressing(pos, state);
         }
         else progress++;
+        markDirty(world, pos, state);
     }
 
     // Animation

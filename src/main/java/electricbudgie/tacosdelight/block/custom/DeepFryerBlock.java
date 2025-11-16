@@ -69,7 +69,7 @@ public class DeepFryerBlock extends BlockWithEntity {
         return new DeepFryerBlockEntity(pos, state);
     }
 
-    @Override //this is pretty boilerplate, makes sure stored items are scattered in the world if block destroyed
+    @Override
     protected void onStateReplaced(BlockState state, World world, BlockPos pos, BlockState newState, boolean moved) {
         if (state.getBlock() != newState.getBlock()) {
             BlockEntity blockEntity = world.getBlockEntity(pos);
@@ -81,7 +81,7 @@ public class DeepFryerBlock extends BlockWithEntity {
         }
     }
 
-    @Override //boilerplate; pulls up a screen when block used with an item
+    @Override
     protected ItemActionResult onUseWithItem(ItemStack stack, BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult hit) {
         if (!world.isClient) {
             NamedScreenHandlerFactory screenHandlerFactory = (DeepFryerBlockEntity) world.getBlockEntity(pos);

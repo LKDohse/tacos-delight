@@ -24,6 +24,8 @@ import net.minecraft.registry.RegistryWrapper;
 import net.minecraft.screen.PropertyDelegate;
 import net.minecraft.screen.ScreenHandler;
 import net.minecraft.server.network.ServerPlayerEntity;
+import net.minecraft.sound.SoundCategory;
+import net.minecraft.sound.SoundEvents;
 import net.minecraft.text.Text;
 import net.minecraft.util.collection.DefaultedList;
 import net.minecraft.util.math.BlockPos;
@@ -82,6 +84,7 @@ public class DeepFryerBlockEntity extends BlockEntity implements ExtendedScreenH
     public void tick(World world, BlockPos pos, BlockState state) {
         //20 ticks per second
         if (isCrafting()) {
+            if (progress == 1) sizzle(world, pos);
             startCooking();
             increaseCraftingProgress();
             markDirty(world, pos, state);
@@ -89,10 +92,17 @@ public class DeepFryerBlockEntity extends BlockEntity implements ExtendedScreenH
             if (hasCraftingFinished()) {
                 craftItem();
                 resetProgress();
+                if (!hasMoreItemsToCook())
+                    stopCooking();
             }
         } else {
             resetProgress();
         }
+    }
+
+    private void sizzle(World world, BlockPos pos){
+        if (!world.isClient)
+            world.playSound(null, pos, SoundEvents.BLOCK_FIRE_EXTINGUISH, SoundCategory.BLOCKS, 0.3f, 1f);
     }
 
     @Override
@@ -103,6 +113,11 @@ public class DeepFryerBlockEntity extends BlockEntity implements ExtendedScreenH
     //Crafting Stuff
     public boolean isCrafting() {
         return hasRecipe() && canInsertIntoOutputSlot();
+    }
+
+    public boolean hasMoreItemsToCook(){
+        var items = inventory.get(INPUT_SLOT);
+        return (items.getCount() > 0) && hasRecipe();
     }
 
     public void startCooking() {
@@ -120,7 +135,6 @@ public class DeepFryerBlockEntity extends BlockEntity implements ExtendedScreenH
     private void resetProgress() {
         this.progress = 0;
         this.maxProgress = DEFAULT_MAX_PROGRESS;
-        stopCooking();
     }
 
     private void craftItem() {
@@ -173,22 +187,19 @@ public class DeepFryerBlockEntity extends BlockEntity implements ExtendedScreenH
 
     private final AnimatableInstanceCache geoCache = GeckoLibUtil.createInstanceCache(this);
 
-    protected static final RawAnimation START_FRYING = RawAnimation.begin().thenPlayXTimes("start_frying", 1).thenLoop("in_use");
-    protected static final RawAnimation STOP_FRYING = RawAnimation.begin().thenPlayXTimes("stop_frying", 1).thenLoop("idle");
-    protected static final RawAnimation IDLE = RawAnimation.begin().thenLoop("idle");
 
 
     @Override
     public void registerControllers(AnimatableManager.ControllerRegistrar controllers) {
         controllers.add(new AnimationController<>(this,
                 "baseController",
-                0,
+                5,
                 state -> {
                     if (getCachedState().get(DeepFryerBlock.COOKING)){
-                        return state.setAndContinue(RawAnimation.begin().thenPlayXTimes("start_frying", 1).thenLoop("in_use"));
+                        return state.setAndContinue(RawAnimation.begin().thenPlayAndHold("start_frying"));
                     }
                     else {
-                       return state.setAndContinue(RawAnimation.begin().thenPlayXTimes("stop_frying", 1).thenLoop("idle"));
+                       return state.setAndContinue(RawAnimation.begin().thenPlayAndHold("stop_frying"));
                     }
                 }));
     }

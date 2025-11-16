@@ -11,10 +11,12 @@
 							"vector": [0, 0, 0]
 						},
 						"0.1667": {
-							"vector": [0, 0, -2]
+							"vector": [0, 0, -2],
+							"easing": "linear"
 						},
 						"0.2917": {
-							"vector": [0, -4, -2]
+							"vector": [0, -4, -2],
+							"easing": "easeInOutBack"
 						}
 					}
 				}
@@ -33,21 +35,9 @@
 							"vector": [0, 0, -2]
 						},
 						"0.25": {
-							"vector": [0, 0, 0]
+							"vector": [0, 0, 0],
+							"easing": "easeInBack"
 						}
-					}
-				}
-			}
-		},
-		"idle": {
-			"loop": true
-		},
-		"in_use": {
-			"loop": true,
-			"bones": {
-				"fryer_basket": {
-					"position": {
-						"vector": [0, -4, -2]
 					}
 				}
 			}

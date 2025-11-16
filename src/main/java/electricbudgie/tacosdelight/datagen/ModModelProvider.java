@@ -40,6 +40,7 @@ public class ModModelProvider extends FabricModelProvider {
         registerFoodModels(itemModelGenerator);
         itemModelGenerator.register(ModItems.CARDBOARD_TRAY, Models.GENERATED);
         itemModelGenerator.register(ModBlocks.CHEESE_PRESS_BLOCK.asItem(), Models.GENERATED);
+        itemModelGenerator.register(ModBlocks.DEEP_FRYER_BLOCK.asItem(), Models.GENERATED);
     }
 
     private static void registerFoodModels(ItemModelGenerator itemModelGenerator) {
