@@ -6,6 +6,7 @@ import electricbudgie.tacosdelight.components.ModComponents;
 import electricbudgie.tacosdelight.effect.ModEffects;
 import electricbudgie.tacosdelight.item.ModItemGroups;
 import electricbudgie.tacosdelight.item.ModItems;
+import electricbudgie.tacosdelight.particle.ModParticles;
 import electricbudgie.tacosdelight.recipe.ModRecipes;
 import electricbudgie.tacosdelight.screen.ModScreenHandlers;
 import electricbudgie.tacosdelight.world.gen.ModWorldGeneration;
@@ -35,6 +36,7 @@ public class TacosDelight implements ModInitializer {
 		ModItems.registerModItems();
 		ModBlocks.registerModBlocks();
 		ModBlockEntities.registerBlockEntities();
+		ModParticles.registerParticles();
 		ModEffects.registerEffects();
 		ModWorldGeneration.generateModWorldGeneration();
 		ModScreenHandlers.registerScreenHandlers();

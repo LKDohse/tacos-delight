@@ -35,24 +35,28 @@ public class ModFoodComponents {
     public static FoodComponent BuildQuesadillaProperties(FillingType type){
         var builder = new FoodComponent.Builder().nutrition(10).saturationModifier(12F);
         builder.statusEffect(GetFillingEffect(type, 20), 0.45f);
+        builder.statusEffect(new StatusEffectInstance(ModEffects.GASSY, 400), 0.05f);
         return builder.build();
     }
 
     public static FoodComponent BuildTacoProperties(FillingType type){
         var builder = new FoodComponent.Builder().nutrition(12).saturationModifier(14F);
         builder.statusEffect(GetFillingEffect(type, 25), 0.30F);
+        builder.statusEffect(new StatusEffectInstance(ModEffects.GASSY, 400), 0.05f);
         return builder.build();
     }
 
     public static FoodComponent BuildBurritoProperties(FillingType type){
         var builder = new FoodComponent.Builder().nutrition(14).saturationModifier(16F);
         builder.statusEffect(GetFillingEffect(type, 30), 0.80F);
+        builder.statusEffect(new StatusEffectInstance(ModEffects.GASSY, 400), 0.05f);
         return builder.build();
     }
 
     public static FoodComponent BuildCrunchwrapProperties(FillingType type){
         var builder = new FoodComponent.Builder().nutrition(16).saturationModifier(18F);
         builder.statusEffect(GetFillingEffect(type, 35), 1F);
+        builder.statusEffect(new StatusEffectInstance(ModEffects.GASSY, 400), 0.05f);
         return builder.build();
     }
 

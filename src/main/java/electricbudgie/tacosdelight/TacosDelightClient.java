@@ -5,11 +5,14 @@ import electricbudgie.tacosdelight.block.entity.ModBlockEntities;
 import electricbudgie.tacosdelight.block.entity.renderer.CheesePressEntityRenderer;
 import electricbudgie.tacosdelight.block.entity.renderer.DeepFryerBlockEntityRenderer;
 import electricbudgie.tacosdelight.client.ModClientTickEvents;
+import electricbudgie.tacosdelight.particle.GassyParticle;
+import electricbudgie.tacosdelight.particle.ModParticles;
 import electricbudgie.tacosdelight.registry.ModModelPredicateProvider;
 import electricbudgie.tacosdelight.screen.ModScreenHandlers;
 import electricbudgie.tacosdelight.screen.custom.DeepFryerScreen;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
+import net.fabricmc.fabric.api.client.particle.v1.ParticleFactoryRegistry;
 import net.minecraft.client.gui.screen.ingame.HandledScreens;
 import net.minecraft.client.render.RenderLayer;
 import net.minecraft.client.render.block.entity.BlockEntityRendererFactories;
@@ -26,6 +29,7 @@ public class TacosDelightClient implements ClientModInitializer {
         BlockEntityRendererFactories.register(ModBlockEntities.CHEESE_PRESS_BE, CheesePressEntityRenderer::new);
         ModClientTickEvents.registerClientTickEvents();
         ModModelPredicateProvider.registerModelPredicateProviders();
+        ParticleFactoryRegistry.getInstance().register(ModParticles.GASSY_PARTICLE, GassyParticle.Factory::new);
         HandledScreens.register(ModScreenHandlers.DEEP_FRYER_HANDLER, DeepFryerScreen::new);
     }
 }
