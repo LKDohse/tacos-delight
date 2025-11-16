@@ -1,5 +1,6 @@
 package electricbudgie.tacosdelight.item;
 
+import electricbudgie.tacosdelight.effect.ModEffects;
 import net.minecraft.component.type.FoodComponent;
 import net.minecraft.component.type.PotionContentsComponent;
 import net.minecraft.entity.effect.StatusEffectInstance;
@@ -60,7 +61,7 @@ public class ModFoodComponents {
     public static final FoodComponent RAW_INGREDIENT_PROPERTIES = new FoodComponent.Builder().nutrition(2).saturationModifier(1.0F).statusEffect(new StatusEffectInstance(StatusEffects.NAUSEA), 0.30F).build();
     public static final FoodComponent RAW_MEAT_PROPERTIES = new FoodComponent.Builder().nutrition(2).saturationModifier(0.5F).statusEffect(new StatusEffectInstance(StatusEffects.NAUSEA), 0.70F).build();
     public static final FoodComponent MEAT_PROPERTIES = new FoodComponent.Builder().nutrition(4).saturationModifier(1.2F).build();
-    public static final FoodComponent UNFINISHED_FOOD_PROPERTIES = new FoodComponent.Builder().nutrition(3).saturationModifier(1.2F).build();
+    public static final FoodComponent UNFINISHED_FOOD_PROPERTIES = new FoodComponent.Builder().nutrition(3).saturationModifier(1.2F).statusEffect(new StatusEffectInstance(ModEffects.DISAPPOINTED, 200), 0.80F).build();
     public static final FoodComponent SYRUP_PROPERTIES = new FoodComponent.Builder().nutrition(-1).statusEffect(new StatusEffectInstance(StatusEffects.NAUSEA), 0.03f).build();
     public static final FoodComponent BAJA_PROPERTIES = new FoodComponent.Builder().nutrition(2).saturationModifier(2F)
             .statusEffect(new StatusEffectInstance(StatusEffects.HERO_OF_THE_VILLAGE, 12000, 1),0.1F)

@@ -17,6 +17,12 @@ public class ModEffects {
                             Identifier.of(TacosDelight.MOD_ID, "slimy"), -0.25f,
                             EntityAttributeModifier.Operation.ADD_MULTIPLIED_TOTAL));
 
+    public static final RegistryEntry<StatusEffect> DISAPPOINTED = registerStatusEffect("disappointed",
+            new DisappointedEffect(StatusEffectCategory.HARMFUL,0xbbbfbf)
+                    .addAttributeModifier(EntityAttributes.GENERIC_MOVEMENT_SPEED,
+                            Identifier.of(TacosDelight.MOD_ID, "disappointed"), -0.20f,
+                            EntityAttributeModifier.Operation.ADD_MULTIPLIED_TOTAL));
+
     private static RegistryEntry<StatusEffect> registerStatusEffect(String name, StatusEffect statusEffect){
         return Registry.registerReference(Registries.STATUS_EFFECT, Identifier.of(TacosDelight.MOD_ID, name), statusEffect);
     }
