@@ -24,6 +24,8 @@ import net.minecraft.registry.RegistryWrapper;
 import net.minecraft.screen.PropertyDelegate;
 import net.minecraft.screen.ScreenHandler;
 import net.minecraft.server.network.ServerPlayerEntity;
+import net.minecraft.sound.SoundCategory;
+import net.minecraft.sound.SoundEvents;
 import net.minecraft.text.Text;
 import net.minecraft.util.collection.DefaultedList;
 import net.minecraft.util.math.BlockPos;
@@ -82,6 +84,7 @@ public class DeepFryerBlockEntity extends BlockEntity implements ExtendedScreenH
     public void tick(World world, BlockPos pos, BlockState state) {
         //20 ticks per second
         if (isCrafting()) {
+            if (progress == 1) sizzle(world, pos);
             startCooking();
             increaseCraftingProgress();
             markDirty(world, pos, state);
@@ -95,6 +98,11 @@ public class DeepFryerBlockEntity extends BlockEntity implements ExtendedScreenH
         } else {
             resetProgress();
         }
+    }
+
+    private void sizzle(World world, BlockPos pos){
+        if (!world.isClient)
+            world.playSound(null, pos, SoundEvents.BLOCK_FIRE_EXTINGUISH, SoundCategory.BLOCKS, 0.3f, 1f);
     }
 
     @Override
