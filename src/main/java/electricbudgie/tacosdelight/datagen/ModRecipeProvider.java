@@ -158,7 +158,7 @@ public class ModRecipeProvider extends CustomFabricRecipeProvider {
                 .criterion(FabricRecipeProvider.hasItem(Items.LEVER), FabricRecipeProvider.conditionsFromItem(Items.LEVER))
                 .offerTo(recipeExporter);
 
-        ShapelessRecipeJsonBuilder.create(RecipeCategory.MISC, ModItems.SALT, 2)
+        ShapelessRecipeJsonBuilder.create(RecipeCategory.MISC, ModItems.SALT, 4)
                 .input(ModItems.ROCK_SALT_CRYSTALS)
                 .criterion(FabricRecipeProvider.hasItem(ModItems.ROCK_SALT_CRYSTALS), FabricRecipeProvider.conditionsFromItem((ModItems.ROCK_SALT_CRYSTALS)))
                 .offerTo(recipeExporter);

@@ -19,11 +19,6 @@ public class ModBlocks {
 
     //Ores
     public static final Block HALITE = registerBasicBlockAndItem("halite", new PillarBlock(AbstractBlock.Settings.copy(Blocks.QUARTZ_PILLAR)));
-    public static final Block BUDDING_HALITE = registerBasicBlockAndItem("budding_halite", new BuddingHaliteBlock(AbstractBlock.Settings.create().ticksRandomly().strength(1.5F).requiresTool()));
-    public static final Block HALITE_CLUSTER = registerBasicBlockAndItem("halite_cluster", new HaliteClusterBlock(7.0F, 3.0F, AbstractBlock.Settings.create().nonOpaque()));
-    public static final Block SMALL_HALITE_BUD = registerBasicBlockAndItem("small_halite_bud", new HaliteClusterBlock(3.0f, 4.0f, AbstractBlock.Settings.copy(ModBlocks.HALITE_CLUSTER).nonOpaque()));
-    public static final Block MEDIUM_HALITE_BUD = registerBasicBlockAndItem("medium_halite_bud", new HaliteClusterBlock(4.0f, 4.0f, AbstractBlock.Settings.copy(ModBlocks.HALITE_CLUSTER).nonOpaque()));
-    public static final Block LARGE_HALITE_BUD = registerBasicBlockAndItem("large_halite_bud", new HaliteClusterBlock(5.0f, 4.0f, AbstractBlock.Settings.copy(ModBlocks.HALITE_CLUSTER).nonOpaque()));
 
     //Crops
     public static final Block BLUE_RASPBERRY_BUSH = registerItemlessBlock("blue_raspberry_bush", new BlueRaspberryBushBlock(AbstractBlock.Settings.copy(Blocks.WHEAT)));
