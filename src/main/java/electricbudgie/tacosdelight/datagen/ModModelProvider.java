@@ -116,7 +116,9 @@ public class ModModelProvider extends FabricModelProvider {
         itemModelGenerator.register(ModItems.BEEF_CRUNCHWRAP, Models.GENERATED);
         itemModelGenerator.register(ModItems.POTATO_CRUNCHWRAP, Models.GENERATED);
 
-
+        //Drinks and Drink Errata
+        itemModelGenerator.register(ModItems.BAJA_BLAST_SYRUP, Models.GENERATED);
+        itemModelGenerator.register(ModItems.BAJA_BLAST, Models.GENERATED);
     }
 
     public final void registerTallPlant(BlockStateModelGenerator generator, Block plant, Property<Integer> ageProperty) {

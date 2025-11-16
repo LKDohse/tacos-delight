@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_baja_blast_syrup": {
+      "conditions": {
+        "items": [
+          {
+            "items": "tacos-delight:baja_blast_syrup"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "tacos-delight:baja_blast"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_baja_blast_syrup"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "tacos-delight:baja_blast"
+    ]
+  }
+}

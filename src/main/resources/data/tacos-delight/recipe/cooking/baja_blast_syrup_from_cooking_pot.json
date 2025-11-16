@@ -1,0 +1,22 @@
+{
+  "type": "farmersdelight:cooking",
+  "container": {
+    "id": "minecraft:glass_bottle"
+  },
+  "ingredients": [
+    {
+      "item": "minecraft:sugar"
+    },
+    {
+      "item": "tacos-delight:lime"
+    },
+    {"item": "tacos-delight:blue_raspberry"}
+  ],
+  "result": {
+    "id": "tacos-delight:baja_blast_syrup",
+    "count": 1
+  },
+  "recipe_book_tab": "misc",
+  "cookingtime": 400,
+  "experience": 2.0
+}

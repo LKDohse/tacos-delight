@@ -175,6 +175,13 @@ public class ModRecipeProvider extends CustomFabricRecipeProvider {
                 .criterion(FabricRecipeProvider.hasItem(ModItems.NACHO_CHEESE), FabricRecipeProvider.conditionsFromItem(ModItems.NACHO_CHEESE))
                 .offerTo(recipeExporter);
 
+        ShapelessRecipeJsonBuilder.create(RecipeCategory.FOOD, ModItems.BAJA_BLAST, 4)
+                .input(ModItems.BAJA_BLAST_SYRUP)
+                .input(Items.WATER_BUCKET)
+                .input(Items.GLASS_BOTTLE, 4)
+                .criterion(FabricRecipeProvider.hasItem(ModItems.BAJA_BLAST_SYRUP), FabricRecipeProvider.conditionsFromItem(ModItems.BAJA_BLAST_SYRUP))
+                .offerTo(recipeExporter);
+
         try {
             offerDeepFrying(recipeExporter, ModItems.RAW_TORTILLA_CHIPS, ModItems.TORTILLA_CHIPS, 1.0f, 100, 1);
             offerDeepFrying(recipeExporter, ModItems.UNCOOKED_FIESTA_POTATOES, ModItems.FRIED_FIESTA_POTATOES, 1.0f, 100, 1);

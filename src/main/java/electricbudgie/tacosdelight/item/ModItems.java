@@ -7,6 +7,7 @@ import net.minecraft.item.Item;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
+import vectorwing.farmersdelight.common.item.DrinkableItem;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -84,6 +85,10 @@ public class ModItems {
     public static final Item BLUE_RASPBERRY = registerItem("blue_raspberry", new AliasedBlockItem(ModBlocks.BLUE_RASPBERRY_BUSH, ModFoodComponents.BLUE_RASPBERRY_SETTINGS));
     public static final Item HOT_PEPPER_SEEDS = registerItem("hot_pepper_seeds", new AliasedBlockItem(ModBlocks.HOT_PEPPER_CROP, new Item.Settings()));
     public static final Item HOT_PEPPER = registerItem("hot_pepper", new Item(ModFoodComponents.HOT_PEPPER_SETTINGS));
+
+    //Drinks
+    public static final Item BAJA_BLAST_SYRUP = registerItem("baja_blast_syrup", new DrinkableItem(ModFoodComponents.BAJA_BLAST_SYRUP_SETTINGS));
+    public static final Item BAJA_BLAST = registerItem("baja_blast", new DrinkableItem(ModFoodComponents.BAJA_BLAST_SETTINGS));
 
     //Uncategorized
     public static final Item CARDBOARD_TRAY = registerItem("cardboard_tray", new Item(new Item.Settings()));
