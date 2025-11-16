@@ -5,7 +5,10 @@
       "alternate_inner_layer_provider": {
         "type": "minecraft:simple_state_provider",
         "state": {
-          "Name": "tacos-delight:budding_halite"
+          "Name": "tacos-delight:halite",
+          "Properties": {
+            "axis": "y"
+          }
         }
       },
       "cannot_replace": "#minecraft:features_cannot_replace",
@@ -26,31 +29,9 @@
       },
       "inner_placements": [
         {
-          "Name": "tacos-delight:small_halite_bud",
+          "Name": "tacos-delight:halite",
           "Properties": {
-            "facing": "up",
-            "waterlogged": "false"
-          }
-        },
-        {
-          "Name": "tacos-delight:medium_halite_bud",
-          "Properties": {
-            "facing": "up",
-            "waterlogged": "false"
-          }
-        },
-        {
-          "Name": "tacos-delight:large_halite_bud",
-          "Properties": {
-            "facing": "up",
-            "waterlogged": "false"
-          }
-        },
-        {
-          "Name": "tacos-delight:halite_cluster",
-          "Properties": {
-            "facing": "up",
-            "waterlogged": "false"
+            "axis": "y"
           }
         }
       ],

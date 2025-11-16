@@ -1,6 +1,7 @@
 package electricbudgie.tacosdelight.item;
 
 import net.minecraft.component.type.FoodComponent;
+import net.minecraft.component.type.PotionContentsComponent;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.item.Item;
@@ -55,17 +56,19 @@ public class ModFoodComponents {
         return builder.build();
     }
 
-    public static FoodComponent BuildNachoServingProperties(FillingType type){
-        var builder = new FoodComponent.Builder().nutrition(10).saturationModifier(10F);
-        builder.statusEffect(GetFillingEffect(type, 20), 0.30F);
-        return builder.build();
-    }
-
     public static final FoodComponent BASIC_INGREDIENT_PROPERTIES = new FoodComponent.Builder().nutrition(1).snack().build();
-    public static final FoodComponent RAW_INGREDIENT_PROPERTIES = new FoodComponent.Builder().nutrition(2).saturationModifier(1.0F).statusEffect(new StatusEffectInstance(StatusEffects.NAUSEA), 0.03F).build();
-    public static final FoodComponent RAW_MEAT_PROPERTIES = new FoodComponent.Builder().nutrition(2).saturationModifier(0.5F).statusEffect(new StatusEffectInstance(StatusEffects.NAUSEA), 0.07F).build();
+    public static final FoodComponent RAW_INGREDIENT_PROPERTIES = new FoodComponent.Builder().nutrition(2).saturationModifier(1.0F).statusEffect(new StatusEffectInstance(StatusEffects.NAUSEA), 0.30F).build();
+    public static final FoodComponent RAW_MEAT_PROPERTIES = new FoodComponent.Builder().nutrition(2).saturationModifier(0.5F).statusEffect(new StatusEffectInstance(StatusEffects.NAUSEA), 0.70F).build();
     public static final FoodComponent MEAT_PROPERTIES = new FoodComponent.Builder().nutrition(4).saturationModifier(1.2F).build();
     public static final FoodComponent UNFINISHED_FOOD_PROPERTIES = new FoodComponent.Builder().nutrition(3).saturationModifier(1.2F).build();
+    public static final FoodComponent SYRUP_PROPERTIES = new FoodComponent.Builder().nutrition(-1).statusEffect(new StatusEffectInstance(StatusEffects.NAUSEA), 0.03f).build();
+    public static final FoodComponent BAJA_PROPERTIES = new FoodComponent.Builder().nutrition(2).saturationModifier(2F)
+            .statusEffect(new StatusEffectInstance(StatusEffects.HERO_OF_THE_VILLAGE, 12000, 1),0.1F)
+            .statusEffect(new StatusEffectInstance(StatusEffects.REGENERATION, 600, 1), 0.10F)
+            .statusEffect(new StatusEffectInstance(StatusEffects.ABSORPTION, 600, 1), 0.10F)
+            .statusEffect(new StatusEffectInstance(StatusEffects.GLOWING, 600, 1), 0.30F)
+            .snack()
+            .build();
 
     //Basic Ingredients
     public static final Item.Settings DICED_TOMATOES_SETTINGS =  new Item.Settings().food(BASIC_INGREDIENT_PROPERTIES);
@@ -108,11 +111,6 @@ public class ModFoodComponents {
     public static final Item.Settings NACHOS_SETTINGS = new Item.Settings().food(BASIC_INGREDIENT_PROPERTIES).recipeRemainder(Items.BOWL).maxCount(16);
     public static final Item.Settings CHEESY_FIESTA_POTATOES_SETTINGS = new Item.Settings().food(BASIC_INGREDIENT_PROPERTIES).recipeRemainder(Items.BOWL).maxCount(16);
 
-    //Special Nachos
-    public static final Item.Settings CHEESY_NACHO_PLATTER_SERVING_SETTINGS = new Item.Settings().food(BuildNachoServingProperties(FillingType.CHEESE)).recipeRemainder(Items.BOWL).maxCount(4);
-    public static final Item.Settings CHICKEN_NACHO_PLATTER_SERVING_SETTINGS = new Item.Settings().food(BuildNachoServingProperties(FillingType.CHICKEN)).recipeRemainder(Items.BOWL).maxCount(4);
-    public static final Item.Settings BEEF_NACHO_PLATTER_SERVING_SETTINGS = new Item.Settings().food(BuildNachoServingProperties(FillingType.BEEF)).recipeRemainder(Items.BOWL).maxCount(4);
-
     //Tacos
     public static final Item.Settings POTATO_TACO_SETTINGS = new Item.Settings().food(BuildTacoProperties(FillingType.POTATO));
     public static final Item.Settings CHICKEN_TACO_SETTINGS = new Item.Settings().food(BuildTacoProperties(FillingType.CHICKEN));
@@ -133,6 +131,10 @@ public class ModFoodComponents {
     public static final Item.Settings CHICKEN_CRUNCHWRAP_SETTINGS = new Item.Settings().food(BuildCrunchwrapProperties(FillingType.CHICKEN));
     public static final Item.Settings BEEF_CRUNCHWRAP_SETTINGS = new Item.Settings().food(BuildCrunchwrapProperties(FillingType.BEEF));
     public static final Item.Settings POTATO_CRUNCHWRAP_SETTINGS = new Item.Settings().food(BuildCrunchwrapProperties(FillingType.POTATO));
+
+    //Baja Be Thy Blast
+    public static final Item.Settings BAJA_BLAST_SYRUP_SETTINGS = new Item.Settings().food(SYRUP_PROPERTIES).recipeRemainder(Items.GLASS_BOTTLE);
+    public static final Item.Settings BAJA_BLAST_SETTINGS = new Item.Settings().food(BAJA_PROPERTIES).recipeRemainder(Items.GLASS_BOTTLE);
 
     //Crops
     public static final Item.Settings LIME_SETTINGS = new Item.Settings().food(new FoodComponent.Builder().nutrition(1).snack().statusEffect(new StatusEffectInstance(StatusEffects.WITHER), 0.1F).build());

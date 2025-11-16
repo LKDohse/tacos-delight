@@ -37,14 +37,11 @@ public class ModConfiguredFeatures {
                         new GeodeLayerConfig(
                                 BlockStateProvider.of(Blocks.AIR),
                                 BlockStateProvider.of(ModBlocks.HALITE),
-                                BlockStateProvider.of(ModBlocks.BUDDING_HALITE),
+                                BlockStateProvider.of(ModBlocks.HALITE),
                                 BlockStateProvider.of(Blocks.CALCITE),
                                 BlockStateProvider.of(Blocks.SANDSTONE),
                                 List.of(
-                                        ModBlocks.SMALL_HALITE_BUD.getDefaultState(),
-                                        ModBlocks.MEDIUM_HALITE_BUD.getDefaultState(),
-                                        ModBlocks.LARGE_HALITE_BUD.getDefaultState(),
-                                        ModBlocks.HALITE_CLUSTER.getDefaultState()
+                                        ModBlocks.HALITE.getDefaultState()
                                 ),
                                 BlockTags.FEATURES_CANNOT_REPLACE,
                                 BlockTags.GEODE_INVALID_BLOCKS
@@ -68,14 +65,11 @@ public class ModConfiguredFeatures {
                         new GeodeLayerConfig(
                                 BlockStateProvider.of(Blocks.AIR),
                                 BlockStateProvider.of(ModBlocks.HALITE),
-                                BlockStateProvider.of(ModBlocks.BUDDING_HALITE),
+                                BlockStateProvider.of(ModBlocks.HALITE),
                                 BlockStateProvider.of(Blocks.CALCITE),
                                 BlockStateProvider.of(Blocks.SMOOTH_BASALT),
                                 List.of(
-                                        ModBlocks.SMALL_HALITE_BUD.getDefaultState(),
-                                        ModBlocks.MEDIUM_HALITE_BUD.getDefaultState(),
-                                        ModBlocks.LARGE_HALITE_BUD.getDefaultState(),
-                                        ModBlocks.HALITE_CLUSTER.getDefaultState()
+                                        ModBlocks.HALITE.getDefaultState()
                                 ),
                                 BlockTags.FEATURES_CANNOT_REPLACE,
                                 BlockTags.GEODE_INVALID_BLOCKS

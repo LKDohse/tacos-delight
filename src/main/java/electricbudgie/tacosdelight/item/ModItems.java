@@ -7,6 +7,7 @@ import net.minecraft.item.Item;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
+import vectorwing.farmersdelight.common.item.DrinkableItem;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -58,11 +59,6 @@ public class ModItems {
     public static final Item NACHOS = registerItemViaSettings("nachos", ModFoodComponents.NACHOS_SETTINGS);
     public static final Item CHEESY_FIESTA_POTATOES = registerItemViaSettings("cheesy_fiesta_potatoes", ModFoodComponents.CHEESY_FIESTA_POTATOES_SETTINGS);
 
-    //Special Nachos
-    public static final Item CHEESY_NACHO_PLATTER_SERVING = registerItemViaSettings("cheesy_nacho_platter_serving", ModFoodComponents.CHEESY_NACHO_PLATTER_SERVING_SETTINGS);
-    public static final Item BEEF_NACHO_PLATTER_SERVING = registerItemViaSettings("beef_nacho_platter_serving", ModFoodComponents.BEEF_NACHO_PLATTER_SERVING_SETTINGS);
-    public static final Item CHICKEN_NACHO_PLATTER_SERVING = registerItemViaSettings("chicken_nacho_platter_serving", ModFoodComponents.CHICKEN_NACHO_PLATTER_SERVING_SETTINGS);
-
     //Tacos
     public static final Item POTATO_TACO = registerItemViaSettings("potato_taco", ModFoodComponents.POTATO_TACO_SETTINGS);
     public static final Item CHICKEN_TACO = registerItemViaSettings("chicken_taco", ModFoodComponents.CHICKEN_TACO_SETTINGS);
@@ -89,6 +85,10 @@ public class ModItems {
     public static final Item BLUE_RASPBERRY = registerItem("blue_raspberry", new AliasedBlockItem(ModBlocks.BLUE_RASPBERRY_BUSH, ModFoodComponents.BLUE_RASPBERRY_SETTINGS));
     public static final Item HOT_PEPPER_SEEDS = registerItem("hot_pepper_seeds", new AliasedBlockItem(ModBlocks.HOT_PEPPER_CROP, new Item.Settings()));
     public static final Item HOT_PEPPER = registerItem("hot_pepper", new Item(ModFoodComponents.HOT_PEPPER_SETTINGS));
+
+    //Drinks
+    public static final Item BAJA_BLAST_SYRUP = registerItem("baja_blast_syrup", new DrinkableItem(ModFoodComponents.BAJA_BLAST_SYRUP_SETTINGS));
+    public static final Item BAJA_BLAST = registerItem("baja_blast", new DrinkableItem(ModFoodComponents.BAJA_BLAST_SETTINGS));
 
     //Uncategorized
     public static final Item CARDBOARD_TRAY = registerItem("cardboard_tray", new Item(new Item.Settings()));

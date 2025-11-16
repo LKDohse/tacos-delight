@@ -31,7 +31,6 @@ public class ModRecipeProvider extends CustomFabricRecipeProvider {
     @Override
     public void generate(RecipeExporter recipeExporter) {
 
-
         Map<Item, Item> fillingWithTaco = Map.of(
                 ModItems.TACO_BEEF, ModItems.BEEF_TACO,
                 ModItems.TACO_CHICKEN, ModItems.CHICKEN_TACO,
@@ -50,12 +49,6 @@ public class ModRecipeProvider extends CustomFabricRecipeProvider {
                 ModItems.SHREDDED_CHEESE, ModItems.UNCOOKED_CHEESE_QUESADILLA
         );
 
-//        Map<Item, Item> toppingsWithNachos = Map.of(
-//                ModItems.TACO_BEEF, ModItems.BEEF_NACHO_PLATTER,
-//                ModItems.TACO_CHICKEN, ModItems.CHICKEN_NACHO_PLATTER,
-//                ModItems.SHREDDED_CHEESE, ModItems.CHEESY_NACHO_PLATTER
-//        );
-
         Map<Item, Item> fillingWithCrunchwrap = Map.of(
                 ModItems.TACO_BEEF, ModItems.UNCOOKED_BEEF_CRUNCHWRAP,
                 ModItems.TACO_CHICKEN, ModItems.UNCOOKED_CHICKEN_CRUNCHWRAP,
@@ -70,9 +63,6 @@ public class ModRecipeProvider extends CustomFabricRecipeProvider {
 
         generateRecipes(fillingWithQuesadilla,
                 (filling, result) -> generateQuesadillaRecipe(filling, result).offerTo(recipeExporter));
-
-//        generateRecipes(toppingsWithNachos,
-//                (filling, result) -> generateNachoPlatterRecipe(filling, result).offerTo(recipeExporter));
 
         generateRecipes(fillingWithCrunchwrap,
                 (filling, result) -> generateCrunchwrapRecipe(filling, result).offerTo(recipeExporter));
@@ -158,7 +148,7 @@ public class ModRecipeProvider extends CustomFabricRecipeProvider {
                 .criterion(FabricRecipeProvider.hasItem(Items.LEVER), FabricRecipeProvider.conditionsFromItem(Items.LEVER))
                 .offerTo(recipeExporter);
 
-        ShapelessRecipeJsonBuilder.create(RecipeCategory.MISC, ModItems.SALT, 2)
+        ShapelessRecipeJsonBuilder.create(RecipeCategory.MISC, ModItems.SALT, 4)
                 .input(ModItems.ROCK_SALT_CRYSTALS)
                 .criterion(FabricRecipeProvider.hasItem(ModItems.ROCK_SALT_CRYSTALS), FabricRecipeProvider.conditionsFromItem((ModItems.ROCK_SALT_CRYSTALS)))
                 .offerTo(recipeExporter);
@@ -170,6 +160,27 @@ public class ModRecipeProvider extends CustomFabricRecipeProvider {
                 .criterion(FabricRecipeProvider.hasItem(ModItems.SALT), FabricRecipeProvider.conditionsFromItem(ModItems.SALT))
                 .offerTo(recipeExporter);
 
+        ShapelessRecipeJsonBuilder.create(RecipeCategory.FOOD, ModItems.NACHOS, 1)
+                .input(ModItems.NACHO_CHEESE)
+                .input(ModItems.TORTILLA_CHIPS)
+                .input(Items.BOWL)
+                .criterion(FabricRecipeProvider.hasItem(ModItems.NACHO_CHEESE), FabricRecipeProvider.conditionsFromItem(ModItems.NACHO_CHEESE))
+                .offerTo(recipeExporter);
+
+        ShapelessRecipeJsonBuilder.create(RecipeCategory.FOOD, ModItems.CHEESY_FIESTA_POTATOES, 1)
+                .input(ModItems.NACHO_CHEESE)
+                .input(ModItems.FRIED_FIESTA_POTATOES)
+                .input(ModItems.SOUR_CREAM)
+                .input(Items.BOWL)
+                .criterion(FabricRecipeProvider.hasItem(ModItems.NACHO_CHEESE), FabricRecipeProvider.conditionsFromItem(ModItems.NACHO_CHEESE))
+                .offerTo(recipeExporter);
+
+        ShapelessRecipeJsonBuilder.create(RecipeCategory.FOOD, ModItems.BAJA_BLAST, 4)
+                .input(ModItems.BAJA_BLAST_SYRUP)
+                .input(Items.WATER_BUCKET)
+                .input(Items.GLASS_BOTTLE, 4)
+                .criterion(FabricRecipeProvider.hasItem(ModItems.BAJA_BLAST_SYRUP), FabricRecipeProvider.conditionsFromItem(ModItems.BAJA_BLAST_SYRUP))
+                .offerTo(recipeExporter);
 
         try {
             offerDeepFrying(recipeExporter, ModItems.RAW_TORTILLA_CHIPS, ModItems.TORTILLA_CHIPS, 1.0f, 100, 1);
