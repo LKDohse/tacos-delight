@@ -95,9 +95,6 @@ public class ModModelProvider extends FabricModelProvider {
         itemModelGenerator.register(ModItems.NACHOS, Models.GENERATED);
         itemModelGenerator.register(ModItems.CHEESY_FIESTA_POTATOES, Models.GENERATED);
 
-        //Special Nachos
-        itemModelGenerator.register(ModItems.CHEESY_NACHO_PLATTER_SERVING, Models.GENERATED);
-
         //Tacos
         itemModelGenerator.register(ModItems.POTATO_TACO, Models.GENERATED);
         itemModelGenerator.register(ModItems.CHICKEN_TACO, Models.GENERATED);

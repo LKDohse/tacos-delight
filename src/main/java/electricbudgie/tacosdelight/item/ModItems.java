@@ -58,11 +58,6 @@ public class ModItems {
     public static final Item NACHOS = registerItemViaSettings("nachos", ModFoodComponents.NACHOS_SETTINGS);
     public static final Item CHEESY_FIESTA_POTATOES = registerItemViaSettings("cheesy_fiesta_potatoes", ModFoodComponents.CHEESY_FIESTA_POTATOES_SETTINGS);
 
-    //Special Nachos
-    public static final Item CHEESY_NACHO_PLATTER_SERVING = registerItemViaSettings("cheesy_nacho_platter_serving", ModFoodComponents.CHEESY_NACHO_PLATTER_SERVING_SETTINGS);
-    public static final Item BEEF_NACHO_PLATTER_SERVING = registerItemViaSettings("beef_nacho_platter_serving", ModFoodComponents.BEEF_NACHO_PLATTER_SERVING_SETTINGS);
-    public static final Item CHICKEN_NACHO_PLATTER_SERVING = registerItemViaSettings("chicken_nacho_platter_serving", ModFoodComponents.CHICKEN_NACHO_PLATTER_SERVING_SETTINGS);
-
     //Tacos
     public static final Item POTATO_TACO = registerItemViaSettings("potato_taco", ModFoodComponents.POTATO_TACO_SETTINGS);
     public static final Item CHICKEN_TACO = registerItemViaSettings("chicken_taco", ModFoodComponents.CHICKEN_TACO_SETTINGS);

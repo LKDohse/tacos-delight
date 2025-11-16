@@ -108,11 +108,6 @@ public class ModFoodComponents {
     public static final Item.Settings NACHOS_SETTINGS = new Item.Settings().food(BASIC_INGREDIENT_PROPERTIES).recipeRemainder(Items.BOWL).maxCount(16);
     public static final Item.Settings CHEESY_FIESTA_POTATOES_SETTINGS = new Item.Settings().food(BASIC_INGREDIENT_PROPERTIES).recipeRemainder(Items.BOWL).maxCount(16);
 
-    //Special Nachos
-    public static final Item.Settings CHEESY_NACHO_PLATTER_SERVING_SETTINGS = new Item.Settings().food(BuildNachoServingProperties(FillingType.CHEESE)).recipeRemainder(Items.BOWL).maxCount(4);
-    public static final Item.Settings CHICKEN_NACHO_PLATTER_SERVING_SETTINGS = new Item.Settings().food(BuildNachoServingProperties(FillingType.CHICKEN)).recipeRemainder(Items.BOWL).maxCount(4);
-    public static final Item.Settings BEEF_NACHO_PLATTER_SERVING_SETTINGS = new Item.Settings().food(BuildNachoServingProperties(FillingType.BEEF)).recipeRemainder(Items.BOWL).maxCount(4);
-
     //Tacos
     public static final Item.Settings POTATO_TACO_SETTINGS = new Item.Settings().food(BuildTacoProperties(FillingType.POTATO));
     public static final Item.Settings CHICKEN_TACO_SETTINGS = new Item.Settings().food(BuildTacoProperties(FillingType.CHICKEN));
