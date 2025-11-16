@@ -2,7 +2,6 @@ package electricbudgie.tacosdelight.item;
 
 import electricbudgie.tacosdelight.effect.ModEffects;
 import net.minecraft.component.type.FoodComponent;
-import net.minecraft.component.type.PotionContentsComponent;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.item.Item;
