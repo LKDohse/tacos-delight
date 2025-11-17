@@ -3,7 +3,7 @@
   "criteria": {
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:cheese_quesadilla_from_campfire"
+        "recipe": "tacos-delight:cheese_quesadilla_from_campfire"
       },
       "trigger": "minecraft:recipe_unlocked"
     },
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:cheese_quesadilla_from_campfire"
+      "tacos-delight:cheese_quesadilla_from_campfire"
     ]
   }
 }
