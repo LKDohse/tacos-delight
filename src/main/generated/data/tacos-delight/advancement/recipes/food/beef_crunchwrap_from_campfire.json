@@ -3,7 +3,7 @@
   "criteria": {
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:beef_crunchwrap_from_campfire"
+        "recipe": "tacos-delight:beef_crunchwrap_from_campfire"
       },
       "trigger": "minecraft:recipe_unlocked"
     },
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:beef_crunchwrap_from_campfire"
+      "tacos-delight:beef_crunchwrap_from_campfire"
     ]
   }
 }

@@ -6,6 +6,7 @@ import electricbudgie.tacosdelight.item.ModItems;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
 import net.minecraft.block.Block;
+import net.minecraft.block.Blocks;
 import net.minecraft.data.server.recipe.RecipeExporter;
 import net.minecraft.data.server.recipe.ShapedRecipeJsonBuilder;
 import net.minecraft.data.server.recipe.ShapelessRecipeJsonBuilder;
@@ -146,6 +147,17 @@ public class ModRecipeProvider extends CustomFabricRecipeProvider {
                 .input('#', ItemTags.SLABS)
                 .input('D', Items.IRON_TRAPDOOR)
                 .criterion(FabricRecipeProvider.hasItem(Items.LEVER), FabricRecipeProvider.conditionsFromItem(Items.LEVER))
+                .offerTo(recipeExporter);
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ModBlocks.DEEP_FRYER_BLOCK)
+                .pattern("III")
+                .pattern("iDi")
+                .pattern("i#i")
+                .input('I', Items.IRON_BARS)
+                .input('i', Items.IRON_INGOT)
+                .input('D', Items.BLAZE_ROD)
+                .input('#', Blocks.IRON_BLOCK)
+                .criterion(FabricRecipeProvider.hasItem(Items.IRON_INGOT), FabricRecipeProvider.conditionsFromItem(Items.IRON_INGOT))
                 .offerTo(recipeExporter);
 
         ShapelessRecipeJsonBuilder.create(RecipeCategory.MISC, ModItems.SALT, 4)

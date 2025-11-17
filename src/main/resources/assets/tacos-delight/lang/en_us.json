@@ -67,5 +67,7 @@
   "block.tacos-delight.potato_burrito_box": "Cheesy Potato Burrito Box",
   "death.attack.gas_cloud": "%s died inhaling putrid fumes",
   "death.attack.gas_cloud.player": "%s died inhaling %s's putrid fumes",
-  "death.attack.blue_raspberry_bush": "%s died stuck is a blue raspberry bush"
+  "death.attack.blue_raspberry_bush": "%s died stuck is a blue raspberry bush",
+  "effect.tacos-delight.disappointed": "Disappointed",
+  "effect.tacos-delight.gassy": "Gassy"
 }
