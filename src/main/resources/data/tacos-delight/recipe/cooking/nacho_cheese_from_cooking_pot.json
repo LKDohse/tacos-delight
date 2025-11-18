@@ -9,11 +9,11 @@
       "item": "minecraft:milk_bucket"
     },
     {
-      "item": "minecraft:bone_meal"
+      "item": "tacos-delight:shredded_cheese"
     }
   ],
   "result": {
-    "id": "tacos-delight:sour_cream",
+    "id": "tacos-delight:nacho_cheese",
     "count": 4
   },
   "cookingtime": 400,
