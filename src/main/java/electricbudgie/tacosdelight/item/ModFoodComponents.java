@@ -55,23 +55,22 @@ public class ModFoodComponents {
 
     public static FoodComponent BuildCrunchwrapProperties(FillingType type){
         var builder = new FoodComponent.Builder().nutrition(14).saturationModifier(0.8F);
-        builder.statusEffect(GetFillingEffect(type, 35), 1F);
+        builder.statusEffect(GetFillingEffect(type, 35), 0.85F);
         builder.statusEffect(new StatusEffectInstance(ModEffects.GASSY, 400), 0.05f);
         return builder.build();
     }
 
     public static final FoodComponent BASIC_INGREDIENT_PROPERTIES = new FoodComponent.Builder().nutrition(1).saturationModifier(0.3F).build();
     public static final FoodComponent SPICY_INGREDIENT_PROPERTIES = new FoodComponent.Builder().nutrition(1).saturationModifier(0.3F).statusEffect(new StatusEffectInstance(ModEffects.SPICY, 200), 0.7F).build();
-    public static final FoodComponent RAW_INGREDIENT_PROPERTIES = new FoodComponent.Builder().nutrition(2).saturationModifier(0.1F).statusEffect(new StatusEffectInstance(StatusEffects.NAUSEA), 0.30F).build();
-    public static final FoodComponent RAW_MEAT_PROPERTIES = new FoodComponent.Builder().nutrition(2).saturationModifier(0.1F).statusEffect(new StatusEffectInstance(StatusEffects.NAUSEA), 0.70F).build();
+    public static final FoodComponent RAW_INGREDIENT_PROPERTIES = new FoodComponent.Builder().nutrition(2).saturationModifier(0.1F).statusEffect(new StatusEffectInstance(StatusEffects.NAUSEA, 200), 0.30F).build();
+    public static final FoodComponent RAW_MEAT_PROPERTIES = new FoodComponent.Builder().nutrition(2).saturationModifier(0.1F).statusEffect(new StatusEffectInstance(StatusEffects.NAUSEA, 200), 0.70F).build();
     public static final FoodComponent MEAT_PROPERTIES = new FoodComponent.Builder().nutrition(8).saturationModifier(0.8F).build();
     public static final FoodComponent UNFINISHED_FOOD_PROPERTIES = new FoodComponent.Builder().nutrition(8).saturationModifier(0.8F).statusEffect(new StatusEffectInstance(ModEffects.DISAPPOINTED, 200), 0.80F).build();
-    public static final FoodComponent SYRUP_PROPERTIES = new FoodComponent.Builder().nutrition(1).saturationModifier(0.1F).statusEffect(new StatusEffectInstance(StatusEffects.NAUSEA), 0.03f).build();
+    public static final FoodComponent SYRUP_PROPERTIES = new FoodComponent.Builder().nutrition(1).saturationModifier(0.1F).statusEffect(new StatusEffectInstance(StatusEffects.NAUSEA, 400), 0.50f).build();
     public static final FoodComponent BAJA_PROPERTIES = new FoodComponent.Builder().nutrition(2).saturationModifier(0.8F)
             .statusEffect(new StatusEffectInstance(StatusEffects.HERO_OF_THE_VILLAGE, 12000, 1),0.1F)
-            .statusEffect(new StatusEffectInstance(StatusEffects.REGENERATION, 600, 1), 0.10F)
-            .statusEffect(new StatusEffectInstance(StatusEffects.ABSORPTION, 600, 1), 0.10F)
-            .statusEffect(new StatusEffectInstance(StatusEffects.GLOWING, 600, 1), 0.30F)
+            .statusEffect(new StatusEffectInstance(StatusEffects.REGENERATION, 600, 2), 0.40F)
+            .statusEffect(new StatusEffectInstance(StatusEffects.ABSORPTION, 1200, 4), 0.20F)
             .snack()
             .build();
 
@@ -86,7 +85,7 @@ public class ModFoodComponents {
     public static final Item.Settings RAW_TORTILLA_CHIPS_SETTINGS = new Item.Settings().food(BASIC_INGREDIENT_PROPERTIES);
     public static final Item.Settings UNCOOKED_FIESTA_POTATOES_SETTINGS = new Item.Settings().food(BASIC_INGREDIENT_PROPERTIES);
     public static final Item.Settings FRIED_FIESTA_POTATOES_SETTINGS = new Item.Settings().food(BASIC_INGREDIENT_PROPERTIES);
-    public static final Item.Settings TACO_SEASONING_SETTINGS = new Item.Settings().food(new FoodComponent.Builder().nutrition(1).snack().statusEffect(new StatusEffectInstance(StatusEffects.BLINDNESS), 0.03F).build());
+    public static final Item.Settings TACO_SEASONING_SETTINGS = new Item.Settings().food(new FoodComponent.Builder().nutrition(1).snack().statusEffect(new StatusEffectInstance(StatusEffects.BLINDNESS, 100), 0.10F).build());
     public static final Item.Settings TORTILLA_CHIPS = new Item.Settings().food(BASIC_INGREDIENT_PROPERTIES);
     public static final Item.Settings FLOUR_TOSTADA = new Item.Settings().food(BASIC_INGREDIENT_PROPERTIES);
     public static final Item.Settings SALT = new Item.Settings().food(BASIC_INGREDIENT_PROPERTIES);
@@ -144,7 +143,7 @@ public class ModFoodComponents {
     public static final Item.Settings DRIED_CHILI_SETTINGS = new Item.Settings().food(SPICY_INGREDIENT_PROPERTIES);
 
     //Crops
-    public static final Item.Settings LIME_SETTINGS = new Item.Settings().food(new FoodComponent.Builder().nutrition(1).snack().statusEffect(new StatusEffectInstance(StatusEffects.WITHER), 0.1F).build());
+    public static final Item.Settings LIME_SETTINGS = new Item.Settings().food(new FoodComponent.Builder().nutrition(1).snack().statusEffect(new StatusEffectInstance(StatusEffects.WITHER, 500), 0.1F).build());
     public static final Item.Settings HOT_PEPPER_SETTINGS = new Item.Settings().food(SPICY_INGREDIENT_PROPERTIES);
     public static final Item.Settings BLUE_RASPBERRY_SETTINGS = new Item.Settings().food(new FoodComponent.Builder().nutrition(1).snack().build());
 }
