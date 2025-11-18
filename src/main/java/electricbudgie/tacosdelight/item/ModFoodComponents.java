@@ -61,6 +61,7 @@ public class ModFoodComponents {
     }
 
     public static final FoodComponent BASIC_INGREDIENT_PROPERTIES = new FoodComponent.Builder().nutrition(1).saturationModifier(0.3F).build();
+    public static final FoodComponent SPICY_INGREDIENT_PROPERTIES = new FoodComponent.Builder().nutrition(1).saturationModifier(0.3F).statusEffect(new StatusEffectInstance(ModEffects.SPICY, 200), 0.7F).build();
     public static final FoodComponent RAW_INGREDIENT_PROPERTIES = new FoodComponent.Builder().nutrition(2).saturationModifier(0.1F).statusEffect(new StatusEffectInstance(StatusEffects.NAUSEA), 0.30F).build();
     public static final FoodComponent RAW_MEAT_PROPERTIES = new FoodComponent.Builder().nutrition(2).saturationModifier(0.1F).statusEffect(new StatusEffectInstance(StatusEffects.NAUSEA), 0.70F).build();
     public static final FoodComponent MEAT_PROPERTIES = new FoodComponent.Builder().nutrition(8).saturationModifier(0.8F).build();
@@ -76,7 +77,6 @@ public class ModFoodComponents {
 
     //Basic Ingredients
     public static final Item.Settings DICED_TOMATOES_SETTINGS =  new Item.Settings().food(BASIC_INGREDIENT_PROPERTIES);
-    public static final Item.Settings DRIED_CHILI_SETTINGS = new Item.Settings().food(BASIC_INGREDIENT_PROPERTIES);
     public static final Item.Settings DRIED_ONION_SETTINGS = new Item.Settings().food(BASIC_INGREDIENT_PROPERTIES);
     public static final Item.Settings FLOUR_TORTILLA_SETTINGS = new Item.Settings().food(BASIC_INGREDIENT_PROPERTIES);
     public static final Item.Settings NACHO_CHEESE_SETTINGS = new Item.Settings().food(BASIC_INGREDIENT_PROPERTIES).recipeRemainder(Items.GLASS_BOTTLE).maxCount(16);
@@ -140,8 +140,11 @@ public class ModFoodComponents {
     public static final Item.Settings BAJA_BLAST_SYRUP_SETTINGS = new Item.Settings().food(SYRUP_PROPERTIES).recipeRemainder(Items.GLASS_BOTTLE);
     public static final Item.Settings BAJA_BLAST_SETTINGS = new Item.Settings().food(BAJA_PROPERTIES).recipeRemainder(Items.GLASS_BOTTLE);
 
+    //Special Ingredient Properties
+    public static final Item.Settings DRIED_CHILI_SETTINGS = new Item.Settings().food(SPICY_INGREDIENT_PROPERTIES);
+
     //Crops
     public static final Item.Settings LIME_SETTINGS = new Item.Settings().food(new FoodComponent.Builder().nutrition(1).snack().statusEffect(new StatusEffectInstance(StatusEffects.WITHER), 0.1F).build());
-    public static final Item.Settings HOT_PEPPER_SETTINGS = new Item.Settings().food(new FoodComponent.Builder().nutrition(1).snack().statusEffect(new StatusEffectInstance(StatusEffects.FIRE_RESISTANCE), 0.1F).build());
+    public static final Item.Settings HOT_PEPPER_SETTINGS = new Item.Settings().food(SPICY_INGREDIENT_PROPERTIES);
     public static final Item.Settings BLUE_RASPBERRY_SETTINGS = new Item.Settings().food(new FoodComponent.Builder().nutrition(1).snack().build());
 }

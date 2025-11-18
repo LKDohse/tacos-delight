@@ -18,7 +18,7 @@ public class ModEffects {
                             EntityAttributeModifier.Operation.ADD_MULTIPLIED_TOTAL));
 
     public static final RegistryEntry<StatusEffect> DISAPPOINTED = registerStatusEffect("disappointed",
-            new DisappointedEffect(StatusEffectCategory.HARMFUL,0xbbbfbf)
+            new DisappointedEffect(StatusEffectCategory.HARMFUL, 0xbbbfbf)
                     .addAttributeModifier(EntityAttributes.GENERIC_MOVEMENT_SPEED,
                             Identifier.of(TacosDelight.MOD_ID, "disappointed"), -0.20f,
                             EntityAttributeModifier.Operation.ADD_MULTIPLIED_TOTAL));
@@ -27,13 +27,23 @@ public class ModEffects {
             new GasCloudDamageEffect(StatusEffectCategory.HARMFUL, 0x7d5011));
 
     public static final RegistryEntry<StatusEffect> GASSY = registerStatusEffect("gassy",
-            new GassyEffect(StatusEffectCategory.NEUTRAL,0x7d5011));
+            new GassyEffect(StatusEffectCategory.HARMFUL, 0x7d5011));
 
-    private static RegistryEntry<StatusEffect> registerStatusEffect(String name, StatusEffect statusEffect){
+    public static final RegistryEntry<StatusEffect> SPICY = registerStatusEffect("spicy",
+            new SpicyEffect(StatusEffectCategory.NEUTRAL, 0x850900)
+                    .addAttributeModifier(EntityAttributes.GENERIC_ATTACK_DAMAGE,
+                            Identifier.of(TacosDelight.MOD_ID, "spicy"),
+                            2.0f, EntityAttributeModifier.Operation.ADD_MULTIPLIED_TOTAL)
+                    .addAttributeModifier(EntityAttributes.GENERIC_MOVEMENT_SPEED,
+                            Identifier.of(TacosDelight.MOD_ID, "spicy"),
+                            0.5f,
+                            EntityAttributeModifier.Operation.ADD_MULTIPLIED_TOTAL));
+
+    private static RegistryEntry<StatusEffect> registerStatusEffect(String name, StatusEffect statusEffect) {
         return Registry.registerReference(Registries.STATUS_EFFECT, Identifier.of(TacosDelight.MOD_ID, name), statusEffect);
     }
 
-    public static void registerEffects(){
+    public static void registerEffects() {
         TacosDelight.LOGGER.info("Registering Mod Effects for " + TacosDelight.MOD_ID);
     }
 }
