@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_raw_taco_chicken": {
+      "conditions": {
+        "items": [
+          {
+            "items": "tacos-delight:raw_taco_chicken"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "tacos-delight:taco_chicken_from_campfire"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_raw_taco_chicken"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "tacos-delight:taco_chicken_from_campfire"
+    ]
+  }
+}

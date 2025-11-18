@@ -15,7 +15,7 @@
     "id": "tacos-delight:sour_cream",
     "count": 4
   },
-  "recipe_book_tab": "misc",
-  "cookingtime": 200,
+  "recipe_book_tab": "food",
+  "cookingtime": 600,
   "experience": 1.0
 }

@@ -2,6 +2,7 @@ package electricbudgie.tacosdelight.datagen;
 
 import electricbudgie.tacosdelight.block.ModBlocks;
 import electricbudgie.tacosdelight.datagen.custom.recipe.CustomFabricRecipeProvider;
+import electricbudgie.tacosdelight.item.ModFoodComponents;
 import electricbudgie.tacosdelight.item.ModItems;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
@@ -19,6 +20,7 @@ import net.minecraft.recipe.book.RecipeCategory;
 import net.minecraft.registry.RegistryWrapper;
 import net.minecraft.registry.tag.ItemTags;
 
+import java.awt.*;
 import java.io.IOException;
 import java.util.Map;
 import java.util.concurrent.CompletableFuture;
@@ -69,16 +71,18 @@ public class ModRecipeProvider extends CustomFabricRecipeProvider {
                 (filling, result) -> generateCrunchwrapRecipe(filling, result).offerTo(recipeExporter));
 
 
-        FabricRecipeProvider.offerFoodCookingRecipe(recipeExporter, "campfire", RecipeSerializer.CAMPFIRE_COOKING, CampfireCookingRecipe::new, 100, ModItems.TORTILLA_DOUGH, ModItems.FLOUR_TORTILLA, 1f);
-        FabricRecipeProvider.offerFoodCookingRecipe(recipeExporter, "campfire", RecipeSerializer.CAMPFIRE_COOKING, CampfireCookingRecipe::new, 100, ModItems.UNCOOKED_CHEESE_QUESADILLA, ModItems.CHEESE_QUESADILLA, 1f);
-        FabricRecipeProvider.offerFoodCookingRecipe(recipeExporter, "campfire", RecipeSerializer.CAMPFIRE_COOKING, CampfireCookingRecipe::new, 100, ModItems.UNCOOKED_POTATO_QUESADILLA, ModItems.POTATO_QUESADILLA, 1f);
-        FabricRecipeProvider.offerFoodCookingRecipe(recipeExporter, "campfire", RecipeSerializer.CAMPFIRE_COOKING, CampfireCookingRecipe::new, 100, ModItems.UNCOOKED_CHICKEN_QUESADILLA, ModItems.CHICKEN_QUESADILLA, 1f);
-        FabricRecipeProvider.offerFoodCookingRecipe(recipeExporter, "campfire", RecipeSerializer.CAMPFIRE_COOKING, CampfireCookingRecipe::new, 100, ModItems.UNCOOKED_BEEF_QUESADILLA, ModItems.BEEF_QUESADILLA, 1f);
-        FabricRecipeProvider.offerFoodCookingRecipe(recipeExporter, "campfire", RecipeSerializer.CAMPFIRE_COOKING, CampfireCookingRecipe::new, 100, ModItems.UNCOOKED_POTATO_CRUNCHWRAP, ModItems.POTATO_CRUNCHWRAP, 1f);
-        FabricRecipeProvider.offerFoodCookingRecipe(recipeExporter, "campfire", RecipeSerializer.CAMPFIRE_COOKING, CampfireCookingRecipe::new, 100, ModItems.UNCOOKED_BEEF_CRUNCHWRAP, ModItems.BEEF_CRUNCHWRAP, 1f);
-        FabricRecipeProvider.offerFoodCookingRecipe(recipeExporter, "campfire", RecipeSerializer.CAMPFIRE_COOKING, CampfireCookingRecipe::new, 100, ModItems.UNCOOKED_CHICKEN_CRUNCHWRAP, ModItems.CHICKEN_CRUNCHWRAP, 1f);
+        FabricRecipeProvider.offerFoodCookingRecipe(recipeExporter, "campfire", RecipeSerializer.CAMPFIRE_COOKING, CampfireCookingRecipe::new, 400, ModItems.TORTILLA_DOUGH, ModItems.FLOUR_TORTILLA, 0.35f);
+        FabricRecipeProvider.offerFoodCookingRecipe(recipeExporter, "campfire", RecipeSerializer.CAMPFIRE_COOKING, CampfireCookingRecipe::new, 400, ModItems.UNCOOKED_CHEESE_QUESADILLA, ModItems.CHEESE_QUESADILLA, 0.35f);
+        FabricRecipeProvider.offerFoodCookingRecipe(recipeExporter, "campfire", RecipeSerializer.CAMPFIRE_COOKING, CampfireCookingRecipe::new, 400, ModItems.UNCOOKED_POTATO_QUESADILLA, ModItems.POTATO_QUESADILLA, 0.35f);
+        FabricRecipeProvider.offerFoodCookingRecipe(recipeExporter, "campfire", RecipeSerializer.CAMPFIRE_COOKING, CampfireCookingRecipe::new, 400, ModItems.UNCOOKED_CHICKEN_QUESADILLA, ModItems.CHICKEN_QUESADILLA, 0.35f);
+        FabricRecipeProvider.offerFoodCookingRecipe(recipeExporter, "campfire", RecipeSerializer.CAMPFIRE_COOKING, CampfireCookingRecipe::new, 400, ModItems.UNCOOKED_BEEF_QUESADILLA, ModItems.BEEF_QUESADILLA, 0.35f);
+        FabricRecipeProvider.offerFoodCookingRecipe(recipeExporter, "campfire", RecipeSerializer.CAMPFIRE_COOKING, CampfireCookingRecipe::new, 400, ModItems.UNCOOKED_POTATO_CRUNCHWRAP, ModItems.POTATO_CRUNCHWRAP, 0.35f);
+        FabricRecipeProvider.offerFoodCookingRecipe(recipeExporter, "campfire", RecipeSerializer.CAMPFIRE_COOKING, CampfireCookingRecipe::new, 400, ModItems.UNCOOKED_BEEF_CRUNCHWRAP, ModItems.BEEF_CRUNCHWRAP, 0.35f);
+        FabricRecipeProvider.offerFoodCookingRecipe(recipeExporter, "campfire", RecipeSerializer.CAMPFIRE_COOKING, CampfireCookingRecipe::new, 400, ModItems.UNCOOKED_CHICKEN_CRUNCHWRAP, ModItems.CHICKEN_CRUNCHWRAP, 0.35f);
+        FabricRecipeProvider.offerFoodCookingRecipe(recipeExporter, "campfire", RecipeSerializer.CAMPFIRE_COOKING, CampfireCookingRecipe::new, 600, ModItems.RAW_TACO_BEEF, ModItems.TACO_BEEF, 0.35f);
+        FabricRecipeProvider.offerFoodCookingRecipe(recipeExporter, "campfire", RecipeSerializer.CAMPFIRE_COOKING, CampfireCookingRecipe::new, 600, ModItems.RAW_TACO_CHICKEN, ModItems.TACO_CHICKEN, 0.35f);
 
-        FabricRecipeProvider.offerFoodCookingRecipe(recipeExporter, "smoker", RecipeSerializer.SMOKING, SmokingRecipe::new, 100, ModItems.HOT_PEPPER, ModItems.DRIED_CHILI, 1f);
+        FabricRecipeProvider.offerFoodCookingRecipe(recipeExporter, "smoker", RecipeSerializer.SMOKING, SmokingRecipe::new, 200, ModItems.HOT_PEPPER, ModItems.DRIED_CHILI, 1f);
 
         generateHomogenousFoodBox(ModItems.BEEF_BURRITO, ModBlocks.BEEF_BURRITO_BOX_BLOCK, 5).offerTo(recipeExporter);
         generateHomogenousFoodBox(ModItems.CHICKEN_BURRITO, ModBlocks.CHICKEN_BURRITO_BOX_BLOCK, 5).offerTo(recipeExporter);
@@ -195,9 +199,9 @@ public class ModRecipeProvider extends CustomFabricRecipeProvider {
                 .offerTo(recipeExporter);
 
         try {
-            offerDeepFrying(recipeExporter, ModItems.RAW_TORTILLA_CHIPS, ModItems.TORTILLA_CHIPS, 1.0f, 100, 1);
-            offerDeepFrying(recipeExporter, ModItems.UNCOOKED_FIESTA_POTATOES, ModItems.FRIED_FIESTA_POTATOES, 1.0f, 100, 1);
-            offerDeepFrying(recipeExporter, ModItems.FLOUR_TORTILLA, ModItems.FLOUR_TOSTADA, 1.0f, 100, 1);
+            offerDeepFrying(recipeExporter, ModItems.RAW_TORTILLA_CHIPS, ModItems.TORTILLA_CHIPS, 0.2f, 200, 1);
+            offerDeepFrying(recipeExporter, ModItems.UNCOOKED_FIESTA_POTATOES, ModItems.FRIED_FIESTA_POTATOES, 0.2f, 200, 1);
+            offerDeepFrying(recipeExporter, ModItems.FLOUR_TORTILLA, ModItems.FLOUR_TOSTADA, 0.2f, 200, 1);
             offerCutting(recipeExporter, ModItemTagProvider.TOMATOES, ModItems.DICED_TOMATOES, 1);
             offerCutting(recipeExporter, ModItems.FLOUR_TORTILLA, ModItems.RAW_TORTILLA_CHIPS, 2);
             offerCutting(recipeExporter, Items.POTATO, ModItems.DICED_POTATO, 4);
@@ -240,19 +244,6 @@ public class ModRecipeProvider extends CustomFabricRecipeProvider {
                 .input(filling)
                 .input(ModItemTagProvider.SHREDDED_CHEESE)
                 .input(ModItems.SOUR_CREAM)
-                .criterion(FabricRecipeProvider.hasItem(ModItems.FLOUR_TORTILLA), FabricRecipeProvider.conditionsFromItem(ModItems.FLOUR_TORTILLA));
-    }
-
-    private static ShapelessRecipeJsonBuilder generateNachoPlatterRecipe(Item filling, Item result) {
-        return ShapelessRecipeJsonBuilder.create(RecipeCategory.FOOD, result)
-                .input(ModItems.TORTILLA_CHIPS)
-                .input(ModItems.TORTILLA_CHIPS)
-                .input(ModItems.TORTILLA_CHIPS)
-                .input(ModItems.TORTILLA_CHIPS)
-                .input(filling)
-                .input(ModItems.NACHO_CHEESE)
-                .input(ModItems.SOUR_CREAM)
-                .input(ModItems.CARDBOARD_TRAY)
                 .criterion(FabricRecipeProvider.hasItem(ModItems.FLOUR_TORTILLA), FabricRecipeProvider.conditionsFromItem(ModItems.FLOUR_TORTILLA));
     }
 
