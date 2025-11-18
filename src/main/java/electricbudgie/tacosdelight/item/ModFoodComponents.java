@@ -33,40 +33,41 @@ public class ModFoodComponents {
     }
 
     public static FoodComponent BuildQuesadillaProperties(FillingType type){
-        var builder = new FoodComponent.Builder().nutrition(10).saturationModifier(12F);
+        var builder = new FoodComponent.Builder().nutrition(8).saturationModifier(4F);
         builder.statusEffect(GetFillingEffect(type, 20), 0.45f);
         builder.statusEffect(new StatusEffectInstance(ModEffects.GASSY, 400), 0.05f);
         return builder.build();
     }
 
     public static FoodComponent BuildTacoProperties(FillingType type){
-        var builder = new FoodComponent.Builder().nutrition(12).saturationModifier(14F);
+        var builder = new FoodComponent.Builder().nutrition(10).saturationModifier(6F);
         builder.statusEffect(GetFillingEffect(type, 25), 0.30F);
         builder.statusEffect(new StatusEffectInstance(ModEffects.GASSY, 400), 0.05f);
         return builder.build();
     }
 
     public static FoodComponent BuildBurritoProperties(FillingType type){
-        var builder = new FoodComponent.Builder().nutrition(14).saturationModifier(16F);
+        var builder = new FoodComponent.Builder().nutrition(12).saturationModifier(9F);
         builder.statusEffect(GetFillingEffect(type, 30), 0.80F);
         builder.statusEffect(new StatusEffectInstance(ModEffects.GASSY, 400), 0.05f);
         return builder.build();
     }
 
     public static FoodComponent BuildCrunchwrapProperties(FillingType type){
-        var builder = new FoodComponent.Builder().nutrition(16).saturationModifier(18F);
+        var builder = new FoodComponent.Builder().nutrition(14).saturationModifier(12F);
         builder.statusEffect(GetFillingEffect(type, 35), 1F);
         builder.statusEffect(new StatusEffectInstance(ModEffects.GASSY, 400), 0.05f);
         return builder.build();
     }
 
     public static final FoodComponent BASIC_INGREDIENT_PROPERTIES = new FoodComponent.Builder().nutrition(1).snack().build();
-    public static final FoodComponent RAW_INGREDIENT_PROPERTIES = new FoodComponent.Builder().nutrition(2).saturationModifier(1.0F).statusEffect(new StatusEffectInstance(StatusEffects.NAUSEA), 0.30F).build();
+    public static final FoodComponent SPICY_INGREDIENT_PROPERTIES = new FoodComponent.Builder().nutrition(1).snack().statusEffect(new StatusEffectInstance(ModEffects.SPICY, 200),0.70f).build();
+    public static final FoodComponent RAW_INGREDIENT_PROPERTIES = new FoodComponent.Builder().nutrition(1).saturationModifier(1.0F).statusEffect(new StatusEffectInstance(StatusEffects.NAUSEA), 0.30F).build();
     public static final FoodComponent RAW_MEAT_PROPERTIES = new FoodComponent.Builder().nutrition(2).saturationModifier(0.5F).statusEffect(new StatusEffectInstance(StatusEffects.NAUSEA), 0.70F).build();
     public static final FoodComponent MEAT_PROPERTIES = new FoodComponent.Builder().nutrition(4).saturationModifier(1.2F).build();
-    public static final FoodComponent UNFINISHED_FOOD_PROPERTIES = new FoodComponent.Builder().nutrition(3).saturationModifier(1.2F).statusEffect(new StatusEffectInstance(ModEffects.DISAPPOINTED, 200), 0.80F).build();
-    public static final FoodComponent SYRUP_PROPERTIES = new FoodComponent.Builder().nutrition(-1).statusEffect(new StatusEffectInstance(StatusEffects.NAUSEA), 0.03f).build();
-    public static final FoodComponent BAJA_PROPERTIES = new FoodComponent.Builder().nutrition(2).saturationModifier(2F)
+    public static final FoodComponent UNFINISHED_FOOD_PROPERTIES = new FoodComponent.Builder().nutrition(5).saturationModifier(1.2F).statusEffect(new StatusEffectInstance(ModEffects.DISAPPOINTED, 200), 0.70F).build();
+    public static final FoodComponent SYRUP_PROPERTIES = new FoodComponent.Builder().nutrition(1).statusEffect(new StatusEffectInstance(StatusEffects.NAUSEA), 0.30f).build();
+    public static final FoodComponent BAJA_PROPERTIES = new FoodComponent.Builder().nutrition(2).saturationModifier(4F)
             .statusEffect(new StatusEffectInstance(StatusEffects.HERO_OF_THE_VILLAGE, 12000, 1),0.1F)
             .statusEffect(new StatusEffectInstance(StatusEffects.REGENERATION, 600, 1), 0.10F)
             .statusEffect(new StatusEffectInstance(StatusEffects.ABSORPTION, 600, 1), 0.10F)
@@ -76,7 +77,6 @@ public class ModFoodComponents {
 
     //Basic Ingredients
     public static final Item.Settings DICED_TOMATOES_SETTINGS =  new Item.Settings().food(BASIC_INGREDIENT_PROPERTIES);
-    public static final Item.Settings DRIED_CHILI_SETTINGS = new Item.Settings().food(BASIC_INGREDIENT_PROPERTIES);
     public static final Item.Settings DRIED_ONION_SETTINGS = new Item.Settings().food(BASIC_INGREDIENT_PROPERTIES);
     public static final Item.Settings FLOUR_TORTILLA_SETTINGS = new Item.Settings().food(BASIC_INGREDIENT_PROPERTIES);
     public static final Item.Settings NACHO_CHEESE_SETTINGS = new Item.Settings().food(BASIC_INGREDIENT_PROPERTIES).recipeRemainder(Items.GLASS_BOTTLE).maxCount(16);
@@ -140,8 +140,11 @@ public class ModFoodComponents {
     public static final Item.Settings BAJA_BLAST_SYRUP_SETTINGS = new Item.Settings().food(SYRUP_PROPERTIES).recipeRemainder(Items.GLASS_BOTTLE);
     public static final Item.Settings BAJA_BLAST_SETTINGS = new Item.Settings().food(BAJA_PROPERTIES).recipeRemainder(Items.GLASS_BOTTLE);
 
+    //Special Ingredient Properties
+    public static final Item.Settings DRIED_CHILI_SETTINGS = new Item.Settings().food(SPICY_INGREDIENT_PROPERTIES);
+
     //Crops
     public static final Item.Settings LIME_SETTINGS = new Item.Settings().food(new FoodComponent.Builder().nutrition(1).snack().statusEffect(new StatusEffectInstance(StatusEffects.WITHER), 0.1F).build());
-    public static final Item.Settings HOT_PEPPER_SETTINGS = new Item.Settings().food(new FoodComponent.Builder().nutrition(1).snack().statusEffect(new StatusEffectInstance(StatusEffects.FIRE_RESISTANCE), 0.1F).build());
+    public static final Item.Settings HOT_PEPPER_SETTINGS = new Item.Settings().food(SPICY_INGREDIENT_PROPERTIES);
     public static final Item.Settings BLUE_RASPBERRY_SETTINGS = new Item.Settings().food(new FoodComponent.Builder().nutrition(1).snack().build());
 }
