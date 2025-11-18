@@ -77,7 +77,6 @@ public class ModFoodComponents {
 
     //Basic Ingredients
     public static final Item.Settings DICED_TOMATOES_SETTINGS =  new Item.Settings().food(BASIC_INGREDIENT_PROPERTIES);
-    public static final Item.Settings DRIED_CHILI_SETTINGS = new Item.Settings().food(BASIC_INGREDIENT_PROPERTIES);
     public static final Item.Settings DRIED_ONION_SETTINGS = new Item.Settings().food(BASIC_INGREDIENT_PROPERTIES);
     public static final Item.Settings FLOUR_TORTILLA_SETTINGS = new Item.Settings().food(BASIC_INGREDIENT_PROPERTIES);
     public static final Item.Settings NACHO_CHEESE_SETTINGS = new Item.Settings().food(BASIC_INGREDIENT_PROPERTIES).recipeRemainder(Items.GLASS_BOTTLE).maxCount(16);
@@ -140,6 +139,9 @@ public class ModFoodComponents {
     //Baja Be Thy Blast
     public static final Item.Settings BAJA_BLAST_SYRUP_SETTINGS = new Item.Settings().food(SYRUP_PROPERTIES).recipeRemainder(Items.GLASS_BOTTLE);
     public static final Item.Settings BAJA_BLAST_SETTINGS = new Item.Settings().food(BAJA_PROPERTIES).recipeRemainder(Items.GLASS_BOTTLE);
+
+    //Special Ingredient Properties
+    public static final Item.Settings DRIED_CHILI_SETTINGS = new Item.Settings().food(SPICY_INGREDIENT_PROPERTIES);
 
     //Crops
     public static final Item.Settings LIME_SETTINGS = new Item.Settings().food(new FoodComponent.Builder().nutrition(1).snack().statusEffect(new StatusEffectInstance(StatusEffects.WITHER), 0.1F).build());
