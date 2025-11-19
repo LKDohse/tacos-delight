@@ -64,7 +64,7 @@ public class ModBlocks {
 
     private static Block registerAgeComponentBlock(String name, Block block){
         Registry.register(Registries.ITEM, Identifier.of(TacosDelight.MOD_ID, name),
-                new BlockItem(block, new Item.Settings().component(ModComponents.AGE_COMPONENT, -1)));
+                new BlockItem(block, new Item.Settings().component(ModComponents.AGE_COMPONENT, 0)));
         return registerBlock(name, block);
     }
 
