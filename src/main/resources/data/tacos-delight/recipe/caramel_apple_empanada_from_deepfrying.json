@@ -1,0 +1,14 @@
+{
+  "type": "tacos-delight:deepfrying",
+  "group": "tacos-delight",
+  "category": "food",
+  "experience": 0.2,
+  "cookingtime": 200,
+  "ingredient": {
+    "item": "tacos-delight:uncooked_caramel_apple_empanada"
+  },
+  "result": {
+    "id": "tacos-delight:caramel_apple_empanada",
+    "count": 1
+  }
+}

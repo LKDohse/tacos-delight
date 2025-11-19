@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "tacos-delight:cheesy_roll_up_from_campfire"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_tortilla_with_cheese": {
+      "conditions": {
+        "items": [
+          {
+            "items": "tacos-delight:tortilla_with_cheese"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_tortilla_with_cheese"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "tacos-delight:cheesy_roll_up_from_campfire"
+    ]
+  }
+}
