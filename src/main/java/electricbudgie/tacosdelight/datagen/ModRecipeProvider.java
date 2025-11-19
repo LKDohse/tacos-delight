@@ -92,13 +92,13 @@ public class ModRecipeProvider extends CustomFabricRecipeProvider {
         generateHomogenousFoodBox(ModItems.POTATO_TACO, ModBlocks.POTATO_TACO_BOX_BLOCK, 6).offerTo(recipeExporter);
 
         ShapelessRecipeJsonBuilder.create(RecipeCategory.FOOD, ModItems.RAW_TACO_BEEF)
-                .input(ModItemTagProvider.CUT_CHICKEN)
+                .input(ModItemTagProvider.GROUND_BEEF)
                 .input(ModItems.TACO_SEASONING)
                 .criterion(FabricRecipeProvider.hasItem(ModItems.TACO_SEASONING), FabricRecipeProvider.conditionsFromItem(ModItems.TACO_SEASONING))
                 .offerTo(recipeExporter);
 
         ShapelessRecipeJsonBuilder.create(RecipeCategory.FOOD, ModItems.RAW_TACO_CHICKEN)
-                .input(ModItemTagProvider.GROUND_BEEF)
+                .input(ModItemTagProvider.CUT_CHICKEN)
                 .input(ModItems.TACO_SEASONING)
                 .criterion(FabricRecipeProvider.hasItem(ModItems.TACO_SEASONING), FabricRecipeProvider.conditionsFromItem(ModItems.TACO_SEASONING))
                 .offerTo(recipeExporter);
@@ -196,6 +196,14 @@ public class ModRecipeProvider extends CustomFabricRecipeProvider {
                 .input(Items.WATER_BUCKET)
                 .input(Items.GLASS_BOTTLE, 4)
                 .criterion(FabricRecipeProvider.hasItem(ModItems.BAJA_BLAST_SYRUP), FabricRecipeProvider.conditionsFromItem(ModItems.BAJA_BLAST_SYRUP))
+                .offerTo(recipeExporter);
+
+
+        ShapelessRecipeJsonBuilder.create(RecipeCategory.FOOD, ModItems.TORTILLA_DOUGH, 4)
+                .input(Items.WATER_BUCKET)
+                .input(Items.WHEAT)
+                .input(ModItems.SALT)
+                .criterion(FabricRecipeProvider.hasItem(Items.WHEAT), FabricRecipeProvider.conditionsFromItem(Items.WHEAT))
                 .offerTo(recipeExporter);
 
         try {

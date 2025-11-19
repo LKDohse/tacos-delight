@@ -12,9 +12,9 @@
   },
   "result": [
     {
-      "count": 1,
       "item": {
-        "id": "tacos-delight:diced_tomatoes"
+        "id": "tacos-delight:diced_tomatoes",
+        "count": 4
       }
     }
   ]

@@ -44,7 +44,7 @@ public class CuttingRecipeGenerator {
         JsonObject id = new JsonObject();
         JsonObject result = new JsonObject();
         id.addProperty("id", outputId.toString());
-        result.addProperty("count", count);
+        id.addProperty("count", count);
         result.add("item", id);
         JsonArray resultsArray = new JsonArray();
         resultsArray.add(result);
