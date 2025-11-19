@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "tacos-delight:steak_taquito_from_campfire"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_uncooked_steak_taquito": {
+      "conditions": {
+        "items": [
+          {
+            "items": "tacos-delight:uncooked_steak_taquito"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_uncooked_steak_taquito"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "tacos-delight:steak_taquito_from_campfire"
+    ]
+  }
+}

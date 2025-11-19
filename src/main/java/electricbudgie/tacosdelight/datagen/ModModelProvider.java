@@ -71,6 +71,8 @@ public class ModModelProvider extends FabricModelProvider {
         itemModelGenerator.register(ModItems.TORTILLA_CHIPS, Models.GENERATED);
         itemModelGenerator.register(ModItems.FLOUR_TOSTADA, Models.GENERATED);
         itemModelGenerator.register(ModItems.CHEESE_WEDGE, Models.GENERATED);
+        itemModelGenerator.register(ModItems.HAND_PIE_CRUST, Models.GENERATED);
+        itemModelGenerator.register(ModItems.APPLE_SLICES, Models.GENERATED);
 
         // Raw Ingredients
         itemModelGenerator.register(ModItems.RAW_TACO_BEEF, Models.GENERATED);
@@ -90,10 +92,22 @@ public class ModModelProvider extends FabricModelProvider {
         itemModelGenerator.register(ModItems.UNCOOKED_CHICKEN_CRUNCHWRAP, Models.GENERATED);
         itemModelGenerator.register(ModItems.UNCOOKED_BEEF_CRUNCHWRAP, Models.GENERATED);
         itemModelGenerator.register(ModItems.UNCOOKED_POTATO_CRUNCHWRAP, Models.GENERATED);
+        itemModelGenerator.register(ModItems.TORTILLA_WITH_CHEESE, Models.GENERATED);
+        itemModelGenerator.register(ModItems.UNCOOKED_CHEESY_POTATO_GRILLER, Models.GENERATED);
+        itemModelGenerator.register(ModItems.UNCOOKED_CHICKEN_TAQUITO, Models.GENERATED);
+        itemModelGenerator.register(ModItems.UNCOOKED_STEAK_TAQUITO, Models.GENERATED);
+        itemModelGenerator.register(ModItems.UNCOOKED_CARAMEL_APPLE_EMPANADA, Models.GENERATED);
 
         //Sides
         itemModelGenerator.register(ModItems.NACHOS, Models.GENERATED);
         itemModelGenerator.register(ModItems.CHEESY_FIESTA_POTATOES, Models.GENERATED);
+        itemModelGenerator.register(ModItems.CARAMEL_APPLE_EMPANADA, Models.GENERATED);
+
+        //Roll-Ups
+        itemModelGenerator.register(ModItems.CHEESY_ROLL_UP, Models.GENERATED);
+        itemModelGenerator.register(ModItems.CHEESY_POTATO_GRILLER, Models.GENERATED);
+        itemModelGenerator.register(ModItems.CHICKEN_TAQUITO, Models.GENERATED);
+        itemModelGenerator.register(ModItems.STEAK_TAQUITO, Models.GENERATED);
 
         //Tacos
         itemModelGenerator.register(ModItems.POTATO_TACO, Models.GENERATED);

@@ -12,7 +12,8 @@ public class ModFoodComponents {
         BEEF,
         CHICKEN,
         POTATO,
-        CHEESE
+        CHEESE,
+        FRUIT
     };
 
     public enum FoodType {
@@ -29,7 +30,23 @@ public class ModFoodComponents {
             case CHICKEN -> new StatusEffectInstance(StatusEffects.HASTE, duration);
             case POTATO -> new StatusEffectInstance(StatusEffects.RESISTANCE, duration);
             case CHEESE -> new StatusEffectInstance(StatusEffects.REGENERATION, duration);
+            case FRUIT -> new StatusEffectInstance(StatusEffects.ABSORPTION, duration);
         };
+    }
+
+    public static FoodComponent BuildSideProperties(FillingType type){
+        var builder = new FoodComponent.Builder().nutrition(8).saturationModifier(0.6F);
+        builder.statusEffect(GetFillingEffect(type, 600), 0.7f);
+        builder.statusEffect(new StatusEffectInstance(vectorwing.farmersdelight.common.registry.ModEffects.COMFORT, 600), 1f);
+        builder.statusEffect(new StatusEffectInstance(ModEffects.GASSY, 400), 0.05f);
+        return builder.build();
+    }
+
+    public static FoodComponent BuildRollupProperties(FillingType type){
+        var builder = new FoodComponent.Builder().nutrition(8).saturationModifier(0.65F);
+        builder.statusEffect(GetFillingEffect(type, 600), 0.4f);
+        builder.statusEffect(new StatusEffectInstance(ModEffects.GASSY, 400), 0.05f);
+        return builder.build();
     }
 
     public static FoodComponent BuildQuesadillaProperties(FillingType type){
@@ -90,6 +107,8 @@ public class ModFoodComponents {
     public static final Item.Settings FLOUR_TOSTADA = new Item.Settings().food(BASIC_INGREDIENT_PROPERTIES);
     public static final Item.Settings SALT = new Item.Settings().food(BASIC_INGREDIENT_PROPERTIES);
     public static final Item.Settings CHEESE_WEDGE = new Item.Settings().food(BASIC_INGREDIENT_PROPERTIES);
+    public static final Item.Settings HAND_PIE_CRUST_SETTINGS = new Item.Settings().food(BASIC_INGREDIENT_PROPERTIES);
+    public static final Item.Settings APPLE_SLICES_SETTINGS = new Item.Settings().food(BASIC_INGREDIENT_PROPERTIES);
 
     //Raw Ingredients
     public static final Item.Settings RAW_TACO_BEEF_SETTINGS = new Item.Settings().food(RAW_MEAT_PROPERTIES);
@@ -109,10 +128,23 @@ public class ModFoodComponents {
     public static final Item.Settings UNCOOKED_CHICKEN_CRUNCHWRAP_SETTINGS = new Item.Settings().food(UNFINISHED_FOOD_PROPERTIES);
     public static final Item.Settings UNCOOKED_BEEF_CRUNCHWRAP_SETTINGS = new Item.Settings().food(UNFINISHED_FOOD_PROPERTIES);
     public static final Item.Settings UNCOOKED_POTATO_CRUNCHWRAP_SETTINGS = new Item.Settings().food(UNFINISHED_FOOD_PROPERTIES);
+    public static final Item.Settings TORTILLA_WITH_CHEESE_SETTINGS = new Item.Settings().food(UNFINISHED_FOOD_PROPERTIES);
+    public static final Item.Settings UNCOOKED_CHEESY_POTATO_GRILLER_SETTINGS = new Item.Settings().food(UNFINISHED_FOOD_PROPERTIES);
+    public static final Item.Settings UNCOOKED_CHICKEN_TAQUITO_SETTINGS = new Item.Settings().food(UNFINISHED_FOOD_PROPERTIES);
+    public static final Item.Settings UNCOOKED_STEAK_TAQUITO_SETTINGS = new Item.Settings().food(UNFINISHED_FOOD_PROPERTIES);
+    public static final Item.Settings UNCOOKED_CARAMEL_APPLE_EMPANADA = new Item.Settings().food(UNFINISHED_FOOD_PROPERTIES);
+
 
     //Sides
-    public static final Item.Settings NACHOS_SETTINGS = new Item.Settings().food(BASIC_INGREDIENT_PROPERTIES).recipeRemainder(Items.BOWL).maxCount(16);
-    public static final Item.Settings CHEESY_FIESTA_POTATOES_SETTINGS = new Item.Settings().food(BASIC_INGREDIENT_PROPERTIES).recipeRemainder(Items.BOWL).maxCount(16);
+    public static final Item.Settings NACHOS_SETTINGS = new Item.Settings().food(BuildSideProperties(FillingType.CHEESE)).recipeRemainder(Items.BOWL).maxCount(16);
+    public static final Item.Settings CHEESY_FIESTA_POTATOES_SETTINGS = new Item.Settings().food(BuildSideProperties(FillingType.POTATO)).recipeRemainder(Items.BOWL).maxCount(16);
+    public static final Item.Settings CARAMEL_APPLE_EMPANADA_SETTINGS = new Item.Settings().food(BuildSideProperties(FillingType.FRUIT));
+
+    //Roll-ups/Taquitos
+    public static final Item.Settings CHEESY_ROLL_UP_SETTINGS = new Item.Settings().food(BuildRollupProperties(FillingType.CHEESE));
+    public static final Item.Settings CHEESY_POTATO_GRILLER_SETTINGS = new Item.Settings().food(BuildRollupProperties(FillingType.POTATO));
+    public static final Item.Settings CHICKEN_TAQUITO_SETTINGS = new Item.Settings().food(BuildRollupProperties(FillingType.CHICKEN));
+    public static final Item.Settings STEAK_TAQUITO_SETTINGS = new Item.Settings().food(BuildRollupProperties(FillingType.BEEF));
 
     //Tacos
     public static final Item.Settings POTATO_TACO_SETTINGS = new Item.Settings().food(BuildTacoProperties(FillingType.POTATO));

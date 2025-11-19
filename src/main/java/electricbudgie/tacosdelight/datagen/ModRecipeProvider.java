@@ -34,6 +34,12 @@ public class ModRecipeProvider extends CustomFabricRecipeProvider {
     @Override
     public void generate(RecipeExporter recipeExporter) {
 
+        Map<Item, Item> fillingWithRollup = Map.of(
+                Items.COOKED_BEEF, ModItems.UNCOOKED_STEAK_TAQUITO,
+                ModItems.TACO_CHICKEN, ModItems.UNCOOKED_CHICKEN_TAQUITO,
+                ModItems.FRIED_FIESTA_POTATOES, ModItems.UNCOOKED_CHEESY_POTATO_GRILLER
+        );
+
         Map<Item, Item> fillingWithTaco = Map.of(
                 ModItems.TACO_BEEF, ModItems.BEEF_TACO,
                 ModItems.TACO_CHICKEN, ModItems.CHICKEN_TACO,
@@ -58,6 +64,9 @@ public class ModRecipeProvider extends CustomFabricRecipeProvider {
                 ModItems.FRIED_FIESTA_POTATOES, ModItems.UNCOOKED_POTATO_CRUNCHWRAP
         );
 
+        generateRecipes(fillingWithRollup,
+                (filling, result) -> generateRollupRecipe(filling, result).offerTo(recipeExporter));
+
         generateRecipes(fillingWithTaco,
                 (filling, result) -> generateTacoRecipe(filling, result).offerTo(recipeExporter));
 
@@ -81,6 +90,10 @@ public class ModRecipeProvider extends CustomFabricRecipeProvider {
         FabricRecipeProvider.offerFoodCookingRecipe(recipeExporter, "campfire", RecipeSerializer.CAMPFIRE_COOKING, CampfireCookingRecipe::new, 400, ModItems.UNCOOKED_CHICKEN_CRUNCHWRAP, ModItems.CHICKEN_CRUNCHWRAP, 0.35f);
         FabricRecipeProvider.offerFoodCookingRecipe(recipeExporter, "campfire", RecipeSerializer.CAMPFIRE_COOKING, CampfireCookingRecipe::new, 600, ModItems.RAW_TACO_BEEF, ModItems.TACO_BEEF, 0.35f);
         FabricRecipeProvider.offerFoodCookingRecipe(recipeExporter, "campfire", RecipeSerializer.CAMPFIRE_COOKING, CampfireCookingRecipe::new, 600, ModItems.RAW_TACO_CHICKEN, ModItems.TACO_CHICKEN, 0.35f);
+        FabricRecipeProvider.offerFoodCookingRecipe(recipeExporter, "campfire", RecipeSerializer.CAMPFIRE_COOKING, CampfireCookingRecipe::new, 600, ModItems.TORTILLA_WITH_CHEESE, ModItems.CHEESY_ROLL_UP, 0.35f);
+        FabricRecipeProvider.offerFoodCookingRecipe(recipeExporter, "campfire", RecipeSerializer.CAMPFIRE_COOKING, CampfireCookingRecipe::new, 600, ModItems.UNCOOKED_CHEESY_POTATO_GRILLER, ModItems.CHEESY_POTATO_GRILLER, 0.35f);
+        FabricRecipeProvider.offerFoodCookingRecipe(recipeExporter, "campfire", RecipeSerializer.CAMPFIRE_COOKING, CampfireCookingRecipe::new, 600, ModItems.UNCOOKED_CHICKEN_TAQUITO, ModItems.CHICKEN_TAQUITO, 0.35f);
+        FabricRecipeProvider.offerFoodCookingRecipe(recipeExporter, "campfire", RecipeSerializer.CAMPFIRE_COOKING, CampfireCookingRecipe::new, 600, ModItems.UNCOOKED_STEAK_TAQUITO, ModItems.STEAK_TAQUITO, 0.35f);
 
         FabricRecipeProvider.offerFoodCookingRecipe(recipeExporter, "smoker", RecipeSerializer.SMOKING, SmokingRecipe::new, 200, ModItems.HOT_PEPPER, ModItems.DRIED_CHILI, 1f);
 
@@ -90,6 +103,12 @@ public class ModRecipeProvider extends CustomFabricRecipeProvider {
         generateHomogenousFoodBox(ModItems.BEEF_TACO, ModBlocks.BEEF_TACO_BOX_BLOCK, 6).offerTo(recipeExporter);
         generateHomogenousFoodBox(ModItems.CHICKEN_TACO, ModBlocks.CHICKEN_TACO_BOX_BLOCK, 6).offerTo(recipeExporter);
         generateHomogenousFoodBox(ModItems.POTATO_TACO, ModBlocks.POTATO_TACO_BOX_BLOCK, 6).offerTo(recipeExporter);
+
+        ShapelessRecipeJsonBuilder.create(RecipeCategory.FOOD, ModItems.TORTILLA_WITH_CHEESE)
+                .input(ModItems.FLOUR_TORTILLA)
+                .input(ModItems.SHREDDED_CHEESE)
+                .criterion(FabricRecipeProvider.hasItem(ModItems.FLOUR_TORTILLA), FabricRecipeProvider.conditionsFromItem(ModItems.FLOUR_TORTILLA))
+                .offerTo(recipeExporter);
 
         ShapelessRecipeJsonBuilder.create(RecipeCategory.FOOD, ModItems.RAW_TACO_BEEF)
                 .input(ModItemTagProvider.GROUND_BEEF)
@@ -206,14 +225,25 @@ public class ModRecipeProvider extends CustomFabricRecipeProvider {
                 .criterion(FabricRecipeProvider.hasItem(Items.WHEAT), FabricRecipeProvider.conditionsFromItem(Items.WHEAT))
                 .offerTo(recipeExporter);
 
+        ShapelessRecipeJsonBuilder.create(RecipeCategory.FOOD, ModItems.UNCOOKED_CARAMEL_APPLE_EMPANADA, 1)
+                .input(ModItems.APPLE_SLICES)
+                .input(Items.SUGAR)
+                .input(ModItems.HAND_PIE_CRUST)
+                .criterion(FabricRecipeProvider.hasItem(ModItems.APPLE_SLICES), FabricRecipeProvider.conditionsFromItem(ModItems.APPLE_SLICES))
+                .criterion(FabricRecipeProvider.hasItem(ModItems.HAND_PIE_CRUST), FabricRecipeProvider.conditionsFromItem(ModItems.HAND_PIE_CRUST))
+                .offerTo(recipeExporter);
+
         try {
             offerDeepFrying(recipeExporter, ModItems.RAW_TORTILLA_CHIPS, ModItems.TORTILLA_CHIPS, 0.2f, 200, 1);
             offerDeepFrying(recipeExporter, ModItems.UNCOOKED_FIESTA_POTATOES, ModItems.FRIED_FIESTA_POTATOES, 0.2f, 200, 1);
             offerDeepFrying(recipeExporter, ModItems.FLOUR_TORTILLA, ModItems.FLOUR_TOSTADA, 0.2f, 200, 1);
+            offerDeepFrying(recipeExporter, ModItems.UNCOOKED_CARAMEL_APPLE_EMPANADA, ModItems.CARAMEL_APPLE_EMPANADA, 0.2f, 200, 1);
             offerCutting(recipeExporter, ModItemTagProvider.TOMATOES, ModItems.DICED_TOMATOES, 1);
             offerCutting(recipeExporter, ModItems.FLOUR_TORTILLA, ModItems.RAW_TORTILLA_CHIPS, 2);
             offerCutting(recipeExporter, Items.POTATO, ModItems.DICED_POTATO, 4);
             offerCutting(recipeExporter, ModItems.CHEESE_WEDGE, ModItems.SHREDDED_CHEESE, 4);
+            offerCutting(recipeExporter, Items.APPLE, ModItems.APPLE_SLICES, 4);
+            offerCutting(recipeExporter, vectorwing.farmersdelight.common.registry.ModItems.PIE_CRUST.get(), ModItems.HAND_PIE_CRUST, 4);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
@@ -221,6 +251,14 @@ public class ModRecipeProvider extends CustomFabricRecipeProvider {
 
     private void generateRecipes(Map<Item, Item> fillings, BiConsumer<Item, Item> generator) {
         fillings.forEach(generator);
+    }
+
+    private static ShapelessRecipeJsonBuilder generateRollupRecipe(Item filling, Item result) {
+        return ShapelessRecipeJsonBuilder.create(RecipeCategory.FOOD, result)
+                .input(ModItems.FLOUR_TORTILLA)
+                .input(filling)
+                .input(ModItemTagProvider.SHREDDED_CHEESE)
+                .criterion(FabricRecipeProvider.hasItem(ModItems.FLOUR_TORTILLA), FabricRecipeProvider.conditionsFromItem(ModItems.FLOUR_TORTILLA));
     }
 
     private static ShapelessRecipeJsonBuilder generateTacoRecipe(Item filling, Item result) {

@@ -4,7 +4,7 @@
   "category": "food",
   "ingredients": [
     {
-      "tag": "tacos-delight:tomatoes"
+      "item": "minecraft:apple"
     }
   ],
   "tool": {
@@ -13,8 +13,8 @@
   "result": [
     {
       "item": {
-        "id": "tacos-delight:diced_tomatoes",
-        "count": 1
+        "id": "tacos-delight:apple_slices",
+        "count": 4
       }
     }
   ]
