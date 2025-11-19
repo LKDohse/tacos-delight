@@ -198,6 +198,13 @@ public class ModRecipeProvider extends CustomFabricRecipeProvider {
                 .criterion(FabricRecipeProvider.hasItem(ModItems.BAJA_BLAST_SYRUP), FabricRecipeProvider.conditionsFromItem(ModItems.BAJA_BLAST_SYRUP))
                 .offerTo(recipeExporter);
 
+        ShapelessRecipeJsonBuilder.create(RecipeCategory.FOOD, ModItems.TORTILLA_DOUGH, 4)
+                .input(Items.WATER_BUCKET)
+                .input(Items.WHEAT)
+                .input(ModItems.SALT)
+                .criterion(FabricRecipeProvider.hasItem(Items.WHEAT), FabricRecipeProvider.conditionsFromItem(Items.WHEAT))
+                .offerTo(recipeExporter);
+
         try {
             offerDeepFrying(recipeExporter, ModItems.RAW_TORTILLA_CHIPS, ModItems.TORTILLA_CHIPS, 0.2f, 200, 1);
             offerDeepFrying(recipeExporter, ModItems.UNCOOKED_FIESTA_POTATOES, ModItems.FRIED_FIESTA_POTATOES, 0.2f, 200, 1);

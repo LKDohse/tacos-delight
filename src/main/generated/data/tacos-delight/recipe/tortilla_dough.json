@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "minecraft:water_bucket"
+    },
+    {
+      "item": "minecraft:wheat"
+    },
+    {
+      "item": "tacos-delight:salt"
+    }
+  ],
+  "result": {
+    "count": 4,
+    "id": "tacos-delight:tortilla_dough"
+  }
+}
