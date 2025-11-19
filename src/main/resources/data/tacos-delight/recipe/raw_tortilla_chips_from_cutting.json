@@ -12,9 +12,9 @@
   },
   "result": [
     {
-      "count": 2,
       "item": {
-        "id": "tacos-delight:raw_tortilla_chips"
+        "id": "tacos-delight:raw_tortilla_chips",
+        "count": 2
       }
     }
   ]

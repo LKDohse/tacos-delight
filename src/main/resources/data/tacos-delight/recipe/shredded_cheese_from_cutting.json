@@ -12,9 +12,9 @@
   },
   "result": [
     {
-      "count": 4,
       "item": {
-        "id": "tacos-delight:shredded_cheese"
+        "id": "tacos-delight:shredded_cheese",
+        "count": 4
       }
     }
   ]
