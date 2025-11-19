@@ -108,6 +108,7 @@ public class ModFoodComponents {
     public static final Item.Settings SALT = new Item.Settings().food(BASIC_INGREDIENT_PROPERTIES);
     public static final Item.Settings CHEESE_WEDGE = new Item.Settings().food(BASIC_INGREDIENT_PROPERTIES);
     public static final Item.Settings HAND_PIE_CRUST_SETTINGS = new Item.Settings().food(BASIC_INGREDIENT_PROPERTIES);
+    public static final Item.Settings APPLE_SLICES_SETTINGS = new Item.Settings().food(BASIC_INGREDIENT_PROPERTIES);
 
     //Raw Ingredients
     public static final Item.Settings RAW_TACO_BEEF_SETTINGS = new Item.Settings().food(RAW_MEAT_PROPERTIES);

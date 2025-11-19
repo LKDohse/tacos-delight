@@ -226,10 +226,10 @@ public class ModRecipeProvider extends CustomFabricRecipeProvider {
                 .offerTo(recipeExporter);
 
         ShapelessRecipeJsonBuilder.create(RecipeCategory.FOOD, ModItems.UNCOOKED_CARAMEL_APPLE_EMPANADA, 1)
-                .input(Items.APPLE)
+                .input(ModItems.APPLE_SLICES)
                 .input(Items.SUGAR)
                 .input(ModItems.HAND_PIE_CRUST)
-                .criterion(FabricRecipeProvider.hasItem(Items.APPLE), FabricRecipeProvider.conditionsFromItem(Items.APPLE))
+                .criterion(FabricRecipeProvider.hasItem(ModItems.APPLE_SLICES), FabricRecipeProvider.conditionsFromItem(ModItems.APPLE_SLICES))
                 .criterion(FabricRecipeProvider.hasItem(ModItems.HAND_PIE_CRUST), FabricRecipeProvider.conditionsFromItem(ModItems.HAND_PIE_CRUST))
                 .offerTo(recipeExporter);
 
@@ -242,6 +242,7 @@ public class ModRecipeProvider extends CustomFabricRecipeProvider {
             offerCutting(recipeExporter, ModItems.FLOUR_TORTILLA, ModItems.RAW_TORTILLA_CHIPS, 2);
             offerCutting(recipeExporter, Items.POTATO, ModItems.DICED_POTATO, 4);
             offerCutting(recipeExporter, ModItems.CHEESE_WEDGE, ModItems.SHREDDED_CHEESE, 4);
+            offerCutting(recipeExporter, Items.APPLE, ModItems.APPLE_SLICES, 4);
             offerCutting(recipeExporter, vectorwing.farmersdelight.common.registry.ModItems.PIE_CRUST.get(), ModItems.HAND_PIE_CRUST, 4);
         } catch (IOException e) {
             throw new RuntimeException(e);

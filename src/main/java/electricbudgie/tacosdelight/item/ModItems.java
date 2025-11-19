@@ -36,6 +36,7 @@ public class ModItems {
     public static final Item FLOUR_TOSTADA = registerItemViaSettings("flour_tostada", ModFoodComponents.FLOUR_TOSTADA);
     public static final Item CHEESE_WEDGE = registerItemViaSettings("cheese_wedge", ModFoodComponents.CHEESE_WEDGE);
     public static final Item HAND_PIE_CRUST = registerItemViaSettings("hand_pie_crust", ModFoodComponents.HAND_PIE_CRUST_SETTINGS);
+    public static final Item APPLE_SLICES = registerItemViaSettings("apple_slices", ModFoodComponents.APPLE_SLICES_SETTINGS);
 
     //Raw Ingredients
     public static final Item RAW_TACO_BEEF = registerItemViaSettings("raw_taco_beef", ModFoodComponents.RAW_TACO_BEEF_SETTINGS);

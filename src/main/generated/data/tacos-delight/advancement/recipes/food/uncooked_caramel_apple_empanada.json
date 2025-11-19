@@ -1,11 +1,11 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_apple": {
+    "has_apple_slices": {
       "conditions": {
         "items": [
           {
-            "items": "minecraft:apple"
+            "items": "tacos-delight:apple_slices"
           }
         ]
       },
@@ -31,7 +31,7 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_apple",
+      "has_apple_slices",
       "has_hand_pie_crust"
     ]
   ],
