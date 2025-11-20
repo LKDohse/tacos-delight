@@ -1,0 +1,28 @@
+{
+  "parent": "minecraft:tacos-delight/made_tortilla",
+  "criteria": {
+    "got_disappointed": {
+      "conditions": {
+        "effects": {
+          "tacos-delight:disappointed": {}
+        }
+      },
+      "trigger": "minecraft:effects_changed"
+    }
+  },
+  "display": {
+    "description": "That last meal left you a little hollow and wondering if it could have been more than what it was...",
+    "hidden": true,
+    "icon": {
+      "count": 1,
+      "id": "tacos-delight:tortilla_with_cheese"
+    },
+    "title": "Could have been better"
+  },
+  "requirements": [
+    [
+      "got_disappointed"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

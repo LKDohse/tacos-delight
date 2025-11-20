@@ -1,0 +1,29 @@
+{
+  "parent": "minecraft:tacos-delight/got_hot_pepper",
+  "criteria": {
+    "got_dried_pepper": {
+      "conditions": {
+        "items": [
+          {
+            "items": "tacos-delight:dried_chili"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": "We can probably make a seasoning with this now",
+    "icon": {
+      "count": 1,
+      "id": "tacos-delight:dried_chili"
+    },
+    "title": "Now We're Cooking"
+  },
+  "requirements": [
+    [
+      "got_dried_pepper"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

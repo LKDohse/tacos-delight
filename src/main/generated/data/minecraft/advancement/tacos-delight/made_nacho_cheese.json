@@ -1,0 +1,30 @@
+{
+  "parent": "minecraft:tacos-delight/made_cheese",
+  "criteria": {
+    "made_nacho_cheese": {
+      "conditions": {
+        "items": [
+          {
+            "items": "tacos-delight:nacho_cheese"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": "That orange glow tho",
+    "frame": "goal",
+    "icon": {
+      "count": 1,
+      "id": "tacos-delight:nacho_cheese"
+    },
+    "title": "Saucy"
+  },
+  "requirements": [
+    [
+      "made_nacho_cheese"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

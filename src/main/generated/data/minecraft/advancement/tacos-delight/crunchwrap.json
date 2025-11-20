@@ -1,0 +1,56 @@
+{
+  "parent": "minecraft:tacos-delight/burrito",
+  "criteria": {
+    "beef_crunchwrap": {
+      "conditions": {
+        "items": [
+          {
+            "items": "tacos-delight:beef_crunchwrap"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "chicken_crunchwrap": {
+      "conditions": {
+        "items": [
+          {
+            "items": "tacos-delight:chicken_crunchwrap"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "potato_crunchwrap": {
+      "conditions": {
+        "items": [
+          {
+            "items": "tacos-delight:potato_crunchwrap"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": "Like burritos, but flat and crunchy",
+    "frame": "goal",
+    "icon": {
+      "count": 1,
+      "id": "tacos-delight:beef_crunchwrap"
+    },
+    "title": "Crunchwraps"
+  },
+  "requirements": [
+    [
+      "chicken_crunchwrap"
+    ],
+    [
+      "beef_crunchwrap"
+    ],
+    [
+      "potato_crunchwrap"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

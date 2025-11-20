@@ -1,0 +1,29 @@
+{
+  "parent": "minecraft:tacos-delight/root",
+  "criteria": {
+    "made_deep_fryer": {
+      "conditions": {
+        "items": [
+          {
+            "items": "tacos-delight:deep_fryer"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": "The danger makes the food taste better",
+    "icon": {
+      "count": 1,
+      "id": "tacos-delight:deep_fryer"
+    },
+    "title": "A Vat of Bubbling Hot Oil"
+  },
+  "requirements": [
+    [
+      "made_deep_fryer"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

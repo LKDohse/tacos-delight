@@ -1,0 +1,29 @@
+{
+  "parent": "minecraft:tacos-delight/curds",
+  "criteria": {
+    "made_tortilla": {
+      "conditions": {
+        "items": [
+          {
+            "items": "tacos-delight:cheese_press"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": "As it turns out, cheese takes a lot of work",
+    "icon": {
+      "count": 1,
+      "id": "tacos-delight:cheese_press"
+    },
+    "title": "Cheesemaker"
+  },
+  "requirements": [
+    [
+      "made_tortilla"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

@@ -1,0 +1,56 @@
+{
+  "parent": "minecraft:tacos-delight/quesadilla",
+  "criteria": {
+    "beef_taco": {
+      "conditions": {
+        "items": [
+          {
+            "items": "tacos-delight:beef_taco"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "chicken_taco": {
+      "conditions": {
+        "items": [
+          {
+            "items": "tacos-delight:chicken_taco"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "potato_taco": {
+      "conditions": {
+        "items": [
+          {
+            "items": "tacos-delight:potato_taco"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": "So iconic you could make an entire chain based on them",
+    "frame": "goal",
+    "icon": {
+      "count": 1,
+      "id": "tacos-delight:beef_taco"
+    },
+    "title": "Tacos"
+  },
+  "requirements": [
+    [
+      "chicken_taco"
+    ],
+    [
+      "beef_taco"
+    ],
+    [
+      "potato_taco"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

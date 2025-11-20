@@ -1,0 +1,30 @@
+{
+  "parent": "minecraft:tacos-delight/root",
+  "criteria": {
+    "sour_cream": {
+      "conditions": {
+        "items": [
+          {
+            "items": "tacos-delight:sour_cream"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": "The first in a long-line of non-authentic features on this menu",
+    "frame": "goal",
+    "icon": {
+      "count": 1,
+      "id": "tacos-delight:sour_cream"
+    },
+    "title": "Tangy and Divisive"
+  },
+  "requirements": [
+    [
+      "sour_cream"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

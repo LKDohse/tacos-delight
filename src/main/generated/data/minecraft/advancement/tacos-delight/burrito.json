@@ -1,0 +1,56 @@
+{
+  "parent": "minecraft:tacos-delight/taco",
+  "criteria": {
+    "beef_burrito": {
+      "conditions": {
+        "items": [
+          {
+            "items": "tacos-delight:beef_burrito"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "chicken_burrito": {
+      "conditions": {
+        "items": [
+          {
+            "items": "tacos-delight:chicken_burrito"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "potato_burrito": {
+      "conditions": {
+        "items": [
+          {
+            "items": "tacos-delight:potato_burrito"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": "Like a taco, but with rice",
+    "frame": "goal",
+    "icon": {
+      "count": 1,
+      "id": "tacos-delight:beef_burrito"
+    },
+    "title": "Burritos"
+  },
+  "requirements": [
+    [
+      "chicken_burrito"
+    ],
+    [
+      "beef_burrito"
+    ],
+    [
+      "potato_burrito"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

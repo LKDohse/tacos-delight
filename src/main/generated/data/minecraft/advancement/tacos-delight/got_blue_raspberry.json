@@ -1,0 +1,29 @@
+{
+  "parent": "minecraft:tacos-delight/root",
+  "criteria": {
+    "got_blue_raspberry": {
+      "conditions": {
+        "items": [
+          {
+            "items": "tacos-delight:blue_raspberry"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": "So THAT'S where that flavor comes from",
+    "icon": {
+      "count": 1,
+      "id": "tacos-delight:blue_raspberry"
+    },
+    "title": "They Do Exist!"
+  },
+  "requirements": [
+    [
+      "got_blue_raspberry"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

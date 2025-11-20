@@ -1,0 +1,29 @@
+{
+  "parent": "minecraft:tacos-delight/root",
+  "criteria": {
+    "got_salty": {
+      "conditions": {
+        "items": [
+          {
+            "items": "tacos-delight:salt"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": "Salt might not count as a 'spice', but it's pretty important nonetheless",
+    "icon": {
+      "count": 1,
+      "id": "tacos-delight:salt"
+    },
+    "title": "All These Flavors"
+  },
+  "requirements": [
+    [
+      "got_salty"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

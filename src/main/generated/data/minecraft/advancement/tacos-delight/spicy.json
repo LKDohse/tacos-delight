@@ -1,0 +1,28 @@
+{
+  "parent": "minecraft:tacos-delight/got_hot_pepper",
+  "criteria": {
+    "spicy": {
+      "conditions": {
+        "effects": {
+          "tacos-delight:spicy": {}
+        }
+      },
+      "trigger": "minecraft:effects_changed"
+    }
+  },
+  "display": {
+    "description": "Eating that really hurt! And yet... ",
+    "hidden": true,
+    "icon": {
+      "count": 1,
+      "id": "tacos-delight:hot_pepper"
+    },
+    "title": "It Burns!"
+  },
+  "requirements": [
+    [
+      "spicy"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

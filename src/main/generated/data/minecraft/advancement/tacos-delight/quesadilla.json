@@ -1,0 +1,69 @@
+{
+  "parent": "minecraft:tacos-delight/cheese_roll_up",
+  "criteria": {
+    "beef_quesadilla": {
+      "conditions": {
+        "items": [
+          {
+            "items": "tacos-delight:beef_quesadilla"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "cheese_quesadilla": {
+      "conditions": {
+        "items": [
+          {
+            "items": "tacos-delight:cheese_quesadilla"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "chicken_quesadilla": {
+      "conditions": {
+        "items": [
+          {
+            "items": "tacos-delight:chicken_quesadilla"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "potato_quesadilla": {
+      "conditions": {
+        "items": [
+          {
+            "items": "tacos-delight:potato_quesadilla"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": "Like a roll-up, but flat!",
+    "frame": "goal",
+    "icon": {
+      "count": 1,
+      "id": "tacos-delight:cheese_quesadilla"
+    },
+    "title": "Quesadillas"
+  },
+  "requirements": [
+    [
+      "cheese_quesadilla"
+    ],
+    [
+      "chicken_quesadilla"
+    ],
+    [
+      "beef_quesadilla"
+    ],
+    [
+      "potato_quesadilla"
+    ]
+  ],
+  "sends_telemetry_event": true
+}
