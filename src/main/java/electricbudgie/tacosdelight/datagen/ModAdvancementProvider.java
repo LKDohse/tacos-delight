@@ -372,7 +372,7 @@ public class ModAdvancementProvider extends FabricAdvancementProvider {
                         Text.literal("Too Much of a Good Thing"),
                         Text.literal("Experienced some gastrointestinal distress"),
                         null,
-                        AdvancementFrame.TASK,
+                        AdvancementFrame.GOAL,
                         true,
                         true,
                         true
@@ -386,7 +386,7 @@ public class ModAdvancementProvider extends FabricAdvancementProvider {
                         Text.literal("It Burns!"),
                         Text.literal("Eating that really hurt! And yet... "),
                         null,
-                        AdvancementFrame.TASK,
+                        AdvancementFrame.GOAL,
                         true,
                         true,
                         true
@@ -400,7 +400,7 @@ public class ModAdvancementProvider extends FabricAdvancementProvider {
                         Text.literal("Could have been better"),
                         Text.literal("That last meal left you a little hollow and wondering if it could have been more than what it was..."),
                         null,
-                        AdvancementFrame.TASK,
+                        AdvancementFrame.GOAL,
                         true,
                         true,
                         true

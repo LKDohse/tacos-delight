@@ -12,6 +12,7 @@
   },
   "display": {
     "description": "Eating that really hurt! And yet... ",
+    "frame": "goal",
     "hidden": true,
     "icon": {
       "count": 1,

@@ -81,5 +81,6 @@
   "death.attack.gas_cloud.player": "%s died inhaling %s's putrid fumes",
   "death.attack.blue_raspberry_bush": "%s died stuck is a blue raspberry bush",
   "effect.tacos-delight.disappointed": "Disappointed",
-  "effect.tacos-delight.gassy": "Gassy"
+  "effect.tacos-delight.gassy": "Gassy",
+  "effect.tacos-delight.spicy": "Spicy"
 }

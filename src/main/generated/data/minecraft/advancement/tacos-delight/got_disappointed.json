@@ -12,6 +12,7 @@
   },
   "display": {
     "description": "That last meal left you a little hollow and wondering if it could have been more than what it was...",
+    "frame": "goal",
     "hidden": true,
     "icon": {
       "count": 1,

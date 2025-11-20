@@ -12,6 +12,7 @@
   },
   "display": {
     "description": "Experienced some gastrointestinal distress",
+    "frame": "goal",
     "hidden": true,
     "icon": {
       "count": 1,
