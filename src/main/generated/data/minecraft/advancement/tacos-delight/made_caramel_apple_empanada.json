@@ -1,0 +1,30 @@
+{
+  "parent": "minecraft:tacos-delight/made_deep_fryer",
+  "criteria": {
+    "made_empanada": {
+      "conditions": {
+        "items": [
+          {
+            "items": "tacos-delight:caramel_apple_empanada"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": "At least this won't ever leave YOUR menu",
+    "frame": "goal",
+    "icon": {
+      "count": 1,
+      "id": "tacos-delight:caramel_apple_empanada"
+    },
+    "title": "Caramelly Delicious"
+  },
+  "requirements": [
+    [
+      "made_empanada"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

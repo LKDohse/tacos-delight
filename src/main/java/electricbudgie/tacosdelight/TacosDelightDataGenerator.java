@@ -1,7 +1,6 @@
 package electricbudgie.tacosdelight;
 
 import electricbudgie.tacosdelight.datagen.*;
-import electricbudgie.tacosdelight.datagen.custom.recipe.CustomFabricRecipeProvider;
 import electricbudgie.tacosdelight.world.ModConfiguredFeatures;
 import electricbudgie.tacosdelight.world.ModPlacedFeatures;
 import net.fabricmc.fabric.api.datagen.v1.DataGeneratorEntrypoint;
@@ -23,6 +22,7 @@ public class TacosDelightDataGenerator implements DataGeneratorEntrypoint {
 		});
 		pack.addProvider((output, future) -> new ModItemTagProvider(output, future, blockTag));
 		pack.addProvider(ModRecipeProvider::new);
+		pack.addProvider(ModAdvancementProvider::new);
 	}
 
 	@Override

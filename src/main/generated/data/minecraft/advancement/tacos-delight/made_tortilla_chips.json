@@ -1,0 +1,29 @@
+{
+  "parent": "minecraft:tacos-delight/made_deep_fryer",
+  "criteria": {
+    "made_tortilla_chips": {
+      "conditions": {
+        "items": [
+          {
+            "items": "tacos-delight:tortilla_chips"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": "Surprisingly easy to make (as long as you have a vat of hot oil)",
+    "icon": {
+      "count": 1,
+      "id": "tacos-delight:tortilla_chips"
+    },
+    "title": "Tortilla Chips"
+  },
+  "requirements": [
+    [
+      "made_tortilla_chips"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

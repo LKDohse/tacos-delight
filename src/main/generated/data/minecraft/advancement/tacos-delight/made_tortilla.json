@@ -1,0 +1,29 @@
+{
+  "parent": "minecraft:tacos-delight/got_salty",
+  "criteria": {
+    "made_tortilla": {
+      "conditions": {
+        "items": [
+          {
+            "items": "tacos-delight:flour_tortilla"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": "Tortilla in hand, you've taken your first steps into the magical world of commercialized tex-mex",
+    "icon": {
+      "count": 1,
+      "id": "tacos-delight:flour_tortilla"
+    },
+    "title": "Start of a Tex-Mex Journey"
+  },
+  "requirements": [
+    [
+      "made_tortilla"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

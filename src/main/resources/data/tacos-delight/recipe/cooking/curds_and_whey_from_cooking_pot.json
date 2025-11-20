@@ -10,7 +10,7 @@
     {
       "item": "minecraft:bone_meal"
     },
-    {"item": "minecraft:brown_mushroom"}
+    {"item": "tacos-delight:salt"}
   ],
   "result": {
     "id": "tacos-delight:curds_and_whey",

@@ -1,0 +1,32 @@
+{
+  "criteria": {
+    "root": {
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraft:wheat"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": false,
+    "background": "tacos-delight:textures/gui/advancements/90s_advancement_background.png",
+    "description": "A world of commercialised tex-mex awaits!",
+    "frame": "goal",
+    "icon": {
+      "count": 1,
+      "id": "tacos-delight:beef_taco"
+    },
+    "show_toast": false,
+    "title": "Taco Delights"
+  },
+  "requirements": [
+    [
+      "root"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

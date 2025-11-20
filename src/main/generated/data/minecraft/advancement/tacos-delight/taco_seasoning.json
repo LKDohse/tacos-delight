@@ -1,0 +1,30 @@
+{
+  "parent": "minecraft:tacos-delight/got_dried_pepper",
+  "criteria": {
+    "taco_seasoning": {
+      "conditions": {
+        "items": [
+          {
+            "items": "tacos-delight:taco_seasoning"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": "Works for more than just tacos!",
+    "frame": "goal",
+    "icon": {
+      "count": 1,
+      "id": "tacos-delight:taco_seasoning"
+    },
+    "title": "Taco Seasoning"
+  },
+  "requirements": [
+    [
+      "taco_seasoning"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

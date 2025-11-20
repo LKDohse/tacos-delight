@@ -1,0 +1,30 @@
+{
+  "parent": "minecraft:tacos-delight/made_tortilla_chips",
+  "criteria": {
+    "made_nachos": {
+      "conditions": {
+        "items": [
+          {
+            "items": "tacos-delight:nachos"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": "Classic",
+    "frame": "goal",
+    "icon": {
+      "count": 1,
+      "id": "tacos-delight:nachos"
+    },
+    "title": "Cheesy"
+  },
+  "requirements": [
+    [
+      "made_nachos"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

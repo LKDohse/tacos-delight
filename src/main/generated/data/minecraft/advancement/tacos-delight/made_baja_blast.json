@@ -1,0 +1,31 @@
+{
+  "parent": "minecraft:tacos-delight/got_blue_raspberry",
+  "criteria": {
+    "made_baja_blast": {
+      "conditions": {
+        "items": [
+          {
+            "items": "tacos-delight:baja_blast"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": "You've reached the pinnacle of human ingenuity",
+    "frame": "goal",
+    "hidden": true,
+    "icon": {
+      "count": 1,
+      "id": "tacos-delight:baja_blast"
+    },
+    "title": "Ambrosia In Real Life"
+  },
+  "requirements": [
+    [
+      "made_baja_blast"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

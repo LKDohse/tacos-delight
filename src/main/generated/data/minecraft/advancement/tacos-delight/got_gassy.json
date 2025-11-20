@@ -1,0 +1,28 @@
+{
+  "parent": "minecraft:tacos-delight/taco_seasoning",
+  "criteria": {
+    "got_gassy": {
+      "conditions": {
+        "effects": {
+          "tacos-delight:gassy": {}
+        }
+      },
+      "trigger": "minecraft:effects_changed"
+    }
+  },
+  "display": {
+    "description": "Experienced some gastrointestinal distress",
+    "hidden": true,
+    "icon": {
+      "count": 1,
+      "id": "tacos-delight:beef_burrito"
+    },
+    "title": "Too Much of a Good Thing"
+  },
+  "requirements": [
+    [
+      "got_gassy"
+    ]
+  ],
+  "sends_telemetry_event": true
+}
