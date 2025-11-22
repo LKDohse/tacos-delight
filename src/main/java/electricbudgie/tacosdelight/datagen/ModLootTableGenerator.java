@@ -1,7 +1,6 @@
 package electricbudgie.tacosdelight.datagen;
 
 import electricbudgie.tacosdelight.block.ModBlocks;
-import electricbudgie.tacosdelight.block.custom.CheeseWheelBlock;
 import electricbudgie.tacosdelight.block.custom.HotPepperCropBlock;
 import electricbudgie.tacosdelight.item.ModItems;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
@@ -11,18 +10,20 @@ import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.Enchantments;
 import net.minecraft.item.Item;
 import net.minecraft.item.Items;
+import net.minecraft.loot.LootPool;
 import net.minecraft.loot.LootTable;
 import net.minecraft.loot.condition.BlockStatePropertyLootCondition;
+import net.minecraft.loot.condition.RandomChanceLootCondition;
 import net.minecraft.loot.entry.ItemEntry;
 import net.minecraft.loot.entry.LeafEntry;
 import net.minecraft.loot.entry.LootPoolEntry;
 import net.minecraft.loot.function.ApplyBonusLootFunction;
 import net.minecraft.loot.function.SetCountLootFunction;
+import net.minecraft.loot.provider.number.ConstantLootNumberProvider;
 import net.minecraft.loot.provider.number.UniformLootNumberProvider;
 import net.minecraft.predicate.StatePredicate;
 import net.minecraft.registry.RegistryKeys;
 import net.minecraft.registry.RegistryWrapper;
-import net.minecraft.util.math.intprovider.UniformIntProvider;
 
 import java.util.concurrent.CompletableFuture;
 
@@ -42,6 +43,22 @@ public class ModLootTableGenerator extends FabricBlockLootTableProvider {
         BlockStatePropertyLootCondition.Builder hotPepperLootConditionBuilder = BlockStatePropertyLootCondition.builder(ModBlocks.HOT_PEPPER_CROP)
                 .properties(StatePredicate.Builder.create().exactMatch(HotPepperCropBlock.AGE, 5));
         this.addDrop(ModBlocks.HOT_PEPPER_CROP, this.cropDrops(ModBlocks.HOT_PEPPER_CROP, ModItems.HOT_PEPPER, ModItems.HOT_PEPPER_SEEDS, hotPepperLootConditionBuilder));
+        this.addDrop(ModBlocks.WILD_HOT_PEPPERS, wildCropDrops(ModItems.HOT_PEPPER, ModItems.HOT_PEPPER_SEEDS));
+    }
+
+    public LootTable.Builder wildCropDrops(Item fruit, Item seeds){
+        return LootTable.builder()
+                .pool(LootPool.builder()
+                        .rolls(ConstantLootNumberProvider.create(1.0f))
+                        .with(ItemEntry.builder(fruit))
+                        .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1f, 2f)))
+                )
+                .pool(LootPool.builder()
+                        .rolls(ConstantLootNumberProvider.create(1.0f))
+                        .conditionally(RandomChanceLootCondition.builder(0.50f))
+                        .with(ItemEntry.builder(seeds))
+                        .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(0f, 2f)))
+                );
     }
 
     public LootTable.Builder multipleOreDrops(Block drop, Item item, float minDrops, float maxDrops){

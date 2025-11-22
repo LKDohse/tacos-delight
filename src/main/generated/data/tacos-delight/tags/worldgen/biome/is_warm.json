@@ -1,0 +1,21 @@
+{
+  "values": [
+    "minecraft:desert",
+    "minecraft:jungle",
+    "minecraft:bamboo_jungle",
+    "minecraft:sparse_jungle",
+    "minecraft:savanna",
+    "minecraft:windswept_savanna",
+    "minecraft:savanna_plateau",
+    "minecraft:badlands",
+    "minecraft:eroded_badlands",
+    "minecraft:wooded_badlands",
+    "minecraft:swamp",
+    "minecraft:mangrove_swamp",
+    "minecraft:mushroom_fields",
+    "minecraft:stony_peaks",
+    "minecraft:plains",
+    "minecraft:sunflower_plains",
+    "minecraft:beach"
+  ]
+}

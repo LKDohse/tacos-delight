@@ -7,6 +7,7 @@ import electricbudgie.tacosdelight.tags.ModTags;
 import net.minecraft.block.*;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
+import net.minecraft.entity.ItemEntity;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.entity.player.PlayerEntity;
@@ -34,8 +35,8 @@ import net.minecraft.world.event.GameEvent;
 
 public class BlueRaspberryBushBlock extends PlantBlock implements Fertilizable {
     public static final MapCodec<BlueRaspberryBushBlock> CODEC = createCodec(BlueRaspberryBushBlock::new);
-    private static final int MAX_AGE = 6;
-    private static final TagKey<Biome> GROWABLE_BIOMES = ModTags.IS_SNOWY;
+    public static final int MAX_AGE = 6;
+    private static final TagKey<Biome> GROWABLE_BIOMES = ModTags.IS_COOL;
     public static final IntProperty AGE = IntProperty.of("age", 0, 6);
 
     public BlueRaspberryBushBlock(Settings settings) {
@@ -52,6 +53,21 @@ public class BlueRaspberryBushBlock extends PlantBlock implements Fertilizable {
             BlockState blockState = state.with(AGE, i + 1);
             world.setBlockState(pos, blockState, 2);
             world.emitGameEvent(GameEvent.BLOCK_CHANGE, pos, GameEvent.Emitter.of(blockState));
+        }
+        else if (!world.getBiome(pos).isIn(GROWABLE_BIOMES)){
+            ItemStack blue_raspberry = new ItemStack(ModItems.BLUE_RASPBERRY, 1);
+            ItemEntity blue_raspberry_entity = new ItemEntity(world, pos.getX(), pos.getY(), pos.getZ(), blue_raspberry);
+            world.spawnEntity(blue_raspberry_entity);
+            world.syncWorldEvent(2001, pos, Block.getRawIdFromState(state));
+            world.removeBlock(pos, false);
+            world.playSound(
+                    null,
+                    pos,
+                    state.getSoundGroup().getBreakSound(),
+                    SoundCategory.BLOCKS,
+                    0.5f,
+                    1.0f
+            );
         }
 
     }

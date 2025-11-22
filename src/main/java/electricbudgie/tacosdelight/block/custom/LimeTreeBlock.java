@@ -6,6 +6,7 @@ import electricbudgie.tacosdelight.item.ModItems;
 import electricbudgie.tacosdelight.tags.ModTags;
 import net.minecraft.block.*;
 import net.minecraft.block.enums.DoubleBlockHalf;
+import net.minecraft.entity.ItemEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
@@ -35,7 +36,7 @@ import org.jetbrains.annotations.Nullable;
 
 public class LimeTreeBlock extends TallPlantBlock implements Fertilizable {
     public static final MapCodec<LimeTreeBlock> CODEC = createCodec(LimeTreeBlock::new);
-    private static final TagKey<Biome> GROWABLE_BIOMES = ModTags.IS_TROPICAL;
+    private static final TagKey<Biome> GROWABLE_BIOMES = ModTags.IS_WARM;
     public static final int HARVEST_AGE = 5;
     public static final int ADULT_AGE = 3;
     public static final IntProperty AGE = IntProperty.of("age", 0, 5);
@@ -61,7 +62,7 @@ public class LimeTreeBlock extends TallPlantBlock implements Fertilizable {
     }
 
     protected ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, BlockHitResult hit) {
-       int i = state.get(AGE);
+        int i = state.get(AGE);
         boolean bl = i == 3;
         if (i >= HARVEST_AGE) {
             int j = 2 + world.random.nextInt(3);
@@ -69,7 +70,7 @@ public class LimeTreeBlock extends TallPlantBlock implements Fertilizable {
             world.playSound(null, pos, SoundEvents.BLOCK_SWEET_BERRY_BUSH_PICK_BERRIES, SoundCategory.BLOCKS, 1.0F, 0.8F + world.random.nextFloat() * 0.4F);
             BlockState blockState = state.with(AGE, ADULT_AGE);
             world.setBlockState(pos, blockState, Block.NOTIFY_LISTENERS);
-            if(state.get(HALF) == DoubleBlockHalf.LOWER)
+            if (state.get(HALF) == DoubleBlockHalf.LOWER)
                 world.setBlockState(pos.up(), blockState.with(HALF, DoubleBlockHalf.UPPER), Block.NOTIFY_ALL);
             else
                 world.setBlockState(pos.down(), blockState.with(HALF, DoubleBlockHalf.LOWER), Block.NOTIFY_ALL);
@@ -130,55 +131,70 @@ public class LimeTreeBlock extends TallPlantBlock implements Fertilizable {
             BlockState blockState = state.with(AGE, nextAge);
             world.setBlockState(pos, blockState, Block.NOTIFY_LISTENERS);
             world.setBlockState(pos.up(), blockState.with(HALF, DoubleBlockHalf.UPPER), Block.NOTIFY_ALL);
+        } else if (!world.getBiome(pos).isIn(GROWABLE_BIOMES)) {
+            ItemStack lime = new ItemStack(ModItems.LIME, 1);
+            ItemEntity lime_entity = new ItemEntity(world, pos.getX(), pos.getY(), pos.getZ(), lime);
+            world.spawnEntity(lime_entity);
+            world.syncWorldEvent(2001, pos, Block.getRawIdFromState(state));
+            world.removeBlock(pos, false);
+            world.playSound(
+                    null,
+                    pos,
+                    state.getSoundGroup().getBreakSound(),
+                    SoundCategory.BLOCKS,
+                    0.5f,
+                    1.0f
+            );
         }
     }
 
-    @Nullable
-    private LimeTreeBlock.LowerHalfContext getLowerHalfContext(WorldView world, BlockPos pos, BlockState state) {
-        if (isLowerHalf(state)) {
-            return new LimeTreeBlock.LowerHalfContext(pos, state);
-        } else {
-            BlockPos blockPos = pos.down();
-            BlockState blockState = world.getBlockState(blockPos);
-            return isLowerHalf(blockState) ? new LimeTreeBlock.LowerHalfContext(blockPos, blockState) : null;
-        }
-    }
 
-    private static boolean isLowerHalf(BlockState state) {
-        return state.isOf(ModBlocks.LIME_TREE) && state.get(HALF) == DoubleBlockHalf.LOWER;
+@Nullable
+private LimeTreeBlock.LowerHalfContext getLowerHalfContext(WorldView world, BlockPos pos, BlockState state) {
+    if (isLowerHalf(state)) {
+        return new LimeTreeBlock.LowerHalfContext(pos, state);
+    } else {
+        BlockPos blockPos = pos.down();
+        BlockState blockState = world.getBlockState(blockPos);
+        return isLowerHalf(blockState) ? new LimeTreeBlock.LowerHalfContext(blockPos, blockState) : null;
     }
+}
 
-    @Override
-    public BlockState getAppearance(BlockState state, BlockRenderView renderView, BlockPos pos, Direction side, @Nullable BlockState sourceState, @Nullable BlockPos sourcePos) {
-        return super.getAppearance(state, renderView, pos, side, sourceState, sourcePos);
-    }
+private static boolean isLowerHalf(BlockState state) {
+    return state.isOf(ModBlocks.LIME_TREE) && state.get(HALF) == DoubleBlockHalf.LOWER;
+}
 
-    protected void appendProperties(StateManager.Builder<Block, BlockState> builder) {
-        builder.add(AGE);
-        builder.add(HALF);
-    }
+@Override
+public BlockState getAppearance(BlockState state, BlockRenderView renderView, BlockPos pos, Direction side, @Nullable BlockState sourceState, @Nullable BlockPos sourcePos) {
+    return super.getAppearance(state, renderView, pos, side, sourceState, sourcePos);
+}
 
-    @Override
-    protected BlockState getStateForNeighborUpdate(
-            BlockState state, Direction direction, BlockState neighborState, WorldAccess world, BlockPos pos, BlockPos neighborPos
-    ) {
-        DoubleBlockHalf doubleBlockHalf = state.get(HALF);
-        if (direction.getAxis() != Direction.Axis.Y
-                || doubleBlockHalf == DoubleBlockHalf.LOWER != (direction == Direction.UP)
-                || neighborState.isOf(this) && neighborState.get(HALF) != doubleBlockHalf) {
-            return doubleBlockHalf == DoubleBlockHalf.LOWER && direction == Direction.DOWN && !state.canPlaceAt(world, pos)
-                    ? Blocks.AIR.getDefaultState()
-                    : super.getStateForNeighborUpdate(state, direction, neighborState, world, pos, neighborPos);
-        } else {
-            return Blocks.AIR.getDefaultState();
-        }
-    }
+protected void appendProperties(StateManager.Builder<Block, BlockState> builder) {
+    builder.add(AGE);
+    builder.add(HALF);
+}
 
-    @Override
-    protected VoxelShape getCollisionShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context) {
-       return VoxelShapes.fullCube();
+@Override
+protected BlockState getStateForNeighborUpdate(
+        BlockState state, Direction direction, BlockState neighborState, WorldAccess world, BlockPos pos, BlockPos neighborPos
+) {
+    DoubleBlockHalf doubleBlockHalf = state.get(HALF);
+    if (direction.getAxis() != Direction.Axis.Y
+            || doubleBlockHalf == DoubleBlockHalf.LOWER != (direction == Direction.UP)
+            || neighborState.isOf(this) && neighborState.get(HALF) != doubleBlockHalf) {
+        return doubleBlockHalf == DoubleBlockHalf.LOWER && direction == Direction.DOWN && !state.canPlaceAt(world, pos)
+                ? Blocks.AIR.getDefaultState()
+                : super.getStateForNeighborUpdate(state, direction, neighborState, world, pos, neighborPos);
+    } else {
+        return Blocks.AIR.getDefaultState();
     }
+}
 
-    record LowerHalfContext(BlockPos pos, BlockState state) {
-    }
+@Override
+protected VoxelShape getCollisionShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context) {
+    return VoxelShapes.fullCube();
+}
+
+record LowerHalfContext(BlockPos pos, BlockState state) {
+}
 }

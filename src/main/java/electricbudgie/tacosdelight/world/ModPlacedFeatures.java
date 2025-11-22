@@ -16,6 +16,7 @@ import java.util.List;
 public class ModPlacedFeatures {
     public static final RegistryKey<PlacedFeature> LIME_TREE_PLACED_KEY = registerKey("lime_tree_placed");
     public static final RegistryKey<PlacedFeature> BLUE_RASPBERRY_BUSH_PLACED_KEY = registerKey("blue_raspberry_bush_placed");
+    public static final RegistryKey<PlacedFeature> WILD_HOT_PEPPER_PLACED_KEY = registerKey("wild_hot_pepper_placed");
     public static final RegistryKey<PlacedFeature> COASTAL_HALITE_GEODE_PLACED_KEY = registerKey("coastal_halite_geode_placed_key");
     public static final RegistryKey<PlacedFeature> INLAND_HALITE_GEODE_PLACED_KEY = registerKey("inland_halite_geode_placed_key");
     public static final RegistryKey<PlacedFeature> LOWLAND_HALITE_GEODE_PLACED_KEY = registerKey("lowland_halite_geode_placed_key");
@@ -40,6 +41,10 @@ public class ModPlacedFeatures {
 
         register(context, BLUE_RASPBERRY_BUSH_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.BLUE_RASPBERRY_BUSH_KEY),
                 RarityFilterPlacementModifier.of(4),
+                SquarePlacementModifier.of(), PlacedFeatures.MOTION_BLOCKING_HEIGHTMAP, BiomePlacementModifier.of());
+
+        register(context, WILD_HOT_PEPPER_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.WILD_HOT_PEPPER_KEY),
+                RarityFilterPlacementModifier.of(6),
                 SquarePlacementModifier.of(), PlacedFeatures.MOTION_BLOCKING_HEIGHTMAP, BiomePlacementModifier.of());
 
         register(context, COASTAL_HALITE_GEODE_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.COASTAL_HALITE_GEODE_KEY),

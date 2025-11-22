@@ -26,6 +26,7 @@ public class ModModelProvider extends FabricModelProvider {
         blockStateModelGenerator.registerLog(ModBlocks.HALITE).log(ModBlocks.HALITE);
 
         //Crops
+        blockStateModelGenerator.registerTintableCross(ModBlocks.WILD_HOT_PEPPERS, BlockStateModelGenerator.TintType.NOT_TINTED);
         blockStateModelGenerator.registerCrop(ModBlocks.BLUE_RASPBERRY_BUSH, BlueRaspberryBushBlock.AGE, 0, 1, 2, 3, 4, 5, 6);
         blockStateModelGenerator.registerCrop(ModBlocks.HOT_PEPPER_CROP, HotPepperCropBlock.AGE, 0,1,2,3,4,5);
         registerTallPlant(blockStateModelGenerator, ModBlocks.LIME_TREE, LimeTreeBlock.AGE);

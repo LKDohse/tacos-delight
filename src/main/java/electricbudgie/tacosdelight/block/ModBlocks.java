@@ -5,11 +5,13 @@ import electricbudgie.tacosdelight.block.custom.*;
 import electricbudgie.tacosdelight.components.ModComponents;
 import electricbudgie.tacosdelight.item.ModFoodComponents;
 import net.minecraft.block.*;
+import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
+import vectorwing.farmersdelight.common.block.WildCropBlock;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -19,6 +21,9 @@ public class ModBlocks {
 
     //Ores
     public static final Block HALITE = registerBasicBlockAndItem("halite", new PillarBlock(AbstractBlock.Settings.copy(Blocks.QUARTZ_PILLAR)));
+
+    //Wild Crops
+    public static final Block WILD_HOT_PEPPERS = registerItemlessBlock("wild_hot_pepper", new WildCropBlock(StatusEffects.WEAKNESS,6, AbstractBlock.Settings.copy(Blocks.TALL_GRASS)));
 
     //Crops
     public static final Block BLUE_RASPBERRY_BUSH = registerItemlessBlock("blue_raspberry_bush", new BlueRaspberryBushBlock(AbstractBlock.Settings.copy(Blocks.WHEAT)));

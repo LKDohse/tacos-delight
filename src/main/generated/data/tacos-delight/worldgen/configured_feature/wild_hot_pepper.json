@@ -8,11 +8,7 @@
           "to_place": {
             "type": "minecraft:simple_state_provider",
             "state": {
-              "Name": "tacos-delight:lime_tree",
-              "Properties": {
-                "age": "3",
-                "half": "lower"
-              }
+              "Name": "tacos-delight:wild_hot_pepper"
             }
           }
         }
@@ -27,8 +23,8 @@
         }
       ]
     },
-    "tries": 1,
-    "xz_spread": 1,
+    "tries": 5,
+    "xz_spread": 4,
     "y_spread": 2
   }
 }
