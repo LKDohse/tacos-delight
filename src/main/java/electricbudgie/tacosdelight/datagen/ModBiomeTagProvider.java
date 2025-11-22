@@ -20,7 +20,10 @@ public class ModBiomeTagProvider extends FabricTagProvider<Biome> {
                 .add(BiomeKeys.DESERT)
                 .add(BiomeKeys.JUNGLE)
                 .add(BiomeKeys.BAMBOO_JUNGLE)
-                .add(BiomeKeys.SPARSE_JUNGLE);
+                .add(BiomeKeys.SPARSE_JUNGLE)
+                .add(BiomeKeys.SAVANNA)
+                .add(BiomeKeys.SAVANNA_PLATEAU)
+                .add(BiomeKeys.WINDSWEPT_SAVANNA);
 
         getOrCreateTagBuilder(ModTags.IS_SNOWY)
                 .add(BiomeKeys.SNOWY_TAIGA)

@@ -178,7 +178,7 @@ public class ModRecipeProvider extends CustomFabricRecipeProvider {
                 .pattern("i#i")
                 .input('I', Items.IRON_BARS)
                 .input('i', Items.IRON_INGOT)
-                .input('D', Items.BLAZE_ROD)
+                .input('D', Items.CAMPFIRE)
                 .input('#', Blocks.IRON_BLOCK)
                 .criterion(FabricRecipeProvider.hasItem(Items.IRON_INGOT), FabricRecipeProvider.conditionsFromItem(Items.IRON_INGOT))
                 .offerTo(recipeExporter);
